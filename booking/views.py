@@ -8,9 +8,3 @@ from django.shortcuts import render
 
 def test(request):
     return HttpResponse("Hello Django!!")
-
-
-def login(request):
-    pass
-#     template = loader.get_template('login.html')
-#     return HttpResponse(template.render({}, request))

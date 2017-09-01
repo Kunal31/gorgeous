@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import RedirectView, TemplateView
+from . import views
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/login/')),
-    url(r'^login/$', TemplateView.as_view(template_name="login.html")),
+    # url(r'^login/$', TemplateView.as_view(template_name="login.html")),
+    url(r'^login/$', views.login, name='login'),
     url(r'^booking/', include('booking.urls')),
     url(r'^admin/', admin.site.urls),
 ]
