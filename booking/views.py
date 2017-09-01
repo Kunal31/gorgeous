@@ -7,4 +7,6 @@ from django.shortcuts import render
 
 
 def test(request):
+    print "Inside TEST"
+    print request.POST
     return HttpResponse("Hello Django!!")
