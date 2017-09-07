@@ -21,7 +21,7 @@ class Service(models.Model):
         db_table = "service"
 
     name = models.CharField(max_length=50)
-    image = models.CharField(max_length=500)
+    image = models.ImageField(upload_to='services/')
     short_description = models.CharField(max_length=1000)
     long_description = models.CharField(max_length=5000)
 
