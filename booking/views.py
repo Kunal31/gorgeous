@@ -12,4 +12,4 @@ def test(request):
     return HttpResponse("Hello Django!!")
 
 def index(request):
-    return render(request,"index-4.html")
+    return render(request,"index.html")
