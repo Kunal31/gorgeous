@@ -1,193 +1,7 @@
-{% load static %}
-<!doctype html>
-<html class="no-js" lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Home-Page 1 || Styles</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% extends "base.html" %}
+	{% load static %}
 
-		<!-- favicon -->		
-		<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo/favicon.ico' %}">
-
-		<!-- google fonts here -->
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Raleway:400,400italic,500,600,700' rel='stylesheet' type='text/css'>
-
-		<!-- all css here -->
-
-		<!-- bootstrap v3.3.6 css -->
-		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-		<!-- nivo-slider css -->
-		<link rel="stylesheet" href="{% static 'lib/css/nivo-slider.css' %}" />
-		<link rel="stylesheet" href="{% static 'lib/css/preview.css' %}" type="text/css" media="screen" />
-		<link rel="stylesheet" href="{% static 'lib/css/style.css' %}" type="text/css" media="screen" />
-		<!-- meanmenu css -->
-		<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
-		<!-- animate css -->
-		<link rel="stylesheet" href="{% static 'css/animate.css' %}">
-        <!-- bootstrap-datetimepicker css -->
-        <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.min.css' %}">
-		<!-- owl.carousel css -->
-		<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
-		<link rel="stylesheet" href="{% static 'css/owl.transitions.css' %}">
-		<!-- font-awesome css -->
-		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-		<!-- venobox css -->
-		<link rel="stylesheet" href="{% static 'css/venobox.css' %}">
-		<!-- style css -->
-		<link rel="stylesheet" href="{% static 'css/style.css' %}">
-		<!-- responsive css -->
-		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-
-		<!-- modernizr css -->
-		<script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
-	</head>
-	<body>
-		<!--[if lt IE 8]>
-			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-		<![endif]-->
-		
-        <div id="preloader"></div>
-		<header>
-			<!-- header-area start -->
-			<div id="sticker" class="header-area hidden-xs">
-				<div class="container">
-					<div class="row">
-						<!-- logo start -->
-						<div class="col-md-2 col-lg-2 col-sm-3 col-xs-12">
-							<div class="logo">
-								<a href="index.html"><img src="{% static 'images/logo/logo.png' %}" alt="" /></a>
-							</div>
-						</div>
-						<!-- logo end -->
-						<!-- mainmenu start -->
-						<div class="col-md-10 col-lg-10 col-sm-9 hidden-xs">
-							<div class="header-search hidden-sm">
-								<form action="index.html#">
-									<span class="search-button"><i class="fa fa-search"></i></span>
-									<input type="text" placeholder="search..."/>
-								</form>						
-							</div>
-							<div class="mainmenu">
-								<nav>
-									<ul id="nav">
-										<li><a href="index.html">Home</a>
-											<ul class="sub-menu">
-												<li><a href="index.html">Homepage Version 1</a></li>
-												<li><a href="index-2.html">Homepage Version 2</a></li>
-											</ul>
-										</li>
-										<li><a href="about.html">About</a></li>
-										<li><a href="service.html">services</a>
-											<div class="mega-menu">
-												<span>
-													<a class="mega-menu-title badge-hot" href="sub-services-1.html">Latest hair style</a>
-													<a href="index.html">casual cut</a>
-													<a href="index.html#">rikke cut</a>
-												</span>
-												<span>	
-												  <a class="mega-menu-title new-pro" href="sub-services-2.html">Celebraty Style</a>
-													<a href="index.html#">casual cut</a>
-													<a href="index.html#">side cut</a>
-												</span>
-												<span>
-													<a class="mega-menu-title badge-populer" href="sub-services-3.html">Populer style</a>
-													<a href="index.html#">casual cut</a>
-													<a href="index.html#">styles</a>
-												</span>
-											</div>									
-										</li>
-										<li><a href="portfolio-1.html">Gallery</a>
-											<ul class="sub-menu">										
-                                                <li><a href="portfolio-1.html">Gallery 1</a></li>
-                                                <li><a href="portfolio-2.html">Gallery 2</a></li>
-											</ul>								
-										</li>
-										<li><a href="http://usdtheme.com/preview-styles/blog.html">Blog</a>
-											<ul class="sub-menu">										
-												<li><a href="blog-grid.html">Blog Grid</a></li>
-												<li><a href="blog-details.html">Blog-Details</a></li>
-												<li><a href="blog-single-post.html">Blog Single Post</a></li>
-											</ul>									
-										</li>									
-										<li><a href="index.html#">Contact</a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-						<!-- mainmenu end -->
-					</div>
-				</div>
-			</div>
-			<!-- header-area end -->
-			<!-- mobile-menu-area start -->
-			<div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="mobile-menu">
-								<div class="logo">
-									<a href="index.html"><img src="{% static 'images/logo/logo.png' %}" alt="" /></a>
-								</div>
-								<nav id="dropdown">
-									<ul>
-										<li><a href="index.html">Styles Home</a>
-											<ul>
-												<li><a href="index-2.html">Home 1</a></li>
-												<li><a href="http://usdtheme.com/preview-styles/index-3.html">Home 2</a></li>
-											</ul>
-										</li>
-										<li><a href="service.html">Our Team</a>
-										</li>
-										<li><a href="service.html">Our Services</a>
-											<ul>
-												<li><a href="index.html#">rekke cut</a></li>
-												<li><a href="index.html#">bobe cut</a></li>
-												<li><a href="index.html#">celebrity cut</a></li>
-												<li><a href="index.html#">Reguler cut</a></li>
-												<li><a href="index.html#">casual cut</a></li>
-												<li><a href="index.html#">rekke cut</a></li>
-												<li><a href="index.html#">bobe cut</a></li>
-												<li><a href="index.html#">celebrity cut</a></li>
-												<li><a href="index.html#">Reguler cut</a></li>
-												<li><a href="http://usdtheme.com/preview-styles/protfolio-full.html">our work</a></li>
-											</ul>
-										</li>
-										<li><a href="http://usdtheme.com/preview-styles/portfolio-clasic.html">Portfolio</a>
-											<ul>
-												<li><a href="index.html#">casual cut</a></li>
-												<li><a href="index.html#">rekke cut</a></li>
-												<li><a href="index.html#">bobe cut</a></li>
-												<li><a href="index.html#">celebrity cut</a></li>
-												<li><a href="index.html#">Reguler cut</a></li>
-												<li><a href="index.html#">casual cut</a></li>
-												<li><a href="index.html#">rekke cut</a></li>
-												<li><a href="index.html#">bobe cut</a></li>
-												<li><a href="index.html#">celebrity cut</a></li>
-												<li><a href="index.html#">Reguler cut</a></li>
-											</ul>									
-										</li>
-										<li><a href="http://usdtheme.com/preview-styles/events.html">Events and Gifts</a></li>
-										<li><a href="blog-grid.html">Blog</a>
-											<ul>
-												<li><a href="blog-grid.html">Blog Grid</a></li>
-												<li><a href="blog-details.html">Blog Detailst</a></li>
-												<li><a href="blog-single-post.html">Blog single</a></li>
-											</ul>
-										</li>
-										<li><a href="index.html#">Contact</a></li>
-									</ul>
-								</nav>
-							</div>					
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- mobile-menu-area end -->		
-		</header>
-		<!-- header end -->
+	{% block content %}
 		<!-- Start Slider Area -->
 		<div class="slider-area">
 			<div class="bend niceties preview-2">
@@ -1072,107 +886,9 @@
 			</div>
 		</div>
 		<!-- End Appointment Area -->
-        <!-- Start Footer bottom Area -->
-        <footer>
-            <div class="footer-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <h4>About Us</h4>
-                                    <p>Redug Lagre dolor sit amet, consectetur adipisicing elit. Minima in nostrum, veniam. Esse est assumenda inventore, facere adipisci tenetur.Redug Lagre dolor sit amet, consectetur adipisicing elit. Minima in nostrum, veniam.r</p>
-                                    <div class="footer-icons">
-                                        <ul>
-                                            <li>
-                                                <a href="index.html#">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="index.html#">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="index.html#">
-                                                    <i class="fa fa-google"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="index.html#">
-                                                    <i class="fa fa-pinterest"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end single footer -->
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <h4>information</h4>
-                                    <p>
-                                        You can contact us our consectetur adipisicing elit.
-                                    </p>
-                                    <div class="footer-contacts">
-                                        <p><span>Tel:</span> +123 564 543</p>
-                                        <p><span>Email:</span> admin@minn.com</p>
-                                        <p><span>Working Hours:</span> 10am-5pm</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end single footer -->
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class="footer-content">
-                                <div class="footer-head">
-                                    <h4>Instragram</h4>
-                                    <div class="flicker-img">
-                                        <a href="index.html#">
-                                            <img src="{% static 'images/portfolio/7.jpg' %}" alt="">
-                                        </a>
-                                        <a href="index.html#">
-                                            <img src="{% static 'images/portfolio/8.jpg' %}" alt="">
-                                        </a>
-                                        <a href="index.html#">
-                                            <img src="{% static 'images/portfolio/9.jpg' %}" alt="">
-                                        </a>
-                                        <a href="index.html#">
-                                            <img src="{% static 'images/portfolio/port1.jpg' %}" alt="">
-                                        </a>
-                                        <a href="index.html#">
-                                            <img src="{% static 'images/portfolio/5.jpg' %}" alt="">
-                                        </a>
-                                        <a href="index.html#">
-                                            <img src="{% static 'images/portfolio/6.jpg' %}" alt="">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end single footer -->
-                    </div>
-                </div>
-            </div>
-            <div class="footer-area-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="copyright text-center">
-                                <p>
-                                    Copyright © 2016 
-                                    <a href="index.html#"> usdtheme</a>.
-                                    All Rights Reserved
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+		{% endblock content %}
+
+		{% block modal %}
         <!-- Modal -->
         <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -1267,65 +983,32 @@
             </div>
         </div>
         <!-- END Modal -->
+	{% endblock modal %}
 
-		<!-- all js here -->
+	{% block js %}
+	{{ block.super }}
+	<!-- Google Map js -->
+	<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=YOUR-API-KEY""></script>
+	<script>
+		function initialize() {
+		  var mapOptions = {
+			zoom: 15,
+			scrollwheel: false,
+			center: new google.maps.LatLng(23.81033, 90.41252)
+		  };
 
-		<!-- jquery latest version -->
-		<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
-		<!-- Google Map js -->
-		<script src="https://maps.googleapis.com/maps/api/js"></script>
-		<script>
-			function initialize() {
-			  var mapOptions = {
-				zoom: 15,
-				scrollwheel: false,
-				center: new google.maps.LatLng(23.81033, 90.41252)
-			  };
+		  var map = new google.maps.Map(document.getElementById('googleMap'),
+			  mapOptions);
 
-			  var map = new google.maps.Map(document.getElementById('googleMap'),
-				  mapOptions);
+		  var marker = new google.maps.Marker({
+			position: map.getCenter(),
+			animation:google.maps.Animation.BOUNCE,
+			icon: 'images/logo/map-marker.png',
+			map: map
+		  });
 
+		}
 
-			  var marker = new google.maps.Marker({
-				position: map.getCenter(),
-				animation:google.maps.Animation.BOUNCE,
-				map: map
-			  });
-
-			}
-
-			google.maps.event.addDomListener(window, 'load', initialize);
-		</script>
-		<!-- bootstrap js -->
-		<script src="{% static 'js/bootstrap.min.js' %}"></script>
-		<!-- owl.carousel js -->
-		<script src="{% static 'js/owl.carousel.min.js' %}"></script>
-		<!-- venobox js -->
-		<script src="{% static 'js/venobox.min.js' %}"></script>
-        <!-- bootstrap-datetimepicker js -->
-        <script src="{% static 'js/moment.js' %}"></script>
-        <script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
-		<!-- meanmenu js -->
-		<script src="{% static 'js/jquery.meanmenu.js' %}"></script>
-		<!-- wow js -->
-		<script src="{% static 'js/wow.min.js' %}"></script>
-		<!-- Nivo slider js --> 		
-		<script src="{% static 'lib/js/jquery.nivo.slider.js' %}" type="text/javascript"></script>
-		<script src="{% static 'lib/home.js' %}" type="text/javascript"></script>
-		<!-- isotope js -->
-		<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
-		<!-- plugins js -->
-		<script src="{% static 'js/plugins.js' %}"></script>
-		<!-- main js -->
-		<script src="{% static 'js/main.js' %}"></script>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker();
-                
-                $('#datetimepicker3').datetimepicker({
-                    format: 'LT'
-                });
-            });
-        </script>
-	</body>
-</html>
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+	{% endblock js %}
