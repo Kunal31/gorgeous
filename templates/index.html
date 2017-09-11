@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- favicon -->		
-		<link rel="shortcut icon" type="image/x-icon" href="logo/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo/favicon.ico' %}">
 
 		<!-- google fonts here -->
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
@@ -22,7 +22,7 @@
 		<!-- nivo-slider css -->
 		<link rel="stylesheet" href="{% static 'lib/css/nivo-slider.css' %}" />
 		<link rel="stylesheet" href="{% static 'lib/css/preview.css' %}" type="text/css" media="screen" />
-		<link rel="stylesheet" href="lib/css/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{% static 'lib/css/style.css' %}" type="text/css" media="screen" />
 		<!-- meanmenu css -->
 		<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
 		<!-- animate css -->
@@ -37,7 +37,7 @@
 		<!-- venobox css -->
 		<link rel="stylesheet" href="{% static 'css/venobox.css' %}">
 		<!-- style css -->
-		<link rel="stylesheet" href="{% static 'style.css' %}">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 		<!-- responsive css -->
 		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 
@@ -1289,7 +1289,6 @@
 			  var marker = new google.maps.Marker({
 				position: map.getCenter(),
 				animation:google.maps.Animation.BOUNCE,
-				icon: 'images/logo/map-marker.png',
 				map: map
 			  });
 
