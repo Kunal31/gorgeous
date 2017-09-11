@@ -11,5 +11,6 @@ def test(request):
     print request.POST
     return HttpResponse("Hello Django!!")
 
+
 def index(request):
     return render(request,"index.html")

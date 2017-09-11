@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
@@ -8,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- favicon -->		
-		<link rel="shortcut icon" type="image/x-icon" href="img/logo/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="logo/favicon.ico">
 
 		<!-- google fonts here -->
 		<link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700' rel='stylesheet' type='text/css'>
@@ -17,31 +18,31 @@
 		<!-- all css here -->
 
 		<!-- bootstrap v3.3.6 css -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 		<!-- nivo-slider css -->
-		<link rel="stylesheet" href="lib/css/nivo-slider.css" />
-		<link rel="stylesheet" href="lib/css/preview.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="{% static 'lib/css/nivo-slider.css' %}" />
+		<link rel="stylesheet" href="{% static 'lib/css/preview.css' %}" type="text/css" media="screen" />
 		<link rel="stylesheet" href="lib/css/style.css" type="text/css" media="screen" />
 		<!-- meanmenu css -->
-		<link rel="stylesheet" href="css/meanmenu.min.css">
+		<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
 		<!-- animate css -->
-		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="{% static 'css/animate.css' %}">
         <!-- bootstrap-datetimepicker css -->
-        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.min.css' %}">
 		<!-- owl.carousel css -->
-		<link rel="stylesheet" href="css/owl.carousel.css">
-		<link rel="stylesheet" href="css/owl.transitions.css">
+		<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+		<link rel="stylesheet" href="{% static 'css/owl.transitions.css' %}">
 		<!-- font-awesome css -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 		<!-- venobox css -->
-		<link rel="stylesheet" href="css/venobox.css">
+		<link rel="stylesheet" href="{% static 'css/venobox.css' %}">
 		<!-- style css -->
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="{% static 'style.css' %}">
 		<!-- responsive css -->
-		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 
 		<!-- modernizr css -->
-		<script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
 	</head>
 	<body>
 		<!--[if lt IE 8]>
@@ -57,7 +58,7 @@
 						<!-- logo start -->
 						<div class="col-md-2 col-lg-2 col-sm-3 col-xs-12">
 							<div class="logo">
-								<a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
+								<a href="index.html"><img src="{% static 'images/logo/logo.png' %}" alt="" /></a>
 							</div>
 						</div>
 						<!-- logo end -->
@@ -128,7 +129,7 @@
 						<div class="col-md-12">
 							<div class="mobile-menu">
 								<div class="logo">
-									<a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
+									<a href="index.html"><img src="{% static 'images/logo/logo.png' %}" alt="" /></a>
 								</div>
 								<nav id="dropdown">
 									<ul>
@@ -191,8 +192,8 @@
 		<div class="slider-area">
 			<div class="bend niceties preview-2">
 				<div id="ensign-nivoslider" class="slides">	
-					<img src="img/slider/slider1.jpg" alt="" title="#slider-direction-1"  />
-					<img src="img/slider/slider2.jpg" alt="" title="#slider-direction-2"  />
+					<img src="{% static 'images/slider/slider1.jpg' %}" alt="" title="#slider-direction-1"  />
+					<img src="{% static 'images/slider/slider2.jpg' %}" alt="" title="#slider-direction-2"  />
 				</div>
 				<!-- direction 1 -->
 				<div id="slider-direction-1" class="slider-direction slider-one">
@@ -259,7 +260,7 @@
 						<div class="banner-item">
 							<div class="single-banner wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
 								<a href="index.html#">
-									<img src="img/banner/banner002.jpg" alt="banners">
+									<img src="{% static 'images/banner/banner002.jpg' %}" alt="banners">
 								</a>
 							</div>
 						</div>
@@ -268,12 +269,12 @@
 						<div class="banner-item">
 							<div class="single-banner banner-mar wow slideInUp" data-wow-duration="1s" data-wow-delay=".3s">
 								<a href="index.html#">
-									<img src="img/banner/banner2.jpg" alt="banners">
+									<img src="{% static 'images/banner/banner2.jpg' %}" alt="banners">
 								</a>
 							</div>
 							<div class="single-banner wow slideInUp" data-wow-duration="1s" data-wow-delay=".4s">
 								<a href="index.html#">
-									<img src="img/banner/banner3.jpg" alt="banners">
+									<img src="{% static 'images/banner/banner3.jpg' %}" alt="banners">
 								</a>
 							</div>
 						</div>
@@ -327,7 +328,7 @@
 							<div class="single-team-member">
 								<div class="team-img">
 									<a href="index.html#">
-										<img src="img/team/team1.jpg" alt="">
+										<img src="{% static 'images/team/team1.jpg' %}" alt="">
 									</a>
 									<div class="team-social-icon text-center">
 										<ul>
@@ -347,7 +348,7 @@
 							<div class="single-team-member">
 								<div class="team-img">
 									<a href="index.html#">
-										<img src="img/team/team2.jpg" alt="">
+										<img src="{% static 'images/team/team2.jpg' %}" alt="">
 									</a>
 									<div class="team-social-icon text-center">
 										<ul>
@@ -367,7 +368,7 @@
 							<div class="single-team-member">
 								<div class="team-img">
 									<a href="index.html#">
-										<img src="img/team/team3.jpg" alt="">
+										<img src="{% static 'images/team/team3.jpg' %}" alt="">
 									</a>
 									<div class="team-social-icon text-center">
 										<ul>
@@ -387,7 +388,7 @@
 							<div class="single-team-member">
 								<div class="team-img">
 									<a href="index.html#">
-										<img src="img/team/team4.jpg" alt="">
+										<img src="{% static 'images/team/team4.jpg' %}" alt="">
 									</a>
 									<div class="team-social-icon text-center">
 										<ul>
@@ -407,7 +408,7 @@
 							<div class="single-team-member">
 								<div class="team-img">
 									<a href="index.html#">
-										<img src="img/team/team5.jpg" alt="">
+										<img src="{% static 'images/team/team5.jpg' %}" alt="">
 									</a>
 									<div class="team-social-icon text-center">
 										<ul>
@@ -427,7 +428,7 @@
 							<div class="single-team-member">
 								<div class="team-img">
 									<a href="index.html#">
-										<img src="img/team/team6.jpg" alt="">
+										<img src="{% static 'images/team/team6.jpg' %}" alt="">
 									</a>
 									<div class="team-social-icon text-center">
 										<ul>
@@ -467,7 +468,7 @@
 								<h4>Cutting</h4>
 							</div>
 							<div class="service-images">
-								<a href="index.html#"><img src="img/service/service1.jpg" alt=""></a>
+								<a href="index.html#"><img src="{% static 'images/service/service1.jpg' %}" alt=""></a>
 								<div class="overly-text">
 									<h4>follow our services</h4>
 									<a class="btn-service " href="index.html#">Read more</a>
@@ -596,7 +597,7 @@
 								<h4>Special facial</h4>
 							</div>
 							<div class="service-images">
-								<a href="index.html#"><img src="img/service/service2.jpg" alt=""></a>
+								<a href="index.html#"><img src="{% static 'images/service/service2.jpg' %}" alt=""></a>
 								<div class="overly-text">
 									<h4>follow our services</h4>
 									<a class="btn-service " href="index.html#">Read more</a>
@@ -613,7 +614,7 @@
 								<h4>Other Services</h4>
 							</div>
 							<div class="service-images">
-								<a href="index.html#"><img src="img/service/service3.jpg" alt=""></a>
+								<a href="index.html#"><img src="{% static 'images/service/service3.jpg' %}" alt=""></a>
 								<div class="overly-text">
 									<h4>follow our services</h4>
 									<a class="btn-service " href="index.html#">Read more</a>
@@ -712,14 +713,14 @@
 							<!-- single-awesome-project start -->
 							<div class="single-awesome-project hair faceial">
 								<div class="awesome-img">
-									<a href="index.html#"><img src="img/portfolio/port1.jpg" alt="" /></a>
+									<a href="index.html#"><img src="{% static 'images/portfolio/port1.jpg' %}" alt="" /></a>
 									<div class="add-actions">
 										<div class="project-dec">
 											<h5><a href="index.html#">Hair styles</a></h5>
 											<span>Modeling</span>
 										</div>
 										<ul class="project-action-btn">
-											<li><a class="venobox" data-gall="myGallery" href="img/portfolio/port1.jpg"><i class="fa fa-search-plus"></i></a></li>
+											<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port1.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
 											<li><a href="index.html#"><i class="fa fa-link"></i></a></li>
 										</ul>
 									</div>
@@ -729,14 +730,14 @@
 							<!-- single-awesome-project start -->
 							<div class="single-awesome-project makeup">
 								<div class="awesome-img">
-									<a href="index.html#"><img src="img/portfolio/port2.jpg" alt="" /></a>
+									<a href="index.html#"><img src="{% static 'images/portfolio/port2.jpg' %}" alt="" /></a>
 									<div class="add-actions">
 										<div class="project-dec">
 											<h5><a href="index.html#">Fashion</a></h5>
 											<span>Hero cut</span>
 										</div>
 										<ul class="project-action-btn">
-											<li><a class="venobox" data-gall="myGallery" href="img/portfolio/port2.jpg"><i class="fa fa-search-plus"></i></a></li>
+											<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port2.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
 											<li><a href="index.html#"><i class="fa fa-link"></i></a></li>
 										</ul>
 									</div>
@@ -746,14 +747,14 @@
 							<!-- single-awesome-project start -->
 							<div class="single-awesome-project faceial">
 								<div class="awesome-img">
-									<a href="index.html#"><img src="img/portfolio/port3.jpg" alt="" /></a>
+									<a href="index.html#"><img src="{% static 'images/portfolio/port3.jpg' %}" alt="" /></a>
 									<div class="add-actions">
 										<div class="project-dec">
 											<h5><a href="index.html#">Makeup</a></h5>
 											<span>Celebrity</span>
 										</div>
 										<ul class="project-action-btn">
-											<li><a class="venobox" data-gall="myGallery" href="img/portfolio/port3.jpg"><i class="fa fa-search-plus"></i></a></li>
+											<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port3.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
 											<li><a href="index.html#"><i class="fa fa-link"></i></a></li>
 										</ul>
 									</div>
@@ -763,14 +764,14 @@
 							<!-- single-awesome-project start -->
 							<div class="single-awesome-project makeup hair">
 								<div class="awesome-img">
-									<a href="index.html#"><img src="img/portfolio/port4.jpg" alt="" /></a>
+									<a href="index.html#"><img src="{% static 'images/portfolio/port4.jpg' %}" alt="" /></a>
 									<div class="add-actions">
 										<div class="project-dec">
 											<h5><a href="index.html#">Styles Salon</a></h5>
 											<span>Styles cutting</span>
 										</div>
 										<ul class="project-action-btn">
-											<li><a class="venobox" data-gall="myGallery" href="img/portfolio/port4.jpg"><i class="fa fa-search-plus"></i></a></li>
+											<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port4.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
 											<li><a href="index.html#"><i class="fa fa-link"></i></a></li>
 										</ul>
 									</div>
@@ -780,14 +781,14 @@
 							<!-- single-awesome-project start -->
 							<div class="single-awesome-project faceial">
 								<div class="awesome-img">
-									<a href="index.html#"><img src="img/portfolio/port5.jpg" alt="" /></a>
+									<a href="index.html#"><img src="{% static 'images/portfolio/port5.jpg' %}" alt="" /></a>
 									<div class="add-actions">
 										<div class="project-dec">
 											<h5><a href="index.html#">Spa Room</a></h5>
 											<span>Easily</span>
 										</div>
 										<ul class="project-action-btn">
-											<li><a class="venobox" data-gall="myGallery" href="img/portfolio/port5.jpg"><i class="fa fa-search-plus"></i></a></li>
+											<li><a class="venobox" data-gall="myGallery" href="images/portfolio/port5.jpg"><i class="fa fa-search-plus"></i></a></li>
 											<li><a href="index.html#"><i class="fa fa-link"></i></a></li>
 										</ul>
 									</div>
@@ -797,14 +798,14 @@
 							<!-- single-awesome-project start -->
 							<div class="single-awesome-project makeup">
 								<div class="awesome-img">
-									<a href="index.html#"><img src="img/portfolio/port6.jpg" alt="" /></a>
+									<a href="index.html#"><img src="{% static 'images/portfolio/port6.jpg' %}" alt="" /></a>
 									<div class="add-actions">
 										<div class="project-dec">
 											<h5><a href="index.html#">Nice Salon</a></h5>
 											<span>Makeup</span>
 										</div>
 										<ul class="project-action-btn">
-											<li><a class="venobox" data-gall="myGallery" href="img/portfolio/port6.jpg"><i class="fa fa-search-plus"></i></a></li>
+											<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port6.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
 											<li><a href="index.html#"><i class="fa fa-link"></i></a></li>
 										</ul>
 									</div>
@@ -814,14 +815,14 @@
 							<!-- single-awesome-project start -->
 							<div class="single-awesome-project faceial">
 								<div class="awesome-img">
-									<a href="index.html#"><img src="img/portfolio/port7.jpg" alt="" /></a>
+									<a href="index.html#"><img src="{% static 'images/portfolio/port7.jpg' %}" alt="" /></a>
 									<div class="add-actions">
 										<div class="project-dec">
 											<h5><a href="index.html#">Facewash</a></h5>
 											<span>Cleaning</span>
 										</div>
 										<ul class="project-action-btn">
-											<li><a class="venobox" data-gall="myGallery" href="img/portfolio/port7.jpg"><i class="fa fa-search-plus"></i></a></li>
+											<li><a class="venobox" data-gall="myGallery" href="images/portfolio/port7.jpg"><i class="fa fa-search-plus"></i></a></li>
 											<li><a href="index.html#"><i class="fa fa-link"></i></a></li>
 										</ul>
 									</div>
@@ -831,14 +832,14 @@
 							<!-- single-awesome-project start -->
 							<div class="single-awesome-project hair">
 								<div class="awesome-img">
-									<a href="index.html#"><img src="img/portfolio/port8.jpg" alt="" /></a>
+									<a href="index.html#"><img src="{% static 'images/portfolio/port8.jpg' %}" alt="" /></a>
 									<div class="add-actions">
 										<div class="project-dec">
 											<h5><a href="index.html#">Beautyful</a></h5>
 											<span>Haircut</span>
 										</div>
 										<ul class="project-action-btn">
-											<li><a class="venobox" data-gall="myGallery" href="img/portfolio/port8.jpg"><i class="fa fa-search-plus"></i></a></li>
+											<li><a class="venobox" data-gall="myGallery" href="images/portfolio/port8.jpg"><i class="fa fa-search-plus"></i></a></li>
 											<li><a href="index.html#"><i class="fa fa-link"></i></a></li>
 										</ul>
 									</div>
@@ -848,14 +849,14 @@
 							<!-- single-awesome-project start -->
 							<div class="single-awesome-project hair">
 								<div class="awesome-img">
-									<a href="index.html#"><img src="img/portfolio/port9.jpg" alt="" /></a>
+									<a href="index.html#"><img src="{% static 'images/portfolio/port9.jpg' %}" alt="" /></a>
 									<div class="add-actions">
 										<div class="project-dec">
 											<h5><a href="index.html#">Beautyful</a></h5>
 											<span>Haircut</span>
 										</div>
 										<ul class="project-action-btn">
-											<li><a class="venobox" data-gall="myGallery" href="img/portfolio/port9.jpg"><i class="fa fa-search-plus"></i></a></li>
+											<li><a class="venobox" data-gall="myGallery" href="images/portfolio/port9.jpg"><i class="fa fa-search-plus"></i></a></li>
 											<li><a href="index.html#"><i class="fa fa-link"></i></a></li>
 										</ul>
 									</div>
@@ -880,7 +881,7 @@
 								<div class="testimonial-carousel">
 									<div class="single-testi text-center">
 										<div class="testi-img">
-											<img src="img/testimonial/test1.jpg" alt="">
+											<img src="{% static 'images/testimonial/test1.jpg' %}" alt="">
 										</div>
 										<div class="testi-text text-center">
 											<p>Salon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.</p>
@@ -891,7 +892,7 @@
 									<!-- End single item -->
 									<div class="single-testi text-center">
 										<div class="testi-img">
-											<img src="img/testimonial/test2.jpg" alt="">
+											<img src="{% static 'images/testimonial/test2.jpg' %}" alt="">
 										</div>
 										<div class="testi-text text-center">
 											<p>Salon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.</p>
@@ -902,7 +903,7 @@
 									<!-- End single item -->
 									<div class="single-testi text-center">
 										<div class="testi-img">
-											<img src="img/testimonial/test3.jpg" alt="">
+											<img src="{% static 'images/testimonial/test3.jpg' %}" alt="">
 										</div>
 										<div class="testi-text text-center">
 											<p>Salon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.</p>
@@ -936,7 +937,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-blog text-left ">
 								<div class="blog-thumb">
-									<img alt="blog img" src="img/blog/bl2.jpg">
+									<img alt="blog img" src="{% static 'images/blog/bl2.jpg' %}">
 								</div>
 								<div class="blog-info">
 									<h3 class="blog-heading"><a href="index.html#">Title Post Here</a></h3>
@@ -958,7 +959,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-blog text-left ">
 								<div class="blog-thumb">
-									<img alt="blog img" src="img/blog/bl3.jpg">
+									<img alt="blog img" src="{% static 'images/blog/bl3.jpg' %}">
 								</div>
 								<div class="blog-info">
 									<h3 class="blog-heading"><a href="index.html#">Title Post Here</a></h3>
@@ -980,7 +981,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-blog text-left ">
 								<div class="blog-thumb">
-									<img alt="blog img" src="img/blog/bl4.jpg">
+									<img alt="blog img" src="{% static 'images/blog/bl4.jpg' %}">
 								</div>
 								<div class="blog-info">
 									<h3 class="blog-heading"><a href="index.html#">Title Post Here</a></h3>
@@ -1002,7 +1003,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="single-blog text-left ">
 								<div class="blog-thumb">
-									<img alt="blog img" src="img/blog/bl5.jpg">
+									<img alt="blog img" src="{% static 'images/blog/bl5.jpg' %}">
 								</div>
 								<div class="blog-info">
 									<h3 class="blog-heading"><a href="index.html#">Title Post Here</a></h3>
@@ -1131,22 +1132,22 @@
                                     <h4>Instragram</h4>
                                     <div class="flicker-img">
                                         <a href="index.html#">
-                                            <img src="img/portfolio/7.jpg" alt="">
+                                            <img src="{% static 'images/portfolio/7.jpg' %}" alt="">
                                         </a>
                                         <a href="index.html#">
-                                            <img src="img/portfolio/8.jpg" alt="">
+                                            <img src="{% static 'images/portfolio/8.jpg' %}" alt="">
                                         </a>
                                         <a href="index.html#">
-                                            <img src="img/portfolio/9.jpg" alt="">
+                                            <img src="{% static 'images/portfolio/9.jpg' %}" alt="">
                                         </a>
                                         <a href="index.html#">
-                                            <img src="img/portfolio/port1.jpg" alt="">
+                                            <img src="{% static 'images/portfolio/port1.jpg' %}" alt="">
                                         </a>
                                         <a href="index.html#">
-                                            <img src="img/portfolio/5.jpg" alt="">
+                                            <img src="{% static 'images/portfolio/5.jpg' %}" alt="">
                                         </a>
                                         <a href="index.html#">
-                                            <img src="img/portfolio/6.jpg" alt="">
+                                            <img src="{% static 'images/portfolio/6.jpg' %}" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -1270,7 +1271,7 @@
 		<!-- all js here -->
 
 		<!-- jquery latest version -->
-		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+		<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
 		<!-- Google Map js -->
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<script>
@@ -1288,7 +1289,7 @@
 			  var marker = new google.maps.Marker({
 				position: map.getCenter(),
 				animation:google.maps.Animation.BOUNCE,
-				icon: 'img/logo/map-marker.png',
+				icon: 'images/logo/map-marker.png',
 				map: map
 			  });
 
@@ -1297,27 +1298,27 @@
 			google.maps.event.addDomListener(window, 'load', initialize);
 		</script>
 		<!-- bootstrap js -->
-		<script src="js/bootstrap.min.js"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
 		<!-- owl.carousel js -->
-		<script src="js/owl.carousel.min.js"></script>
+		<script src="{% static 'js/owl.carousel.min.js' %}"></script>
 		<!-- venobox js -->
-		<script src="js/venobox.min.js"></script>
+		<script src="{% static 'js/venobox.min.js' %}"></script>
         <!-- bootstrap-datetimepicker js -->
-        <script src="js/moment.js"></script>
-        <script src="js/bootstrap-datetimepicker.min.js"></script>
+        <script src="{% static 'js/moment.js' %}"></script>
+        <script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
 		<!-- meanmenu js -->
-		<script src="js/jquery.meanmenu.js"></script>
+		<script src="{% static 'js/jquery.meanmenu.js' %}"></script>
 		<!-- wow js -->
-		<script src="js/wow.min.js"></script>
+		<script src="{% static 'js/wow.min.js' %}"></script>
 		<!-- Nivo slider js --> 		
-		<script src="lib/js/jquery.nivo.slider.js" type="text/javascript"></script>
-		<script src="lib/home.js" type="text/javascript"></script>
+		<script src="{% static 'lib/js/jquery.nivo.slider.js' %}" type="text/javascript"></script>
+		<script src="{% static 'lib/home.js' %}" type="text/javascript"></script>
 		<!-- isotope js -->
-		<script src="js/isotope.pkgd.min.js"></script>
+		<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
 		<!-- plugins js -->
-		<script src="js/plugins.js"></script>
+		<script src="{% static 'js/plugins.js' %}"></script>
 		<!-- main js -->
-		<script src="js/main.js"></script>
+		<script src="{% static 'js/main.js' %}"></script>
         <script type="text/javascript">
             $(function () {
                 $('#datetimepicker1').datetimepicker();
