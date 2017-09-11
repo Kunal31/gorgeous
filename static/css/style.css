@@ -817,7 +817,7 @@ span.search-button i {
  6.Wellcome Area Css
 ----------------------------------------*/
 .wellcome-area {
-background: rgba(248, 248, 248, 0.8) url("img/background/bg1.jpg");
+background: rgba(248, 248, 248, 0.8) url("../images/background/bg1.jpg");
 background-size: cover;
 background-position: center top;
 background-repeat: no-repeat;
@@ -1828,7 +1828,7 @@ width: 100%;
   15.Services page CSS
 ----------------------------------------*/
 .service-heading {
-  background: rgba(0, 0, 0, 0) url("img/service/bg1.jpg") repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("../images/service/bg1.jpg") repeat scroll 0 0;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
