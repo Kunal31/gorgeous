@@ -20,3 +20,15 @@ def about(request):
 
 def services(request):
     return render(request,"services.html")
+
+def portfolio(request):
+    return render(request,"portfolio-1.html")
+
+def blog_grid(request):
+    return render(request,"blog-grid.html")
+
+def blog_single(request):
+    return render(request,"blog-single-post.html")
+
+def blog_details(request):
+    return render(request,"blog-details.html")

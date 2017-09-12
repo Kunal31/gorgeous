@@ -1090,7 +1090,7 @@ position: relative;
   background: rgba(0, 0, 0, 0.90);
 }
 .page-head {
-  background: rgba(0, 0, 0, 0) url("img/blog/blog1.jpg") repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0) url("../images/blog/blog1.jpg") repeat scroll 0 0;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
