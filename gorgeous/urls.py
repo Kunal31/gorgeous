@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    url(r'^$', RedirectView.as_view(url='/login/')),
+    # url(r'^$', RedirectView.as_view(url='/login/')),
+    url(r'^$', TemplateView.as_view(template_name="login.html"), name='landing'),
     # url(r'^login/$', TemplateView.as_view(template_name="login.html")),
     url(r'^login/$', views.login, name='login'),
     url(r'^booking/', include('booking.urls')),
