@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render
 
@@ -12,4 +12,5 @@ def login(request):
     #remove below code and redirect to landing page on successful login
     # template = loader.get_template('login.html')
     # return HttpResponse(template.render({}, request))
-    return HttpResponse("redirect me to landing page on successful login")
+    # return HttpResponse("redirect me to landing page on successful login")
+    return HttpResponseRedirect(request,"index-2.html")
