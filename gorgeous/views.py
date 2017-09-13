@@ -24,15 +24,16 @@ class LoginView(View):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        if request.POST.get('remember_me'):
-            request.session['remember_me'] = True
+        # if request.POST.get('remember_me'):
+        #     request.session['remember_me'] = True
 
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
             login(request, user)
             redirection_url = request.POST.get('redirection_url')
-            if redirection_url:
+            redirection_url = None if redirection_url == 'None' else redirection_url
+            if redirection_url is not None:
                 return HttpResponseRedirect(redirection_url)
             else:
                 return HttpResponseRedirect(reverse('index'))
