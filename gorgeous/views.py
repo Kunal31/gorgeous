@@ -5,21 +5,36 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.urlresolvers import reverse
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
+from django.views import View
 
 
-def login(request):
-    username = request.POST.get('username')
-    password = request.POST.get('password')
-    if request.POST.get('remember_me'):pass
+class LoginView(View):
+    template_name = 'login.html'
 
-    user = authenticate(username=username, password=password)
+    def get(self,request):
+        print "INSIDE GETTTT"
+        print request.GET.get('next')
+        template = loader.get_template(self.template_name)
+        context = {'redirection_url':request.GET.get('next')}
+        return HttpResponse(template.render(context, request))
 
-    if user is not None:
-        return HttpResponseRedirect(reverse('index'))
-    else:
-        return HttpResponseRedirect(reverse('landing'))
+    def post(self,request):
+        print "INSIDE POSTTTT"
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-    #remove below code and redirect to landing page on successful login
-    # template = loader.get_template('login.html')
-    # return HttpResponse(template.render({}, request))
+        if request.POST.get('remember_me'):
+            request.session['remember_me'] = True
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            redirection_url = request.POST.get('redirection_url')
+            if redirection_url:
+                return HttpResponseRedirect(redirection_url)
+            else:
+                return HttpResponseRedirect(reverse('index'))
+        else:
+            return self.get(request)

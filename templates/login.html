@@ -28,11 +28,12 @@
         <input type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="remember_me" value="remember-me"> Remember me
-          </label>
-        </div>
+        <input type="hidden" name="redirection_url" value="{{ redirection_url }}">
+        <!--<div class="checkbox">-->
+          <!--<label>-->
+            <!--<input type="checkbox" name="remember_me" value="remember-me"> Remember me-->
+          <!--</label>-->
+        <!--</div>-->
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
