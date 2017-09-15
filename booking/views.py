@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from gorgeous import settings
+from gorgeous.celery import app
 
 
 @login_required
@@ -78,3 +79,8 @@ def contact(request):
 def log_out(request):
     logout(request)
     return HttpResponseRedirect(reverse('login'))
+
+
+@app.task(name="add")
+def addition(a,b):
+    return a + b
