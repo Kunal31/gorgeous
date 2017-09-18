@@ -23,6 +23,8 @@ class LoginView(View):
         print "INSIDE POSTTTT"
         username = request.POST.get('username')
         password = request.POST.get('password')
+        print username
+        print password
 
         # if request.POST.get('remember_me'):
         #     request.session['remember_me'] = True

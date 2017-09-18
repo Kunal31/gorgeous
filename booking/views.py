@@ -13,7 +13,7 @@ from gorgeous import settings
 
 @login_required
 def index(request):
-    return render(request,"index-2.html")
+    return render(request,"index.html")
 
 
 @login_required

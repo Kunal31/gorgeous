@@ -1,0 +1,70 @@
+/* section settings
+/* -------------------------------------------------- */
+section,#subheader{
+-webkit-background-size: 100% !important;
+-moz-background-size: 100% !important;
+-o-background-size: 100% !important;
+background-size: 100% !important;
+}
+
+/* all section  */
+#section-coming-soon{ background:none; position:absolute; min-height:100%; width:100%;z-index:1;}
+#section-gallery{background:#fff; width:101%;}
+#section-intro{background:url(../images/background/bg-4.jpg); overflow:hidden;}
+#section-intro-2{background:url(../images/background/bg-7.jpg); overflow:hidden;}
+#section-welcome{background:url(../images/background/bg-9.jpg); overflow:hidden;}
+#section-why-choose-us{background:url(../images/background/bg-8.jpg) top fixed;}
+#section-testimonial{ background:url(../images/background/bg-3.jpg); background-size:cover;}
+#section-top-reason{background:#3d3d47;}
+#section-services{ background:url(../images/background/bg-1.jpg) top fixed;}
+#view-all-projects, #call-to-action{padding:60px 0 60px 0;}
+#section-offer{background:#eee;}
+#section-hero-2{background:url(../images/background/bg-10.jpg); overflow:hidden;}
+#section-hero-3{background:url(../images/background/bg-11.jpg); overflow:hidden;}
+#section-hero-5{background:url(../images/background/bg-12.jpg); overflow:hidden;}
+
+/* section with side background image */
+#explore-1,#explore-2,#explore-4{background:#eee;}
+#explore-1.side-bg .background-image {background:url(../images/background/bg-side-2.jpg) top;}
+#explore-2.side-bg .background-image {background:url(../images/background/bg-side-1.jpg) top;}
+#explore-3.side-bg .background-image {background:url(../images/background/bg-side-1.jpg) top;}
+#explore-4.side-bg .background-image {background:url(../images/background/bg-side-4.jpg) top;}
+#explore-5{background:#50094d;}
+#explore-5.side-bg .background-image {background:url(../images/background/bg-side-9.jpg) top;}
+#explore-6.side-bg .background-image {background:url(../images/background/bg-side-10.jpg) top;}
+
+
+/* background settings for file index-coming-soon-1html */
+#bg-coming-soon-page{background:url(../images/background/bg-5.jpg) center fixed; position:fixed; min-height:100%; width:100%;}
+
+
+/* subheader background for specify page */
+#subheader{background:url(http://www.themenesia.com/themeforest/modis-new/images/background/bg-subheader.jpg)top fixed;}
+.page-services #subheader{background-image:url(../images/background/subheader-1.jpg);}
+.page-about #subheader{background-image:url(../images/background/subheader-2.jpg);}
+.page-blog #subheader{background-image:url(../images/background/subheader-7.jpg);}
+.page-shop #subheader{background-image:url(../images/background/subheader-4.jpg);}
+.page-contact #subheader{background-image:url(../images/background/subheader-5.jpg);}
+.page-service-details #subheader{background-image:url(../images/background/subheader-6.jpg);}
+.page-booking #subheader{background-image:url(../images/background/subheader-3.jpg);}
+
+
+/* subheader side background for services details page */
+#services-hair.side-bg .background-image {background:url(../images/background/bg-side-1.jpg) top;}
+#services-makeup.side-bg .background-image {background:url(../images/background/bg-side-4.jpg) top;}
+#services-facial.side-bg .background-image {background:url(../images/background/bg-side-5.jpg) top;}
+#services-massage.side-bg .background-image {background:url(../images/background/bg-side-6.jpg) top;}
+#services-nail.side-bg .background-image {background:url(../images/background/bg-side-7.jpg) top;}
+#services-waxing.side-bg .background-image {background:url(../images/background/bg-side-8.jpg) top;}
+
+
+/* media query */
+@media only screen and (max-width: 992px) {
+section,#subheader{
+-webkit-background-size:cover !important;
+-moz-background-size: cover !important;
+-o-background-size: cover !important;
+background-size: cover !important;
+}
+}
+

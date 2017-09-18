@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,500,500italic,600,600italic,700,700italic,200,200italic);
+
+body{
+font-family:"Open Sans";
+font-size:14px;
+}
+
+body.de_light{
+color:#777;
+}
+
+h1,h2,h3,h4,h5,
+h1.big-font,.type-wrap.big-font,
+#mainmenu,
+.de_count h3,
+.coming-soon-text h1{
+font-family:"Montserrat";
+font-weight:bold;
+letter-spacing:0;
+text-transform:none;
+}
+
+h1.big-font,.type-wrap.big-font{
+font-size:84px;
+text-transform:uppercase;
+}
+
+.testimonial-list, .testimonial-list li{
+font-family:Open Sans;	
+}
+
+#mainmenu{
+font-size:13px;
+}
+
+.testimonial-list, .testimonial-list li{
+font-style:normal;
+}
+
+.testimonial-list.big-font li{
+font-size:30px;
+}
+
+#explore-4{
+background:#353333 !important;
+}
+
+.gallery-col .item{
+margin-bottom:30px;
+}
+
+
+footer{background:#353333;}
+.subfooter{background:#242323;}
+
+
+.absolute{position:absolute; z-index:1;}
+.width100{width:100%;}
