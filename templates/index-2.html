@@ -1,1030 +1,908 @@
-	{% extends "base.html" %}
-	{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Modis - The Most Complete Salon Website Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive Minimal Salon Website Template">
+    <meta name="keywords" content="barber,beauty,clean,gallery,healthcare,make-up,mashup,massage,menucard,portfolio,products,salon,sauna,skin,spa">
+    <meta name="author" content="">
 
-	{% block content %}
-		<!-- Start Slider Area -->
-		<div class="slider-area">
-			<div class="bend niceties preview-2">
-				<div id="ensign-nivoslider" class="slides">	
-					<img src="{% static 'images/slider/slider7.jpg' %}" alt="" title="#slider-direction-1"  />
-					<img src="{% static 'images/slider/slider8.jpg' %}" alt="" title="#slider-direction-2"  />
-				</div>
-				<!-- direction 1 -->
-				<div id="slider-direction-1" class="slider-direction slider-one">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12 col-md-12 col-sm-12 text-center">
-								<div class="slider-content hidden-xs">
-									<!-- layer 1 -->
-									<div class="layer-1-1 wow slideInDown" data-wow-duration="1s" data-wow-delay=".3s ">
-										<h2 class="title1">The Hair Fashion</h2>
-									</div>
-									<!-- layer 2 -->
-									<div class="layer-1-2 wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s ">
-										<h1 class="title2">Lets Go Hair Styless</h1>
-									</div>
-									<!-- layer 3 -->
-									<div class="layer-1-3 wow slideInUp" data-wow-duration="1s" data-wow-delay=".3s ">
-                                        <a href="index-2.html#" class="ready-btn" title="Quick view" data-toggle="modal" data-target="#productModal">Appoinment Here</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- direction 2 -->
-				<div id="slider-direction-2" class="slider-direction slider-two">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12 col-md-12 col-sm-12 text-center">
-								<div class="slider-content hidden-xs">
-									<!-- layer 1 -->
-									<div class="layer-1-1 wow slideInDown" data-wow-duration="1s" data-wow-delay=".3s ">
-										<h2 class="title1">The Hair Fashion</h2>
-									</div>
-									<!-- layer 2 -->
-									<div class="layer-1-2 wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s  ">
-										<h1 class="title2">Lets Go Hair Styless</h1>
-									</div>
-									<!-- layer 3 -->
-									<div class="layer-1-3 wow slideInUp" data-wow-duration="1s" data-wow-delay=".3s ">
-                                        <a href="index-2.html#" class="ready-btn" title="Quick view" data-toggle="modal" data-target="#productModal">Appoinment Here</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Slider Area -->
-		<!-- Start banner Area -->
-		<div class="banner-area banner-area-2 area-padding fix">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="section-headline text-center">
-							<h3>The Gorgeous salon</h3>
-						<p>Our commitment to quality and services ensure our clients happy. With years of experiences and continuing education, <br />our dedicated staff is ready to serve your beauty needs.We're happy to help you decide the best look.</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 wow slideInLeft" data-wow-duration="1s" data-wow-delay=".2s">
-						<div class="banner-item-2">
-							<div class="single-banner">
-								<a href="index-2.html#">
-									<img src="{% static 'images/banner/banner002.jpg' %}" alt="banners">
-								</a>
-							</div>
-						</div>
-						<div class="banner-item-2">
-							<div class="single-banner wow slideInRight" data-wow-duration="1s" data-wow-delay=".3s">
-								<a href="index-2.html#">
-									<img src="{% static 'images/banner/banner003.jpg' %}" alt="banners">
-								</a>
-							</div>
-							<div class="single-banner wow slideInRight" data-wow-duration="1.5s" data-wow-delay=".4s">
-								<a href="index-2.html#">
-									<img src="{% static 'images/banner/banner004.jpg' %}" alt="banners">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End banner Area -->
-		<!-- Start Service Area -->
-		<div class="service-area area-padding">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="section-headline text-center">
-						<h3>Our Services</h3>
-						<p>Discover What We Do</p>
-						</div>
-					</div>
-				</div>
-				<div class="row mar-table">
-					<div class="col-lg-12 wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
-						<div class="service-right">
-							<div class="cut-content head-team">
-								<h4>Cutting</h4>
-							</div>
-							<div class="service-images">
-								<a href="index-2.html#"><img src="{% static 'images/service/service1.jpg' %}" alt=""></a>
-								<div class="overly-text">
-									<h4>follow our services</h4>
-									<a class="btn-service " href="index-2.html#">Read more</a>
-								</div>
-							</div>
-						</div> 
-						<form action="index-2.html#">
-							<div class="table-content table-responsive">
-								<table class=" table table-striped">
-									<thead>
-										<tr>
-											<th>Cut</th>
-											<th>Womens</th>
-											<th>Mens</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Styles</td>
-											<td>$100</td>
-											<td>$90</td>
-										</tr>
-										<tr>
-											<td>Master Stylist</td>
-											<td>$110</td>
-											<td>$100</td>
-										</tr>
-											<tr>
-											<td>Celebrity Stylist</td>
-											<td>$160</td>
-											<td>$150</td>
-										</tr>
-										<tr>
-											<td>Baby Cut</td>
-											<td>$70</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Comon Stylist</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-										<tr>
-											<td>General</td>
-											<td>$80</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Mini Cut</td>
-											<td>$40</td>
-											<td>$40</td>
-										</tr>
-										<tr>
-											<td>Cut</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</form>
-						<!-- end table -->
-					</div>
-				</div>
-				<!-- end row -->
-				<div class="row mar-table hidden-xs">
-					<div class="col-lg-12 wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
-						<form action="index-2.html#">
-							<div class="table-content left-content table-responsive">
-								<table class=" table table-striped">
-									<thead>
-										<tr>
-											<th>facial</th>
-											<th>Womens</th>
-											<th>Mens</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Standerd</td>
-											<td>$100</td>
-											<td>$90</td>
-										</tr>
-										<tr>
-											<td>Special</td>
-											<td>$110</td>
-											<td>$100</td>
-										</tr>
-											<tr>
-											<td>Celebrity face</td>
-											<td>$160</td>
-											<td>$150</td>
-										</tr>
-										<tr>
-											<td>Mackup</td>
-											<td>$70</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Regular</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-										<tr>
-											<td>General</td>
-											<td>$80</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Body spa</td>
-											<td>$240</td>
-											<td>$240</td>
-										</tr>
-										<tr>
-											<td>Styles</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</form>
-						<!-- end table -->
-						<div class="service-right">
-						   <div class="cut-content head-team">
-								<h4>Special facial</h4>
-							</div>
-							<div class="service-images">
-								<a href="index-2.html#"><img src="{% static 'images/service/service2.jpg' %}" alt=""></a>
-								<div class="overly-text">
-									<h4>follow our services</h4>
-									<a class="btn-service " href="index-2.html#">Read more</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- end row -->
-				<div class="row">
-					<div class="col-lg-12 wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
-						<div class="service-right">
-							<div class="cut-content head-team">
-								<h4>Other Services</h4>
-							</div>
-							<div class="service-images">
-								<a href="index.html#"><img src="{% static 'images/service/service3.jpg' %}" alt=""></a>
-								<div class="overly-text">
-									<h4>follow our services</h4>
-									<a class="btn-service " href="index.html#">Read more</a>
-								</div>
-							</div>
-						</div>
-						<form action="index.html#">
-							<div class="table-content table-responsive">
-								<table class=" table table-striped">
-									<thead>
-										<tr>
-											<th>Services</th>
-											<th>Womens</th>
-											<th>Mens</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Colors</td>
-											<td>$100</td>
-											<td>$90</td>
-										</tr>
-										<tr>
-											<td>Red Colors</td>
-											<td>$110</td>
-											<td>$100</td>
-										</tr>
-											<tr>
-											<td>Celebrity</td>
-											<td>$160</td>
-											<td>$150</td>
-										</tr>
-										<tr>
-											<td>Body Masege</td>
-											<td>$70</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Comon Color</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-										<tr>
-											<td>General</td>
-											<td>$80</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Black Hair</td>
-											<td>$40</td>
-											<td>$40</td>
-										</tr>
-										<tr>
-											<td>Broun Clors</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</form>
-						<!-- end table -->
-					</div>
-				</div>
-				<!-- end row -->
-			</div>
-		</div>
-		<!-- End Service Area -->
-		<!-- Start team Area -->
-		<div class="our-team-area area-padding">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="section-headline text-center">
-						<h3>Our special Team</h3>
-						<p>meet our team</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-3 col-md-3 col-sm-4">
-						<div class="team-member">
-							<div class="team-side-text wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
-								<div class="team-left-text">
-									<h4>meet our expert team</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus lacus viverra nec. Nullam cursus, neque non congue aliquam, mauris massa consequat sem.</p>
-								</div>
-								<div class="email-news">
-									<form action="index-2.html#">
-										<div class="email_button">
-										   <input type="text" placeholder="Email"/>
-										   <button type="submit"><i class="fa fa-envelope"></i></button>
-										</div>
-									</form>
-								</div>
-								<div class="team-left-icon text-center">
-									<ul>
-										<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-youtube"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-linkedin"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-9 col-md-9 col-sm-8 team-left wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
-						<div class="team-member-carousel team-indicator">
-						   <!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team1.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Jhon</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team2.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Marey</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team3.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Lopeez</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team4.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Jenne</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team5.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Andew Loies</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team6.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Annei</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End our team Area -->
-		<!-- Start Add Area -->
-		<div class="add-area fix">
-			<div class="add-items">
-				<div class="single-add-itms wow slideInUp" data-wow-duration="1.5s" data-wow-delay=".2s">
-					<a href="index-2.html#"><img src="{% static 'images/banner/banner7.jpg' %}" alt=""></a>
-				</div>
-				<div class="single-add-itms wow slideInUp" data-wow-duration="1.5s" data-wow-delay=".4s">
-					<a href="index-2.html#"><img src="{% static 'images/banner/banner9.jpg' %}" alt=""></a>
-				</div>
-				<div class="single-add-itms hidden-sm wow slideInUp" data-wow-duration="1.5s" data-wow-delay=".6s">
-					<a href="index-2.html#"><img src="{% static 'images/banner/banner8.jpg' %}" alt=""></a>
-				</div>
-			</div>
-		</div>
-		<!-- End Add Area -->
-		<!-- Start portfolio Area -->
-		<div class="portfolio-area area-padding fix">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="section-headline text-center">
-						<h3>Our Portfolio</h3>
-						<p>Checkout our work...</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<!-- Start Portfolio -page -->
-					<div class="awesome-project-1 fix">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="awesome-menu ">
-								<ul class="project-menu">
-									<li><a href="index-2.html#" class="active" data-filter="*" >All</a></li>
-									<li><a href="index-2.html#" data-filter=".hair">hair</a></li>
-									<li><a href="index-2.html#" data-filter=".facial">facial</a></li>
-									<li><a href="index-2.html#" data-filter=".makeup">makeup</a></li>
-								</ul>				
-							</div>
-						</div>
-					</div>
-					<div class="awesome-project-content portfolio-2">
-						<!-- single-awesome-project start -->
-						<div class="single-awesome-project hair facial">
-							<div class="awesome-img">
-								<a href="index-2.html#"><img src="{% static 'images/portfolio/port1.jpg' %}" alt="" /></a>
-								<div class="add-actions">
-									<div class="project-dec">
-										<h5><a href="index-2.html#">Hair styles</a></h5>
-										<span>Modeling</span>
-									</div>
-									<ul class="project-action-btn">
-										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port1.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- single-awesome-project end -->
-						<!-- single-awesome-project start -->
-						<div class="single-awesome-project makeup">
-							<div class="awesome-img">
-								<a href="index-2.html#"><img src="{% static 'images/portfolio/port2.jpg' %}" alt="" /></a>
-								<div class="add-actions">
-									<div class="project-dec">
-										<h5><a href="index-2.html#">Fashion</a></h5>
-										<span>Hero cut</span>
-									</div>
-									<ul class="project-action-btn">
-										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port2.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- single-awesome-project end -->
-						<!-- single-awesome-project start -->
-						<div class="single-awesome-project facial">
-							<div class="awesome-img">
-								<a href="index-2.html#"><img src="{% static 'images/portfolio/port3.jpg' %}" alt="" /></a>
-								<div class="add-actions">
-									<div class="project-dec">
-										<h5><a href="index-2.html#">Makeup</a></h5>
-										<span>Celebrity</span>
-									</div>
-									<ul class="project-action-btn">
-										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port3.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- single-awesome-project end -->
-						<!-- single-awesome-project start -->
-						<div class="single-awesome-project makeup hair">
-							<div class="awesome-img">
-								<a href="index-2.html#"><img src="{% static 'images/portfolio/port4.jpg' %}" alt="" /></a>
-								<div class="add-actions">
-									<div class="project-dec">
-										<h5><a href="index-2.html#">Gorgeous Salon</a></h5>
-										<span>Styles cutting</span>
-									</div>
-									<ul class="project-action-btn">
-										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port4.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- single-awesome-project end -->
-						<!-- single-awesome-project start -->
-						<div class="single-awesome-project facial">
-							<div class="awesome-img">
-								<a href="index-2.html#"><img src="{% static 'images/portfolio/port5.jpg' %}" alt="" /></a>
-								<div class="add-actions">
-									<div class="project-dec">
-										<h5><a href="index-2.html#">Spa Room</a></h5>
-										<span>Easily</span>
-									</div>
-									<ul class="project-action-btn">
-										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port5.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- single-awesome-project end -->
-						<!-- single-awesome-project start -->
-						<div class="single-awesome-project makeup">
-							<div class="awesome-img">
-								<a href="index-2.html#"><img src="{% static 'images/portfolio/port6.jpg' %}" alt="" /></a>
-								<div class="add-actions">
-									<div class="project-dec">
-										<h5><a href="index-2.html#">Nice Salon</a></h5>
-										<span>Makeup</span>
-									</div>
-									<ul class="project-action-btn">
-										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port6.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- single-awesome-project end -->
-						<!-- single-awesome-project start -->
-						<div class="single-awesome-project facial">
-							<div class="awesome-img">
-								<a href="index-2.html#"><img src="{% static 'images/portfolio/port7.jpg' %}" alt="" /></a>
-								<div class="add-actions">
-									<div class="project-dec">
-										<h5><a href="index-2.html#">Facewash</a></h5>
-										<span>Cleaning</span>
-									</div>
-									<ul class="project-action-btn">
-										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port7.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- single-awesome-project end -->
-						<!-- single-awesome-project start -->
-						<div class="single-awesome-project hair">
-							<div class="awesome-img">
-								<a href="index-2.html#"><img src="{% static 'images/portfolio/port8.jpg' %}" alt="" /></a>
-								<div class="add-actions">
-									<div class="project-dec">
-										<h5><a href="index-2.html#">Beautyful</a></h5>
-										<span>Haircut</span>
-									</div>
-									<ul class="project-action-btn">
-										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port8.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- single-awesome-project end -->
-						<!-- single-awesome-project start -->
-						<div class="single-awesome-project hair">
-							<div class="awesome-img">
-								<a href="index-2.html#"><img src="{% static 'images/portfolio/port9.jpg' %}" alt="" /></a>
-								<div class="add-actions">
-									<div class="project-dec">
-										<h5><a href="index-2.html#">Beautyful</a></h5>
-										<span>Haircut</span>
-									</div>
-									<ul class="project-action-btn">
-										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port9.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- single-awesome-project end -->
-					</div>		
-				</div>	
-			</div>	
-		</div>
-		<!-- awesome-portfolio end -->
-		<!-- Start testimonials end -->
-		<div class="testimonial-area">
-			<div class="test-overly"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-						<div class="testimonial-content">
-							<!-- start testimonial carousel -->
-							<div class="testimonial-carousel">
-								<div class="single-testi text-center">
-									<div class="testi-img">
-										<img src="{% static 'images/testimonial/test1.jpg' %}" alt="">
-									</div>
-									<div class="testi-text text-center">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quam voluptatibus beatae itaque ad, voluptate autem vel.</p>
-										<h6>marlin</h6>
-										<span class="guest-rev">Color Specialest - <a href="index-2.html#">Gorgeous Salon</a></span>
-									</div>
-								</div>
-								<!-- End single item -->
-								<div class="single-testi text-center">
-									<div class="testi-img">
-										<img src="{% static 'images/testimonial/test2.jpg' %}" alt="">
-									</div>
-									<div class="testi-text text-center">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quam voluptatibus beatae itaque ad, voluptate autem vel.</p>
-										<h6>Annie</h6>
-										<span class="guest-rev">Face Specialest - <a href="index-2.html#">Gorgeous Salon</a></span>
-									</div>
-								</div>
-								<!-- End single item -->
-								<div class="single-testi text-center">
-									<div class="testi-img">
-										<img src="{% static 'images/testimonial/test3.jpg' %}" alt="">
-									</div>
-									<div class="testi-text text-center">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quam voluptatibus beatae itaque ad, voluptate autem vel.</p>
-										<h6>Janifer</h6>
-										<span class="guest-rev">Hair Specialest -<a href="index-2.html#">Gorgeous Salon</a></span>
-									</div>
-								</div>
-								<!-- End single item -->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End testimonials end -->
-		<!-- Start Blog Post Area -->
-		 <div class="our-blog-area area-padding">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="section-headline text-center">
-						<h3>Our Latest News</h3>
-						<p>Salon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br/>  Nam auctor nisi est, nec tempus lacus viverra nec. Nullam cursus,.</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="blog-post-inner blog-carousel team-indicator">
-						<!-- Start Single Blog -->
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-							<div class="single-blog text-left ">
-								<div class="blog-thumb">
-									<img alt="blog img" src="{% static 'images/blog/bl1.jpg' %}">
-								</div>
-								<div class="blog-info">
-									<h3 class="blog-heading"><a href="index-2.html#">Title Post Here</a></h3>
-									<div class="blog-post-dlc">
-										<ul>
-											<li>
-												<span class="date-time"><i class="fa fa-calendar"></i>feb 18, 2016</span>
-											</li>
-											<li><a href="index-2.html#"><i class="fa fa-heart"></i></a>17</li>
-											<li><a href="index-2.html#"><i class="fa fa-comments-o"></i></a>2</li>
-										</ul>
-									</div>
-									<p class="blog-content">Pellentesque quis condimentum arcu, vel ornare nisi. Donec tellus elit, fringilla non ex id, tincidunt bibendum erat. Nam auctor erat nec mi euismod viverra. Morbi accumsan ipsum velit.</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-						<!-- Start Single Blog -->
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-							<div class="single-blog text-left ">
-								<div class="blog-thumb">
-									<img alt="blog img" src="{% static 'images/blog/bl2.jpg' %}">
-								</div>
-								<div class="blog-info">
-									<h3 class="blog-heading"><a href="index-2.html#">Title Post Here</a></h3>
-									<div class="blog-post-dlc">
-										<ul>
-											<li>
-												<span class="date-time"><i class="fa fa-calendar"></i>feb 18, 2016</span>
-											</li>
-											<li><a href="index-2.html#"><i class="fa fa-heart"></i></a>17</li>
-											<li><a href="index-2.html#"><i class="fa fa-comments-o"></i></a>2</li>
-										</ul>
-									</div>
-									<p class="blog-content">Pellentesque quis condimentum arcu, vel ornare nisi. Donec tellus elit, fringilla non ex id, tincidunt bibendum erat. Nam auctor erat nec mi euismod viverra. Morbi accumsan ipsum velit.</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-						<!-- Start Single Blog -->
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-							<div class="single-blog text-left ">
-								<div class="blog-thumb">
-									<img alt="blog img" src="{% static 'images/blog/bl2.jpg' %}">
-								</div>
-								<div class="blog-info">
-									<h3 class="blog-heading"><a href="index-2.html#">Title Post Here</a></h3>
-									<div class="blog-post-dlc">
-										<ul>
-											<li>
-												<span class="date-time"><i class="fa fa-calendar"></i>feb 18, 2016</span>
-											</li>
-											<li><a href="index-2.html#"><i class="fa fa-heart"></i></a>17</li>
-											<li><a href="index-2.html#"><i class="fa fa-comments-o"></i></a>2</li>
-										</ul>
-									</div>
-									<p class="blog-content">Pellentesque quis condimentum arcu, vel ornare nisi. Donec tellus elit, fringilla non ex id, tincidunt bibendum erat. Nam auctor erat nec mi euismod viverra. Morbi accumsan ipsum velit.</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-						<!-- Start Single Blog -->
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-							<div class="single-blog text-left ">
-								<div class="blog-thumb">
-									<img alt="blog img" src="{% static 'images/blog/bl3.jpg' %}">
-								</div>
-								<div class="blog-info">
-									<h3 class="blog-heading"><a href="index-2.html#">Title Post Here</a></h3>
-									<div class="blog-post-dlc">
-										<ul>
-											<li>
-												<span class="date-time"><i class="fa fa-calendar"></i>feb 18, 2016</span>
-											</li>
-											<li><a href="index-2.html#"><i class="fa fa-heart"></i></a>17</li>
-											<li><a href="index-2.html#"><i class="fa fa-comments-o"></i></a>2</li>
-										</ul>
-									</div>
-									<p class="blog-content">Pellentesque quis condimentum arcu, vel ornare nisi. Donec tellus elit, fringilla non ex id, tincidunt bibendum erat. Nam auctor erat nec mi euismod viverra. Morbi accumsan ipsum velit.</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-						<!-- Start Single Blog -->
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-							<div class="single-blog text-left ">
-								<div class="blog-thumb">
-									<img alt="blog img" src="{% static 'images/blog/bl4.jpg' %}">
-								</div>
-								<div class="blog-info">
-									<h3 class="blog-heading"><a href="index-2.html#">Title Post Here</a></h3>
-									<div class="blog-post-dlc">
-										<ul>
-											<li>
-												<span class="date-time"><i class="fa fa-calendar"></i>feb 18, 2016</span>
-											</li>
-											<li><a href="index-2.html#"><i class="fa fa-heart"></i></a>17</li>
-											<li><a href="index-2.html#"><i class="fa fa-comments-o"></i></a>2</li>
-										</ul>
-									</div>
-									<p class="blog-content">Pellentesque quis condimentum arcu, vel ornare nisi. Donec tellus elit, fringilla non ex id, tincidunt bibendum erat. Nam auctor erat nec mi euismod viverra. Morbi accumsan ipsum velit.</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-						<!-- Start Single Blog -->
-						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-							<div class="single-blog text-left ">
-								<div class="blog-thumb">
-									<img alt="blog img" src="{% static 'images/blog/bl5.jpg' %}">
-								</div>
-								<div class="blog-info">
-									<h3 class="blog-heading"><a href="index-2.html#">Title Post Here</a></h3>
-									<div class="blog-post-dlc">
-										<ul>
-											<li>
-												<span class="date-time"><i class="fa fa-calendar"></i>feb 18, 2016</span>
-											</li>
-											<li><a href="index-2.html#"><i class="fa fa-heart"></i></a>17</li>
-											<li><a href="index-2.html#"><i class="fa fa-comments-o"></i></a>2</li>
-										</ul>
-									</div>
-									<p class="blog-content">Pellentesque quis condimentum arcu, vel ornare nisi. Donec tellus elit, fringilla non ex id, tincidunt bibendum erat. Nam auctor erat nec mi euismod viverra. Morbi accumsan ipsum velit.</p>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Blog -->
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--End Blog Post Area -->
-		<!-- star Appointment Area -->
-		<div class="apoin-area area-padding">
-			<div class="appoin-overly"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="section-headline text-center section-2">
-							<h3>Contact Us</h3>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-					<div class="apoint-form">
-						<form name="app-form" id="app-ready" method="post" action="{% url 'contact' %}">
-							{% csrf_token %}
-                            <div class="col-sm-12 col-md-offset-1 col-md-10 app-left">
-								<div class="form-group">
-									  <label>Name</label>
-									  <input type="text" name="client-name" id="app-name"  class="form-control required" placeholder="name" required title="kindly provide your name">
-								</div>
-								<div class="form-group mt-right0">
-									  <label>Email</label>
-									  <input type="email" class="form-control required email" name="client-email" id="app-email" placeholder="Email">
-								</div>
 
-								<div class="form-group">
-									  <label>Age</label>
-									  <input type="number" name="age" id="age"  class="form-control required" placeholder="age">
-								</div>
-								<div class="form-group mt-right0">
-									  <label>Contact No</label>
-									  <input type="number" class="form-control required email" name="contact_no" id="contact_no" placeholder="contact no" required title="kindly provide your contact no">
-								</div>
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
 
-								<div class="form-group textarea">
-								  <label class="control-label">Description</label>
-								  <textarea class="form-control" name="AppointmentMessage" rows="5" id="AppointmentMessage"></textarea>
-								</div>
-								<div class="submitbtn">
-									<button type="submit" class="btn btn-default" value="Submit" >SUBMIT</button>
-								</div>	
-							</div> 
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Appointment Area -->
-	{% endblock content %}
 
-	{% block modal %}
-        <!-- Modal -->
-        <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h3 class="o-form text-center">Order Form</h3>
+    <!-- CSS Files
+    ================================================== -->
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/jpreloader.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/plugin.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.theme.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.transitions.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="demo/demo.css" type="text/css">
+
+    <!-- custom background -->
+    <link rel="stylesheet" href="css/bg.css" type="text/css">
+
+    <!-- color scheme -->
+    <link rel="stylesheet" href="css/color.css" type="text/css" id="colors">
+
+    <!-- load fonts -->
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="fonts/elegant_font/HTML_CSS/style.css" type="text/css">
+    <link rel="stylesheet" href="fonts/et-line-font/style.css" type="text/css">
+
+    <!-- revolution slider -->
+    <link rel="stylesheet" href="rs-plugin/css/settings.css" type="text/css">
+    <link rel="stylesheet" href="css/rev-settings.css" type="text/css">
+</head>
+
+<body id="homepage">
+
+    <div id="wrapper">
+
+        <!-- header begin -->
+        <header class="header_center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- logo begin -->
+                        <div id="logo">
+                            <a href="index.html">
+                                <img class="logo logo_dark_bg" src="images/logo.png" alt="">
+                                <img class="logo logo_light_bg" src="images/logo_light.png" alt="">
+                            </a>
+                        </div>
+                        <!-- logo close -->
+
+                        <!-- small button begin -->
+                        <span id="menu-btn"></span>
+                        <!-- small button close -->
+
+                        <!-- mainmenu begin -->
+                        <nav>
+                            <ul id="mainmenu">
+                                <li><a href="index.html">Home</a>
+                                    <ul>
+										<li><a href="index-dark-1.html">New Homepage Dark</a></li>
+                                        <li><a href="index-spa-1.html">New Homepage Spa</a></li>
+                                        <li><a href="index.html">Homepage 1</a></li>
+                                        <li><a href="index-2.html">Homepage 2</a></li>
+                                        <li><a href="index-3.html">Homepage 3</a></li>
+                                        <li><a href="index-4.html">Homepage 4</a></li>
+                                        <li><a href="index-5.html">Homepage 5</a></li>
+                                        <li><a href="index-coming-soon-1.html">Coming Soon Page 1</a></li>
+                                        <li><a href="index-coming-soon-2.html">Coming Soon Page 2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="services.html">Services</a>
+                                    <ul>
+                                        <li><a href="service-details-1.html">Single Page</a>
+                                            <ul>
+                                                <li><a href="service-details-1.html">Hair</a></li>
+                                                <li><a href="service-details-2.html">Make Up</a></li>
+                                                <li><a href="service-details-3.html">Facial</a></li>
+                                                <li><a href="service-details-4.html">Massage</a></li>
+                                                <li><a href="service-details-5.html">Nail</a></li>
+                                                <li><a href="service-details-6.html">Waxing</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="services.html">Thumbnails</a></li>
+                                        <li><a href="services-masonry.html">Masonry</a></li>
+                                        <li><a href="services-list.html">List Style</a></li>
+                                        <li><a href="services-list-center.html">List Style Center</a></li>
+                                        <li><a href="services-list-description.html">List + Description</a></li>
+                                        <li><a href="services-list-tab.html">Tab Style</a></li>
+                                        <li><a href="services-thumbnail-circle.html">Thumbnails Circle</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="booking.html">Book</a></li>
+                                <li><a href="index-2.html#">Pages</a>
+                                    <ul>
+                                        <li><a href="gallery.html">Gallery</a>
+                                            <ul>
+                                                <li><a href="gallery-2-cols.html">2 Columns</a></li>
+                                                <li><a href="gallery-3-cols.html">3 Columns</a></li>
+                                                <li><a href="gallery.html">4 Columns</a></li>
+                                                <li><a href="gallery-2-cols-filter.html">2 Columns + Filter</a></li>
+                                                <li><a href="gallery-3-cols-filter.html">3 Columns + Filter</a></li>
+                                                <li><a href="gallery-4-cols-filter.html">4 Columns + Filter</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="offers.html">Offers</a></li>
+                                        <li><a href="popup.html">Popup</a></li>
+                                        <li><a href="skills.html">Skills</a></li>
+                                        <li><a href="tabs.html">Tabs</a></li>
+                                        <li><a href="team.html">Team</a></li>
+                                        <li><a href="testimonials.html">Testimonial</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="modal-body">
-                        <div class="sign-form order-form">
-                            <h4 class="form-head text-center">Please Send Your Information</h4>
-                            <form id="contactForm" method="POST" action="http://usdtheme.com/preview-styles/contact.php" class="contact-form">
-                                <!-- single feilds -->
-                                <div class="sign-feilds">
-                                    <div class="input-text">
-                                        <input type="text" id="fname" class="form-control width-50" placeholder="First Name" required data-error="Please enter your name">
-                                        <input type="text" id="lname" class="form-control width-50 last-name" placeholder="Last Name" required data-error="Please enter your name">
-                                        <div class="help-block with-errors"></div>
+                    <!-- mainmenu close -->
+
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+
+
+
+
+
+        <!-- content begin -->
+        <div id="content" class="no-bottom no-top">
+
+            <!-- parallax section -->
+            <section id="section-intro" aria-label="section-intro" class="full-height overflow-hidden" data-stellar-background-ratio=".2">
+                <div class="center-y text-center absolute width100">
+                    <div class="spacer-double"></div>
+
+                    <a href="https://www.youtube.com/watch?v=efVWyPNd3xw" class="popup-youtube play-button large"></a>
+                    <div class="spacer-single"></div>
+
+                </div>
+            </section>
+            <!-- parallax section close -->
+
+
+            <div class="no-padding mt-130 height90px mobile-hide absolute z-index500 width100 text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="overlay10">
+
+                                <div class="row-fluid">
+                                    <div class="col-md-4">
+                                        <div class="info-box padding20">
+                                            <i class="icon_clock_alt id-color"></i>
+                                            <div class="info-box_text">
+                                                <div class="info-box_title">Opening Times</div>
+                                                <div class="info-box_subtite">Monday - Friday: 09:00 - 22:00</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- single feilds -->
-                                <div class="sign-feilds">
-                                    <div class="input-text">
-                                        <input type="email" class="email form-control" id="email" placeholder="Email" required data-error="Please enter your email">
-                                        <div class="help-block with-errors"></div>
+
+                                    <div class="col-md-4">
+                                        <div class="info-box padding20">
+                                            <i class="icon_house_alt id-color"></i>
+                                            <div class="info-box_text">
+                                                <div class="info-box_title">Our Location</div>
+                                                <div class="info-box_subtite">100 Mainstreet Center, Sydney</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- single feilds -->
-                                <div class="sign-feilds">
-                                    <div class="input-text">
-                                        <input type="text" class="address form-control" id="address" placeholder="Address" required data-error="Please enter your address">
-                                        <div class="help-block with-errors"></div>
+
+                                    <div class="col-md-4">
+                                        <div class="info-box padding20">
+                                            <i class="icon_calendar id-color"></i>
+                                            <div class="info-box_text">
+                                                <div class="info-box_title">Book Now</div>
+                                                <div class="info-box_subtite">+208 333 9296</div>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <div class="clearfix"></div>
                                 </div>
-                                <!-- single feilds -->
-                                <div class="sign-feilds">
-                                    <div class="input-text">
-                                        <input type="text" class="city form-control" id="city" placeholder="City" required data-error="Please enter your City">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <!-- single feilds -->
-                                <div class="sign-feilds">
-                                    <div class="input-text">
-                                        <select id="select-country" class="select-country form-control width-50" name="select-country">
-                                            <option value="0">Choose Country</option>
-                                            <option value="Afganisthan">Afganisthan</option>
-                                            <option value="Australia">Australia</option>
-                                            <option value="Brazil">Brazil</option>
-                                            <option value="Canada">Canada</option>
-                                            <option value="England">England</option>
-                                            <option value="France">France</option>
-                                            <option value="Italy">Italy</option>
-                                            <option value="India">India</option>
-                                            <option value="United States">United States</option>
-                                        </select>
-                                        <input type="text" class="form-control width-50 last-name" id="state" placeholder="State" required data-error="Please enter your State">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <!-- single feilds -->
-                                <div class="sign-feilds">
-                                    <div class="input-text">
-                                        <input type="text" id="zipcode" class="form-control width-50" placeholder="Zip Code" required data-error="Please enter your zip code">
-                                        <input type="text" id="phone" class="form-control width-50 last-name" placeholder="Phone Number" required data-error="Please enter your phone number">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <!-- single feilds -->
-                                <div class="sign-feilds">
-                                    <div class="submit-btn">
-                                        <button type="submit" id="submit" class="add-btn contact-btn">Order Now</button>
-                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
+
                         </div>
                     </div>
-                    <!-- modal-body -->
                 </div>
-                <!-- modal-content -->
             </div>
+
+
+            <!-- section begin -->
+            <section id="section-top-reason" class="no-top no-bottom">
+                <div class="container-fluid">
+                    <div class="row-fluid display-table">
+
+                        <div class="col-md-4 text-middle" data-bgcolor="#e2e2e2">
+                            <div class="padding40">
+                                <div class="box-icon">
+                                    <i class="fa fa-tags wow zoomIn" data-wow-delay=".25s"></i>
+                                    <div class="text">
+                                        <h4>Special Promo</h4>
+                                        <p>Our commitment to quality and services ensure our clients happy. With years of experiences and continuing education, our dedicated staff is ready to serve your beauty needs. We're happy to help you decide the best look.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 text-middle text-light" data-bgimage="url(images/background/bg-div-1.jpg)">
+                            <div class="padding40 hoverdark30">
+                                <div class="box-icon">
+                                    <i class="fa fa-tags wow zoomIn" data-wow-delay=".25s"></i>
+                                    <div class="text">
+                                        <h4>Get Discount 50%</h4>
+                                        <p>Our commitment to quality and services ensure our clients happy. With years of experiences and continuing education, our dedicated staff is ready to serve your beauty needs. We're happy to help you decide the best look.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 text-middle text-center" data-bgcolor="#50094d">
+                            <div class="padding40">
+                                <a href="booking.html" class="btn btn-line-white btn-big wow fadeInUp" data-wow-delay=".3s">Make Appointment Now</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+            <!-- section begin -->
+            <section id="section-services-tab" aria-label="section-services-tab">
+                <div class="container">
+
+                    <div class="col-md-12 wow fadeInUp">
+                        <div class="de_tab tab_style_2 scrollTo">
+                            <ul class="de_nav">
+                                <li class="active" data-link="#section-services-tab">
+                                    <img src="images/services/service_1.jpg" alt=""><span>Hair</span><div class="v-border"></div>
+                                </li>
+                                <li data-link="#section-services-tab">
+                                    <img src="images/services/service_2.jpg" alt=""><span>Make Up</span><div class="v-border"></div>
+                                </li>
+                                <li data-link="#section-services-tab">
+                                    <img src="images/services/service_3.jpg" alt=""><span>Facial</span><div class="v-border"></div>
+                                </li>
+                                <li data-link="#section-services-tab">
+                                    <img src="images/services/service_4.jpg" alt=""><span>Massage</span><div class="v-border"></div>
+                                </li>
+                                <li data-link="#section-services-tab">
+                                    <img src="images/services/service_5.jpg" alt=""><span>Nail</span><div class="v-border"></div>
+                                </li>
+                                <li data-link="#section-services-tab">
+                                    <img src="images/services/service_6.jpg" alt=""><span>Waxing</span><div class="v-border"></div>
+                                </li>
+                            </ul>
+
+                            <div class="de_tab_content">
+
+                                <div id="tab1" class="tab_single_content">
+                                    <div class="row">
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Braids & Twist</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$35</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Clipper Cut</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$5</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Color Rinse</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$5</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Corrective Color</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$15</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Extension Per Track</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$10</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1"><span class="disc">10% Off</span>Full Foil</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$38</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Haircolor</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$15</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Haircut</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$9</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1"><span class="disc">5% Off</span>Hair Extension</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$45</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Kids Haircut</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$5</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Partial Foil</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$25</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="sub-item-service">
+                                                <div class="c1">Thermal Add On</div>
+                                                <div class="c2"></div>
+                                                <div class="c3">$20</div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+
+                                <div id="tab2" class="tab_single_content">
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Full Face</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$20</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Eye Lasy Strip</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$12</div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Teen Makeup</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$18</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Sweet Pea</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$15</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1"><span class="disc">8% Off</span>Special Occasion Makeup</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$25</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Wedding Day Make Up</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$45</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div id="tab3" class="tab_single_content">
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1"><span class="disc">7% Off</span>Vitamin C Facial</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$42</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Acne Facial</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$20</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Anti Aging Facial</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$40</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Sensitive Skin Facial</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$38</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div id="tab4" class="tab_single_content">
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">1 Hour - Essential Therapy</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$49</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">1 1/2 Hour - Complete Therapy</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$74</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">2 Hour - Maximum Therapy</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$99</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1"><span class="disc">15% Off</span>Enhanced Therapy</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$149</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div id="tab5" class="tab_single_content">
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Pedicures</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$25</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Manicures</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$28</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Nail Enhancements</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$65</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div id="tab6" class="tab_single_content">
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Wax</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$63</div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="sub-item-service">
+                                            <div class="c1">Threading</div>
+                                            <div class="c2"></div>
+                                            <div class="c3">$58</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+
+
+
+            <!-- section begin -->
+            <section id="section-gallery" aria-label="section-gallery" class="no-top no-bottom">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div id="gallery" class="gallery zoom-gallery gallery-3-cols wow fadeInUp mb-60" data-wow-delay=".3s">
+
+                                <!-- gallery item -->
+                                <div class="item haircut">
+                                    <div class="picframe">
+                                        <a href="images/gallery/pf&#32;(1).jpg" title="Hair Style 1">
+                                            <span class="overlay">
+                                                <span class="pf_text">
+                                                    <span class="project-name">Hair Style 1</span>
+                                                </span>
+                                            </span>
+                                            <img src="images/gallery/pf&#32;(1).jpg" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- close gallery item -->
+
+                                <!-- gallery item -->
+                                <div class="item hair_color">
+                                    <div class="picframe">
+                                        <a href="images/gallery/pf&#32;(2).jpg" title="Hair Style 2">
+                                            <span class="overlay">
+                                                <span class="pf_text">
+                                                    <span class="project-name">Hair Style 2</span>
+                                                </span>
+                                            </span>
+                                            <img src="images/gallery/pf&#32;(2).jpg" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- close gallery item -->
+
+                                <!-- gallery item -->
+                                <div class="item hair_color">
+                                    <div class="picframe">
+                                        <a href="images/gallery/pf&#32;(3).jpg" title="Hair Style 3">
+                                            <span class="overlay">
+                                                <span class="pf_text">
+                                                    <span class="project-name">Hair Style 3</span>
+                                                </span>
+                                            </span>
+                                            <img src="images/gallery/pf&#32;(3).jpg" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- close gallery item -->
+
+                                <!-- gallery item -->
+                                <div class="item haircut">
+                                    <div class="picframe">
+                                        <a href="images/gallery/pf&#32;(4).jpg" title="Hair Style 4">
+                                            <span class="overlay">
+                                                <span class="pf_text">
+                                                    <span class="project-name">Hair Style 4</span>
+                                                </span>
+                                            </span>
+                                            <img src="images/gallery/pf&#32;(4).jpg" alt="" />
+                                        </a>
+                                        <img src="images/gallery/pf&#32;(4).jpg" alt="" />
+                                    </div>
+                                </div>
+                                <!-- close gallery item -->
+
+                                <!-- gallery item -->
+                                <div class="item hair_extension">
+                                    <div class="picframe">
+                                        <a href="images/gallery/pf&#32;(5).jpg" title="Hair Style 5">
+                                            <span class="overlay">
+                                                <span class="pf_text">
+                                                    <span class="project-name">Hair Style 5</span>
+                                                </span>
+                                            </span>
+                                            <img src="images/gallery/pf&#32;(5).jpg" alt="" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- close gallery item -->
+
+                                <!-- gallery item -->
+                                <div class="item full_foil">
+                                    <div class="picframe">
+                                        <a href="images/gallery/pf&#32;(6).jpg" title="Hair Style 6">
+                                            <span class="overlay">
+                                                <span class="pf_text">
+                                                    <span class="project-name">Hair Style 6</span>
+                                                </span>
+                                            </span>
+                                            <img src="images/gallery/pf&#32;(6).jpg" alt="" />
+                                        </a>
+                                        <img src="images/gallery/pf&#32;(6).jpg" alt="" />
+                                    </div>
+                                </div>
+                                <!-- close gallery item -->
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- section close -->
+
+
+            <!-- section begin -->
+            <section id="section-hero-2" aria-label="section-hero-2" data-stellar-background-ratio=".2" data-bgcolor="#333" class="text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 mt60 mb100 text-center">
+                            <h4 class="mb30">Discover Our Services.</h4>
+                            <div class="small-border wow zoomIn"></div>
+                            <div class="type-wrap font48 text-center">
+                                We do
+                            <div class="typed-strings">
+                                <p>Hair Care</p>
+                                <p>Make Up</p>
+                                <p>Facial</p>
+                                <p>Massage</p>
+                                <p>Nail Care</p>
+                                <p>Waxing</p>
+                            </div>
+                                <span class="typed"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+
+            <!-- section begin -->
+            <section id="cta" aria-label="cta" class="call-to-action bg-color-2 wow fadeInLeftBig text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 mt10">
+                            <h3><i class="fa fa-phone mr10"></i>Contact us now and get special offers!</h3>
+                        </div>
+
+                        <div class="col-md-3 text-right">
+                            <a href="booking.html" class="btn btn-line-white btn-big">Make Appointment Now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
         </div>
-        <!-- END Modal -->
-	{% endblock modal %}
+
+        <!-- footer begin -->
+        <footer>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="widget widget_recent_post">
+                            <h3>Latest News</h3>
+                            <ul>
+                                <li><a href="index-2.html#">How to Make Your Hair Grow Faster </a></li>
+                                <li><a href="index-2.html#">5 Ways to Make Hair Look Gorgeous</a></li>
+                                <li><a href="index-2.html#">14 Easy Ways to Get Standout Eyes</a></li>
+                                <li><a href="index-2.html#">An Owner’s Guide to Naturally Wavy Hair</a></li>
+                                <li><a href="index-2.html#">How to Wash Your Hair (the Right Way)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="widget">
+                            <h3>We're Open</h3>
+                            <div class="box-border double">
+                                <ul class="list-border-bottom">
+                                    <li>
+                                        <span class="pull-left">Monday - Friday</span>
+                                        <span class="pull-right id-color">9 am to 10 pm</span>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li>
+                                        <span class="pull-left">Saturday</span>
+                                        <span class="pull-right id-color">9 am to 12 pm</span>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li>
+                                        <span class="pull-left">Sunday &amp; Holiday</span>
+                                        <span class="pull-right id-color">8 am to 12 pm</span>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="widget widget-address">
+                            <h3>Contact Us</h3>
+
+                            <address>
+                                <span>100 Mainstreet Center, Sydney</span>
+                                <span><strong>Phone:</strong>(208) 333 9296</span>
+                                <span><strong>Fax:</strong>(208) 333 9298</span>
+                                <span><strong>Email:</strong><a href="mailto:contact@modis-salon.com">contact@modis-salon.com</a></span>
+                                <span><strong>Web:</strong><a href="index-2.html#">http://modis-salon.com</a></span>
+                            </address>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            &copy; Copyright 2016 - Modis by Designesia                     
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <div class="social-icons">
+                                <a href="index-2.html#"><i class="fa fa-facebook fa-lg"></i></a>
+                                <a href="index-2.html#"><i class="fa fa-twitter fa-lg"></i></a>
+                                <a href="index-2.html#"><i class="fa fa-rss fa-lg"></i></a>
+                                <a href="index-2.html#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                <a href="index-2.html#"><i class="fa fa-skype fa-lg"></i></a>
+                                <a href="index-2.html#"><i class="fa fa-dribbble fa-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- footer close -->
+    </div>
+
+    <!-- style switcher
+    ================================================== -->
+    <div id="switcher">
+        <span class="custom-close"></span>
+        <span class="custom-show"></span>
+
+        <span class="sw-title">Header Style</span>
+        <select name="switcher" id="de-header">
+            <option value="opt-1" selected>Center Layout</option>
+            <option value="opt-2">Left Layout</option>
+        </select>
+
+        <div class="clearfix"></div>
+
+
+        <span class="sw-title">Header Color</span>
+        <select name="switcher" id="de-header-color">
+            <option value="opt-1" selected>Light</option>
+            <option value="opt-2">Dark</option>
+        </select>
+
+        <div class="clearfix"></div>
+
+        <span class="sw-title">Color :</span>
+        <ul id="de-color">
+            <li class="bg1"></li>
+            <li class="bg2"></li>
+            <li class="bg3"></li>
+            <li class="bg4"></li>
+            <li class="bg5"></li>
+            <li class="bg6"></li>
+            <li class="bg7"></li>
+            <li class="bg8"></li>
+            <li class="bg9"></li>
+        </ul>
+
+    </div>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jpreLoader.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/easing.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.scrollto.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/video.resize.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/enquire.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="demo/demo.js"></script>
+
+    <!-- SLIDER REVOLUTION SCRIPTS  -->
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- current page only scripts -->
+    <script src="js/typed.js"></script>
+    <script src="js/typed-custom.js"></script>
+
+
+</body>
+</html>

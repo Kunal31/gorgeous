@@ -1,380 +1,446 @@
-	{% extends 'base.html' %}
-	{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Modis - The Most Complete Salon Website Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive Minimal Salon Website Template">
+    <meta name="keywords" content="barber,beauty,clean,gallery,healthcare,make-up,mashup,massage,menucard,portfolio,products,salon,sauna,skin,spa">
+    <meta name="author" content="">
 
-	{% block content %}
-		<!--Start Page Content -->
-		<div class="service-page">
-			<div class="service-heading">
-				<div class="blog-overly"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="blog-title text-center">
-								 <h2 class="breadcumb-header">Services</h2>
-								 <ul class="page-head-menu">
-									<li><i class="fa fa-home"></i><a class="home" href="service.html#"><span>Home</span></a></li>
-									<li>Service</li>
-									<li>Services Details</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--End Page Header -->
-		<!-- Start Service Area -->
-		<div class="page-service-area area-padding ">
-			<div class="container">
-			   <div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12">
-						<div class="section-headline text-center">
-							<h3>About Services</h3>
-							<p>Salon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br/>  Nam auctor nisi est, nec tempus lacus viverra nec. Nullam cursus, .</p>
-						</div>
-						<div class="our-service-inner">
-							<div class="col-lg-6 col-md-6">
-								<div class="service-pic">
-									<img src="{% static 'images/service/service1.png' %}" alt="our image">
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="srvice-info">
-									<p>Codespot ltd. is an outsourcing, software, mobile applications and website design based in Ho Chi Minh city, Vietnam. We open job positions for talent and enthusiasm persons who could bring the best technologies and the most values to clients and community. At Codespot, not only you are working, you’re creative!</p>
 
-									<p>Codespot ltd. was founded by a group of passionate and experience programmers in technologies. Over three years, Codespot Company has built a good image with our partners and clients “Separate your website from the crowd “is our mission. We join to turn your ideas into reality. Outstanding Website, your business will stand out. You succeed, we succeed.”</p>
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
 
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu tellus ipsum. Nunc maximus sapien ac dui vulputate tincidunt. Morbi luctus nisi vel suscipit volutpat. Donec vitae auctor nisl. Ut malesuada felis in erat rutrum ultrices. Fusce iaculis ornare nunc rutrum ornare. Proin ut placerat enim, vel venenatis urna. Phasellus sed diam tincidunt mauris malesuada mattis et in nisl. Quisque massa eros, molestie at mi eget, aliquam tristique eros. </p>
-								</div>
-							</div>
-						</div>
-					</div>    
-				</div>
-			</div>
-		</div>
-        <!-- service area start -->
-        <div class="service-single area-padding">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/jpreloader.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/plugin.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.theme.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.transitions.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="demo/demo.css" type="text/css">
+
+    <!-- custom background -->
+    <link rel="stylesheet" href="css/bg.css" type="text/css">
+
+    <!-- color scheme -->
+    <link rel="stylesheet" href="css/color.css" type="text/css" id="colors">
+
+    <!-- revolution slider -->
+    <link rel="stylesheet" href="rs-plugin/css/settings.css" type="text/css">
+    <link rel="stylesheet" href="css/rev-settings.css" type="text/css">
+
+    <!-- load fonts -->
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="fonts/elegant_font/HTML_CSS/style.css" type="text/css">
+    <link rel="stylesheet" href="fonts/elegant_font/HTML_CSS/lte-ie7.js" type="text/css">
+</head>
+<body class="page-services">
+
+    <div id="wrapper">
+        <!-- header begin -->
+        <header class="header_center">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="section-headline text-center">
-                            <h3>Our Services</h3>
-                            <p>Salon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br/>  Nam auctor nisi est, nec tempus lacus viverra nec. Nullam cursus, .</p>
+                    <div class="col-md-12">
+                        <!-- logo begin -->
+                        <div id="logo">
+                            <a href="index.html">
+                                <img class="logo logo_dark_bg" src="images/logo.png" alt="">
+                                <img class="logo logo_light_bg" src="images/logo_light.png" alt="">
+                            </a>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <!-- single-well start-->
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="well-left">
-                            <div class="single-well">
-                                <a href="service.html#">
-                                    <img src="{% static 'images/service/service1.jpg' %}" alt="">
-                                    <h4 class="sec-head">Hair Cutting</h4>
-                                </a>
-                                <p>Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-well end-->
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="well-middle">
-                            <div class="single-well">
-                                <a href="service.html#">
-                                    <img src="{% static 'images/service/service2.jpg' %}" alt="">
-                                    <h4 class="sec-head">Split End Repair </h4>
-                                </a>
-                                <p>Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-well end-->
-                    <div class="col-lg-4 col-md-4 hidden-sm col-xs-12">
-                        <div class="well-left">
-                            <div class="single-well">
-                                <a href="service.html#">
-                                    <img src="{% static 'images/service/service3.jpg' %}" alt="">
-                                    <h4 class="sec-head">Clean Up</h4>
-                                </a>
-                                <p>Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at neque.</p>
+                        <!-- logo close -->
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <!-- single-well end -->
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="well-left">
-                            <div class="single-well">
-                                <a href="service.html#">
-                                    <img src="{% static 'images/service/service4.jpg' %}" alt="">
-                                    <h4 class="sec-head">Dry Cut</h4>
-                                </a>
-                                <p>Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-well end-->
-                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div class="well-middle">
-                            <div class="single-well">
-                                <a href="service.html#">
-                                    <img src="{% static 'images/service/service5.jpg' %}" alt="">
-                                    <h4 class="sec-head">Men’s Cut</h4>
-                                </a>
-                                <p>Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at neque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single-well end-->
-                    <div class="col-lg-4 col-md-4 hidden-sm col-xs-12">
-                        <div class="well-left">
-                            <div class="single-well">
-                                <a href="service.html#">
-                                    <img src="{% static 'images/service/service6.jpg' %}" alt="">
-                                    <h4 class="sec-head">Women’s Cut </h4>
-                                </a>
-                                <p>Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at neque.</p>
+                        <!-- small button begin -->
+                        <div id="menu-btn"></div>
+                        <!-- small button close -->
 
-                            </div>
-                        </div>
+                        <!-- mainmenu begin -->
+                        <nav>
+                            <ul id="mainmenu">
+                                <li><a href="index.html">Home</a>
+                                    <ul>
+										<li><a href="index-dark-1.html">New Homepage Dark</a></li>
+                                        <li><a href="index-spa-1.html">New Homepage Spa</a></li>
+                                        <li><a href="index.html">Homepage 1</a></li>
+                                        <li><a href="index-2.html">Homepage 2</a></li>
+                                        <li><a href="index-3.html">Homepage 3</a></li>
+                                        <li><a href="index-4.html">Homepage 4</a></li>
+                                        <li><a href="index-5.html">Homepage 5</a></li>
+                                        <li><a href="index-coming-soon-1.html">Coming Soon Page 1</a></li>
+                                        <li><a href="index-coming-soon-2.html">Coming Soon Page 2</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="services.html">Services</a>
+                                    <ul>
+                                        <li><a href="service-details-1.html">Single Page</a>
+                                            <ul>
+                                                <li><a href="service-details-1.html">Hair</a></li>
+                                                <li><a href="service-details-2.html">Make Up</a></li>
+                                                <li><a href="service-details-3.html">Facial</a></li>
+                                                <li><a href="service-details-4.html">Massage</a></li>
+                                                <li><a href="service-details-5.html">Nail</a></li>
+                                                <li><a href="service-details-6.html">Waxing</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="services.html">Thumbnails</a></li>
+                                        <li><a href="services-masonry.html">Masonry</a></li>
+                                        <li><a href="services-list.html">List Style</a></li>
+                                        <li><a href="services-list-center.html">List Style Center</a></li>
+                                        <li><a href="services-list-description.html">List + Description</a></li>
+                                        <li><a href="services-list-tab.html">Tab Style</a></li>
+                                        <li><a href="services-thumbnail-circle.html">Thumbnails Circle</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="booking.html">Book</a></li>
+                                <li><a href="services.html#">Pages</a>
+                                    <ul>
+                                        <li><a href="gallery.html">Gallery</a>
+                                            <ul>
+                                                <li><a href="gallery-2-cols.html">2 Columns</a></li>
+                                                <li><a href="gallery-3-cols.html">3 Columns</a></li>
+                                                <li><a href="gallery.html">4 Columns</a></li>
+                                                <li><a href="gallery-2-cols-filter.html">2 Columns + Filter</a></li>
+                                                <li><a href="gallery-3-cols-filter.html">3 Columns + Filter</a></li>
+                                                <li><a href="gallery-4-cols-filter.html">4 Columns + Filter</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="offers.html">Offers</a></li>
+                                        <li><a href="popup.html">Popup</a></li>
+                                        <li><a href="skills.html">Skills</a></li>
+                                        <li><a href="tabs.html">Tabs</a></li>
+                                        <li><a href="team.html">Team</a></li>
+                                        <li><a href="testimonials.html">Testimonial</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="clearfix"></div>
                     </div>
-                    <!-- single-well end -->
+                    <!-- mainmenu close -->
+
                 </div>
             </div>
+        </header>
+        <!-- header close -->
+
+        <!-- subheader -->
+        <section id="subheader" class="subh-center" data-stellar-background-ratio=".2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Our Services</h1>
+                        <h4>Discover What We Do</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subheader close -->
+
+        <!-- content begin -->
+        <div id="content" class="no-bottom no-top">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-6 text-center">
+                            <div class="picframe">
+                                <a href="service-details-1.html">
+                                    <span class="overlay">
+                                        <span class="pf_text">
+                                            <span class="project-name">View All Services</span>
+                                        </span>
+                                    </span>
+                                </a>
+
+                                <img src="images/services/service-big-1.jpg" alt="" />
+                            </div>
+
+                            <div class="spacer-single"></div>
+                            <h3>Hair</h3>
+                            <p>Our commitment to quality and services ensure our clients happy. With years of experiences, our dedicated staff is ready to serve your beauty needs. </p>
+                            <div class="spacer-half"></div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-6 text-center">
+                            <div class="picframe">
+                                <a href="service-details-2.html">
+                                    <span class="overlay">
+                                        <span class="pf_text">
+                                            <span class="project-name">View All Services</span>
+                                        </span>
+                                    </span>
+                                </a>
+
+                                <img src="images/services/service-big-2.jpg" alt="" />
+                            </div>
+                            <div class="spacer-single"></div>
+                            <h3>Make Up</h3>
+                            <p>Our commitment to quality and services ensure our clients happy. With years of experiences, our dedicated staff is ready to serve your beauty needs. </p>
+                            <div class="spacer-half"></div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-6 text-center">
+                            <div class="picframe">
+                                <a href="service-details-3.html">
+                                    <span class="overlay">
+                                        <span class="pf_text">
+                                            <span class="project-name">View All Services</span>
+                                        </span>
+                                    </span>
+                                </a>
+
+                                <img src="images/services/service-big-3.jpg" alt="" />
+                            </div>
+                            <div class="spacer-single"></div>
+                            <h3>Facial</h3>
+                            <p>Our commitment to quality and services ensure our clients happy. With years of experiences, our dedicated staff is ready to serve your beauty needs. </p>
+                            <div class="spacer-half"></div>
+                        </div>
+
+
+                        <div class="col-md-4 col-sm-6 col-xs-6 text-center">
+                            <div class="picframe">
+                                <a href="service-details-4.html">
+                                    <span class="overlay">
+                                        <span class="pf_text">
+                                            <span class="project-name">View All Services</span>
+                                        </span>
+                                    </span>
+                                </a>
+
+                                <img src="images/services/service-big-4.jpg" alt="" />
+                            </div>
+
+                            <div class="spacer-single"></div>
+                            <h3>Massage</h3>
+                            <p>Our commitment to quality and services ensure our clients happy. With years of experiences, our dedicated staff is ready to serve your beauty needs. </p>
+                            <div class="spacer-half"></div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-6 text-center">
+                            <div class="picframe">
+                                <a href="service-details-5.html">
+                                    <span class="overlay">
+                                        <span class="pf_text">
+                                            <span class="project-name">View All Services</span>
+                                        </span>
+                                    </span>
+                                </a>
+
+                                <img src="images/services/service-big-5.jpg" alt="" />
+                            </div>
+                            <div class="spacer-half"></div>
+                            <h3>Nail</h3>
+                            <p>Our commitment to quality and services ensure our clients happy. With years of experiences, our dedicated staff is ready to serve your beauty needs. </p>
+                            <div class="spacer-single"></div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-6 text-center">
+                            <div class="picframe">
+                                <a href="service-details-6.html">
+                                    <span class="overlay">
+                                        <span class="pf_text">
+                                            <span class="project-name">View All Services</span>
+                                        </span>
+                                    </span>
+                                </a>
+
+                                <img src="images/services/service-big-6.jpg" alt="" />
+                            </div>
+                            <div class="spacer-single"></div>
+                            <h3>Waxing</h3>
+                            <p>Our commitment to quality and services ensure our clients happy. With years of experiences, our dedicated staff is ready to serve your beauty needs. </p>
+                            <div class="spacer-half"></div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- section begin -->
+            <section id="cta" aria-label="cta" class="call-to-action bg-color-2 wow fadeInLeftBig text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 mt10">
+                            <h3><i class="fa fa-phone mr10"></i>Contact us now and get special offers!</h3>
+                        </div>
+
+                        <div class="col-md-3 text-right">
+                            <a href="booking.html" class="btn btn-line-white btn-big">Make Appointment Now</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+
+
+
+
         </div>
-        <!-- service-area end -->
-		<!-- Start Service Area -->
-		<div class="service-area area-padding page-service">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<div class="section-headline text-center">
-							<h3>Our Services</h3>
-							<p>Salon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br/>  Nam auctor nisi est, nec tempus lacus viverra nec. Nullam cursus, .</p>
-						</div>
-					</div>
-				</div>
-				<div class="row mar-table">
-					<div class="col-lg-12 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".3s">
-						<div class="service-right">
-							<div class="cut-content head-team">
-								<h4>Cutting</h4>
-							</div>
-							<div class="service-images">
-								<a href="service.html#"><img src="{% static 'images/service/service1.jpg' %}" alt=""></a>
-								<div class="overly-text">
-									<h4>follow our services</h4>
-									<a class="btn-service " href="service.html#">Read more</a>
-								</div>
-							</div>
-						</div> 
-						<form action="service.html#">
-							<div class="table-content table-responsive">
-								<table class=" table table-striped">
-									<thead>
-										<tr>
-											<th>Cut</th>
-											<th>Womens</th>
-											<th>Mens</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Styles</td>
-											<td>$100</td>
-											<td>$90</td>
-										</tr>
-										<tr>
-											<td>Master Stylist</td>
-											<td>$110</td>
-											<td>$100</td>
-										</tr>
-											<tr>
-											<td>Celebrity Stylist</td>
-											<td>$160</td>
-											<td>$150</td>
-										</tr>
-										<tr>
-											<td>Baby Cut</td>
-											<td>$70</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Comon Stylist</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-										<tr>
-											<td>General</td>
-											<td>$80</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Mini Cut</td>
-											<td>$40</td>
-											<td>$40</td>
-										</tr>
-										<tr>
-											<td>Cut</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</form>
-						<!-- end table -->
-					</div>
-				</div>
-				<!-- end row -->
-				<div class="row mar-table hidden-xs">
-					<div class="col-lg-12 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".5s"> 
-						<form action="service.html#">
-							<div class="table-content left-content table-responsive">
-								<table class=" table table-striped">
-									<thead>
-										<tr>
-											<th>facial</th>
-											<th>Womens</th>
-											<th>Mens</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Standerd</td>
-											<td>$100</td>
-											<td>$90</td>
-										</tr>
-										<tr>
-											<td>Special</td>
-											<td>$110</td>
-											<td>$100</td>
-										</tr>
-											<tr>
-											<td>Celebrity face</td>
-											<td>$160</td>
-											<td>$150</td>
-										</tr>
-										<tr>
-											<td>Mackup</td>
-											<td>$70</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Regular</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-										<tr>
-											<td>General</td>
-											<td>$80</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Body spa</td>
-											<td>$240</td>
-											<td>$240</td>
-										</tr>
-										<tr>
-											<td>Styles</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</form>
-						<!-- end table -->
-						<div class="service-right">
-						   <div class="cut-content head-team">
-								<h4>Special facial</h4>
-							</div>
-							<div class="service-images">
-								<a href="service.html#"><img src="{% static 'images/service/service2.jpg' %}" alt=""></a>
-								<div class="overly-text">
-									<h4>follow our services</h4>
-									<a class="btn-service " href="service.html#">Read more</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- end row -->
-				<div class="row">
-					<div class="col-lg-12 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".7s">
-						<div class="service-right">
-							<div class="cut-content head-team">
-								<h4>Other Services</h4>
-							</div>
-							<div class="service-images">
-								<a href="service.html#"><img src="{% static 'images/service/service3.jpg' %}" alt=""></a>
-								<div class="overly-text">
-									<h4>follow our services</h4>
-									<a class="btn-service " href="service.html#">Read more</a>
-								</div>
-							</div>
-						</div> 
-						<form action="service.html#">
-							<div class="table-content table-responsive">
-								<table class=" table table-striped">
-									<thead>
-										<tr>
-											<th>Services</th>
-											<th>Womens</th>
-											<th>Mens</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Colors</td>
-											<td>$100</td>
-											<td>$90</td>
-										</tr>
-										<tr>
-											<td>Red Colors</td>
-											<td>$110</td>
-											<td>$100</td>
-										</tr>
-											<tr>
-											<td>Celebrity</td>
-											<td>$160</td>
-											<td>$150</td>
-										</tr>
-										<tr>
-											<td>Body Masege</td>
-											<td>$70</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Comon Color</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-										<tr>
-											<td>General</td>
-											<td>$80</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Black Hair</td>
-											<td>$40</td>
-											<td>$40</td>
-										</tr>
-										<tr>
-											<td>Broun Clors</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</form>
-						<!-- end table -->
-					</div>
-				</div>
-				<!-- end row -->
-			</div>
-		</div>
-		<!-- End Service Area -->
-	{% endblock content %}
+
+        <!-- footer begin -->
+        <footer>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="widget widget_recent_post">
+                            <h3>Latest News</h3>
+                            <ul>
+                                <li><a href="services.html#">How to Make Your Hair Grow Faster </a></li>
+                                <li><a href="services.html#">5 Ways to Make Hair Look Gorgeous</a></li>
+                                <li><a href="services.html#">14 Easy Ways to Get Standout Eyes</a></li>
+                                <li><a href="services.html#">An Owner’s Guide to Naturally Wavy Hair</a></li>
+                                <li><a href="services.html#">How to Wash Your Hair (the Right Way)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="widget">
+                            <h3>We're Open</h3>
+                            <div class="box-border double">
+                                <ul class="list-border-bottom">
+                                    <li>
+                                        <span class="pull-left">Monday - Friday</span>
+                                        <span class="pull-right id-color">9 am to 10 pm</span>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li>
+                                        <span class="pull-left">Saturday</span>
+                                        <span class="pull-right id-color">9 am to 12 pm</span>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                    <li>
+                                        <span class="pull-left">Sunday &amp; Holiday</span>
+                                        <span class="pull-right id-color">8 am to 12 pm</span>
+                                        <div class="clearfix"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="widget widget-address">
+                            <h3>Contact Us</h3>
+
+                            <address>
+                                <span>100 Mainstreet Center, Sydney</span>
+                                <span><strong>Phone:</strong>(208) 333 9296</span>
+                                <span><strong>Fax:</strong>(208) 333 9298</span>
+                                <span><strong>Email:</strong><a href="mailto:contact@modis-salon.com">contact@modis-salon.com</a></span>
+                                <span><strong>Web:</strong><a href="services.html#">http://modis-salon.com</a></span>
+                            </address>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            &copy; Copyright 2016 - Modis by Designesia                     
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <div class="social-icons">
+                                <a href="services.html#"><i class="fa fa-facebook fa-lg"></i></a>
+                                <a href="services.html#"><i class="fa fa-twitter fa-lg"></i></a>
+                                <a href="services.html#"><i class="fa fa-rss fa-lg"></i></a>
+                                <a href="services.html#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                <a href="services.html#"><i class="fa fa-skype fa-lg"></i></a>
+                                <a href="services.html#"><i class="fa fa-dribbble fa-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- footer close -->
+
+    </div>
+
+    <!-- style switcher
+    ================================================== -->
+    <div id="switcher">
+        <span class="custom-close"></span>
+        <span class="custom-show"></span>
+
+        <span class="sw-title">Header Style</span>
+        <select name="switcher" id="de-header">
+            <option value="opt-1" selected>Center Layout</option>
+            <option value="opt-2">Left Layout</option>
+        </select>
+
+        <div class="clearfix"></div>
+
+
+        <span class="sw-title">Header Color</span>
+        <select name="switcher" id="de-header-color">
+            <option value="opt-1" selected>Light</option>
+            <option value="opt-2">Dark</option>
+        </select>
+
+        <div class="clearfix"></div>
+
+        <span class="sw-title">Color :</span>
+        <ul id="de-color">
+            <li class="bg1"></li>
+            <li class="bg2"></li>
+            <li class="bg3"></li>
+            <li class="bg4"></li>
+            <li class="bg5"></li>
+            <li class="bg6"></li>
+            <li class="bg7"></li>
+            <li class="bg8"></li>
+            <li class="bg9"></li>
+        </ul>
+        
+    </div>
+
+    <!-- Javascript Files
+    ================================================== -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jpreLoader.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/easing.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.scrollto.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/jquery.countTo.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/video.resize.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/enquire.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/designesia.js"></script>
+    <script src="demo/demo.js"></script>
+
+    <!-- SLIDER REVOLUTION SCRIPTS  -->
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+
+</body>
+</html>
