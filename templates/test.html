@@ -1,0 +1,21 @@
+	{% extends "base.html" %}
+	{% load static %}
+	<body>
+		{% block header %}
+		{% endblock header %}
+
+		{% block content %}
+			<input type="text" id="timepicker" class="form-control width-50 last-name timepicker" name="timepicker" placeholder="Select Time" required data-error="Please Select Time">
+		{% endblock content %}
+
+		{% block footer %}
+		{% endblock footer %}
+
+		{% block js %}
+			{{ block.super }}
+			<script>
+				$('#timepicker').timepicker();
+			</script>
+		{% endblock js %}
+	</body>
+

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 
+import json
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render
@@ -9,11 +11,27 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from gorgeous import settings
+from booking.models import Service
+from django.views.decorators.csrf import csrf_exempt
+import pdb
+
+
+@login_required
+def test(request):
+    return render(request,"test.html")
+
+
+@login_required
+def index_test(request):
+    return render(request,"index-test.html")
 
 
 @login_required
 def index(request):
-    return render(request,"index-2.html")
+    services = Service.objects.all()
+    service_categories = Service.objects.values_list('category', flat=True).distinct()
+    context = {'services':services,'service_categories':service_categories}
+    return render(request,"index-2.html",context)
 
 
 @login_required
@@ -24,7 +42,10 @@ def about(request):
 
 @login_required
 def services(request):
-    return render(request,"services.html")
+    skin_services = Service.objects.filter(category='skin')
+    hair_services = Service.objects.filter(category='hair')
+    context = {'skin_services':skin_services,'hair_services':hair_services}
+    return render(request,"services.html",context)
 
 
 @login_required
@@ -46,6 +67,29 @@ def blog_single(request):
 def blog_details(request):
     return render(request,"blog-details.html")
 
+@csrf_exempt
+@login_required()
+def get_services(request):
+    print "getting related services"
+    service_category = request.POST.get('service_category')
+    services = list(Service.objects.filter(category=service_category).values_list('name',flat=True))
+    return HttpResponse(json.dumps({'services':services}),status=200)
+
+
+@login_required
+def book_appointment(request):
+    phone_number = request.POST.get('phone_number')
+    city = request.POST.get('city')
+    first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
+    country = request.POST.get('select-country')
+    state = request.POST.get('state')
+    address = request.POST.get('address')
+    email_id = request.POST.get('email')
+    zipcode = request.POST.get('zip_code')
+
+
+    return HttpResponse('OK',status=200)
 
 def contact(request):
     print request.POST

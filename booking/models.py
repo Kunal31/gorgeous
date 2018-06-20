@@ -21,9 +21,12 @@ class Service(models.Model):
         db_table = "service"
 
     name = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='services/')
-    short_description = models.CharField(max_length=1000)
-    long_description = models.CharField(max_length=5000)
+    category = models.CharField(max_length=50)
+    completion_time = models.IntegerField() #in Minutes
+    price = models.IntegerField()
+    image = models.ImageField(upload_to='services/',null=True,blank=True)
+    short_description = models.CharField(max_length=1000,null=True,blank=True)
+    long_description = models.CharField(max_length=5000,null=True,blank=True)
 
     def __str__(self):
         return self.name
