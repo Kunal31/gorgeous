@@ -1,0 +1,470 @@
+[
+{
+    "model": "booking.service",
+    "pk": 1,
+    "fields": {
+        "name": "face",
+        "category": "skin",
+        "completion_time": 20,
+        "price": 100,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 2,
+    "fields": {
+        "name": "De-tan face",
+        "category": "skin",
+        "completion_time": 15,
+        "price": 100,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 3,
+    "fields": {
+        "name": "back",
+        "category": "skin",
+        "completion_time": 20,
+        "price": 150,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 4,
+    "fields": {
+        "name": "Hands Body",
+        "category": "skin",
+        "completion_time": 30,
+        "price": 200,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 5,
+    "fields": {
+        "name": "Legs",
+        "category": "skin",
+        "completion_time": 40,
+        "price": 300,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 6,
+    "fields": {
+        "name": "facial",
+        "category": "skin",
+        "completion_time": 60,
+        "price": 500,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 7,
+    "fields": {
+        "name": "Full Hands with arms",
+        "category": "skin",
+        "completion_time": 35,
+        "price": 150,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 8,
+    "fields": {
+        "name": "half hands waxing",
+        "category": "skin",
+        "completion_time": 25,
+        "price": 100,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 9,
+    "fields": {
+        "name": "full legs waxing",
+        "category": "skin",
+        "completion_time": 40,
+        "price": 250,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 10,
+    "fields": {
+        "name": "half legs",
+        "category": "skin",
+        "completion_time": 30,
+        "price": 200,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 11,
+    "fields": {
+        "name": "underarms",
+        "category": "skin",
+        "completion_time": 15,
+        "price": 50,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 12,
+    "fields": {
+        "name": "stomach",
+        "category": "skin",
+        "completion_time": 30,
+        "price": 50,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 13,
+    "fields": {
+        "name": "back",
+        "category": "skin",
+        "completion_time": 30,
+        "price": 50,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 14,
+    "fields": {
+        "name": "side locks",
+        "category": "skin",
+        "completion_time": 15,
+        "price": 40,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 15,
+    "fields": {
+        "name": "upper lip",
+        "category": "skin",
+        "completion_time": 10,
+        "price": 30,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 16,
+    "fields": {
+        "name": "chin",
+        "category": "skin",
+        "completion_time": 10,
+        "price": 30,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 17,
+    "fields": {
+        "name": "full face",
+        "category": "skin",
+        "completion_time": 40,
+        "price": 150,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 18,
+    "fields": {
+        "name": "haircut with blowdry",
+        "category": "hair",
+        "completion_time": 30,
+        "price": 200,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 19,
+    "fields": {
+        "name": "hair wash",
+        "category": "hair",
+        "completion_time": 20,
+        "price": 100,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 20,
+    "fields": {
+        "name": "Ironing",
+        "category": "hair",
+        "completion_time": 60,
+        "price": 300,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 21,
+    "fields": {
+        "name": "Head Message",
+        "category": "hair",
+        "completion_time": 30,
+        "price": 200,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 22,
+    "fields": {
+        "name": "loreal root touch up",
+        "category": "hair",
+        "completion_time": 40,
+        "price": 400,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 23,
+    "fields": {
+        "name": "X-tenso smoothing",
+        "category": "hair",
+        "completion_time": 180,
+        "price": 300,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 24,
+    "fields": {
+        "name": "Keratin",
+        "category": "hair",
+        "completion_time": 180,
+        "price": 4000,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 25,
+    "fields": {
+        "name": "Hair Mehndi",
+        "category": "hair",
+        "completion_time": 30,
+        "price": 70,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 26,
+    "fields": {
+        "name": "Hair Spa",
+        "category": "hair",
+        "completion_time": 60,
+        "price": 500,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 27,
+    "fields": {
+        "name": "Ombre",
+        "category": "hair",
+        "completion_time": 60,
+        "price": 1500,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 28,
+    "fields": {
+        "name": "Crown Highlights",
+        "category": "hair",
+        "completion_time": 60,
+        "price": 1000,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 29,
+    "fields": {
+        "name": "full highlights",
+        "category": "hair",
+        "completion_time": 240,
+        "price": 3000,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 30,
+    "fields": {
+        "name": "crazy colours",
+        "category": "hair",
+        "completion_time": 15,
+        "price": 100,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 31,
+    "fields": {
+        "name": "global colour",
+        "category": "hair",
+        "completion_time": 120,
+        "price": 1500,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 32,
+    "fields": {
+        "name": "Threading",
+        "category": "hair",
+        "completion_time": 15,
+        "price": 30,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 33,
+    "fields": {
+        "name": "upper lip",
+        "category": "hair",
+        "completion_time": 5,
+        "price": 10,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 34,
+    "fields": {
+        "name": "chin",
+        "category": "hair",
+        "completion_time": 5,
+        "price": 10,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 35,
+    "fields": {
+        "name": "forhead",
+        "category": "hair",
+        "completion_time": 5,
+        "price": 10,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+},
+{
+    "model": "booking.service",
+    "pk": 36,
+    "fields": {
+        "name": "full face",
+        "category": "hair",
+        "completion_time": 30,
+        "price": 60,
+        "image": "",
+        "short_description": null,
+        "long_description": null
+    }
+}
+]
