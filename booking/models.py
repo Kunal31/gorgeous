@@ -9,11 +9,11 @@ class Customer(models.Model):
         db_table = "customer"
 
     user = models.OneToOneField(User)
-    contact_no = models.IntegerField()
+    contact_no = models.BigIntegerField()
     reward_points = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.user.name
+        return self.user.first_name
 
 
 class Service(models.Model):
@@ -42,7 +42,7 @@ class Session(models.Model):
     is_active = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.id
+        return "{0} {1} To {2}".format(self.session_date,self.start_time,self.end_time)
 
 
 class Order(models.Model):
@@ -53,7 +53,8 @@ class Order(models.Model):
     session = models.ForeignKey(Session)
 
     def __str__(self):
-        return self.id
+        return "{0} @ {1} From {2} To {3}".format(self.customer.user.first_name,self.session.session_date,\
+                                             self.session.start_time,self.session.end_time)
 
 
 class OrderService(models.Model):

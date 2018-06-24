@@ -3,15 +3,18 @@
 from __future__ import unicode_literals
 
 import json
+from datetime import datetime,timedelta
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render
 from django.contrib.auth import logout
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from django.db.models import Sum
 from gorgeous import settings
-from booking.models import Service
+from booking.models import Service,Customer,Order,Session
 from django.views.decorators.csrf import csrf_exempt
 import pdb
 
@@ -78,26 +81,42 @@ def get_services(request):
 
 @login_required
 def book_appointment(request):
-    phone_number = request.POST.get('phone_number')
-    city = request.POST.get('city')
+    pdb.set_trace()
     first_name = request.POST.get('first_name')
     last_name = request.POST.get('last_name')
-    country = request.POST.get('select-country')
-    state = request.POST.get('state')
-    address = request.POST.get('address')
     email_id = request.POST.get('email')
+    phone_number = request.POST.get('phone_number')
+    address = request.POST.get('address')
     zipcode = request.POST.get('zip_code')
-
+    city = request.POST.get('city')
+    state = request.POST.get('state')
+    country = request.POST.get('select-country')
+    appointment_date = request.POST.get('date')
+    appointment_time = request.POST.get('timepicker')
+    service_category = request.POST.get('select-category')
+    selected_service_list = request.POST.getlist('select-service')
+    selected_services = Service.objects.filter(category=service_category,\
+                               name__in=selected_service_list)
+    session_minutes = selected_services.aggregate(session_minutes=Sum('completion_time'))
+    session_bill_amount = selected_services.aggregate(session_bill=Sum('price'))
+    user=User.objects.create(username=email_id,first_name=first_name,\
+                                  last_name=last_name,email=email_id,\
+                                  password='gorgeous')
+    customer = Customer.objects.create(user=user,contact_no=phone_number)
+    session_date = datetime.strptime(appointment_date, "%d-%m-%Y")
+    session_start_time = datetime.strptime(appointment_time,"%I:%M %p")
+    session_end_time = session_start_time + timedelta(minutes=session_minutes['session_minutes'])
+    session = Session.objects.create(session_date=session_date,\
+                           start_time=session_start_time,\
+                           end_time=session_end_time)
+    Order.objects.create(customer=customer,session=session)
+    # contact(first_name,phone_number,)
 
     return HttpResponse('OK',status=200)
 
-def contact(request):
-    print request.POST
-    name = request.POST.get('client-name')
-    age = request.POST.get('age')
-    contact_no = request.POST.get('contact_no')
-    email = request.POST.get('client-email')
-    message = request.POST.get('AppointmentMessage')
+
+def contact(name,contact_no,email,date,start_time,end_time):
+    # age = request.POST.get('age')
 
     try:
         html_message = "<table>"
@@ -105,10 +124,11 @@ def contact(request):
         html_message += "<td>" + "Name of Visitor: " + "</td>" + "<td>" + name + "</td>"
         html_message += "<td>" + "Contact No: " + "</td>" + "<td>" + contact_no + "</td>"
         html_message += "</tr>"
-        # html_message += "<tr><td colspan=2></td></tr>"
-        # html_message += "<tr>"
-        # html_message += message
-        # html_message += "</tr>"
+        html_message += "<tr><td colspan=4></td></tr>"
+        html_message += "<tr>"
+        html_message += "Congratulations!! Your appointment has been booked with Gorgeous Salon"
+        html_message += " on " + date + " from "+ start_time + " to " + end_time
+        html_message += "</tr>"
         html_message = "</table>"
         mail_sent = send_mail(settings.EMAIL_SUBJECT,message,settings.EMAIL_HOST_USER,[settings.EMAIL_HOST_USER],\
                                 # html_message=html_message,\
@@ -117,6 +137,34 @@ def contact(request):
         return HttpResponse("Exception occured while sending mail: %s ", e.__str__())
 
     return HttpResponse("Sending mail for contact us")
+
+
+# def contact(request):
+#     print request.POST
+#     name = request.POST.get('client-name')
+#     age = request.POST.get('age')
+#     contact_no = request.POST.get('contact_no')
+#     email = request.POST.get('client-email')
+#     message = request.POST.get('AppointmentMessage')
+#
+#     try:
+#         html_message = "<table>"
+#         html_message += "<tr>"
+#         html_message += "<td>" + "Name of Visitor: " + "</td>" + "<td>" + name + "</td>"
+#         html_message += "<td>" + "Contact No: " + "</td>" + "<td>" + contact_no + "</td>"
+#         html_message += "</tr>"
+#         # html_message += "<tr><td colspan=2></td></tr>"
+#         # html_message += "<tr>"
+#         # html_message += message
+#         # html_message += "</tr>"
+#         html_message = "</table>"
+#         mail_sent = send_mail(settings.EMAIL_SUBJECT,message,settings.EMAIL_HOST_USER,[settings.EMAIL_HOST_USER],\
+#                                 # html_message=html_message,\
+#                               fail_silently=False)
+#     except Exception as e:
+#         return HttpResponse("Exception occured while sending mail: %s ", e.__str__())
+#
+#     return HttpResponse("Sending mail for contact us")
 
 
 def log_out(request):
