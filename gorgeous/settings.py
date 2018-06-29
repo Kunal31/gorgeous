@@ -140,3 +140,5 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = True
 EMAIL_SUBJECT = 'New Website Visitor'
 
+EMAIL_USE_TLS = True
+

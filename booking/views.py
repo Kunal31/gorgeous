@@ -81,7 +81,6 @@ def get_services(request):
 
 @login_required
 def book_appointment(request):
-    pdb.set_trace()
     first_name = request.POST.get('first_name')
     last_name = request.POST.get('last_name')
     email_id = request.POST.get('email')
@@ -110,6 +109,7 @@ def book_appointment(request):
                            start_time=session_start_time,\
                            end_time=session_end_time)
     Order.objects.create(customer=customer,session=session)
+    pdb.set_trace()
     contact(first_name,phone_number,email_id,session_date,session_start_time,session_end_time)
 
     return HttpResponse('OK',status=200)
@@ -117,6 +117,9 @@ def book_appointment(request):
 
 def contact(name,contact_no,email,date,start_time,end_time):
     # age = request.POST.get('age')
+    date = date.strftime("%d %B %Y")
+    start_time = start_time.strftime("%I %p")
+    end_time = end_time.strftime("%I %p")
 
     try:
         html_message_shop = "<table>"
@@ -136,8 +139,13 @@ def contact(name,contact_no,email,date,start_time,end_time):
         html_message_customer += "</table>"
 
         message = ""
-        mail_sent_to_shop = send_mail(settings.EMAIL_SUBJECT,message,settings.EMAIL_HOST_USER,\
-                                      [settings.EMAIL_HOST_USER], html_message=html_message_shop, fail_silently=False)
+        pdb.set_trace()
+        try:
+            mail_sent_to_shop = send_mail(settings.EMAIL_SUBJECT,message,settings.EMAIL_HOST_USER,\
+                                    [settings.EMAIL_HOST_USER], html_message=html_message_shop, fail_silently=False)
+        except Exception as e:
+            print e
+
         print("mail sent to shop", mail_sent_to_shop)
 
         mail_sent_to_customer = send_mail(settings.EMAIL_SUBJECT,message,settings.EMAIL_HOST_USER,[email],\
@@ -145,6 +153,7 @@ def contact(name,contact_no,email,date,start_time,end_time):
         print("mail sent to customer", mail_sent_to_customer)
 
     except Exception as e:
+        print ('%s (%s)' % (e.message, type(e)))
         return HttpResponse("Exception occured while sending mail: %s ", e.__str__())
 
     return HttpResponse("Sending mail for contact us")
