@@ -137,8 +137,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'gorgeous.salon89@gmail.com'
 EMAIL_HOST_PASSWORD = 'Gorgeous@123'
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = True
+#EMAIL_USE_SSL = True
+NEW_CUSTOMER_SUBJECT = 'Booking Confirmation with Gorgeous Salon :)'
+NEW_SHOP_SUBJECT = 'New appointment!!'
 EMAIL_SUBJECT = 'New Website Visitor'
-
-EMAIL_USE_TLS = True
 

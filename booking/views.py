@@ -109,7 +109,6 @@ def book_appointment(request):
                            start_time=session_start_time,\
                            end_time=session_end_time)
     Order.objects.create(customer=customer,session=session)
-    pdb.set_trace()
     contact(first_name,phone_number,email_id,session_date,session_start_time,session_end_time)
 
     return HttpResponse('OK',status=200)
@@ -118,14 +117,16 @@ def book_appointment(request):
 def contact(name,contact_no,email,date,start_time,end_time):
     # age = request.POST.get('age')
     date = date.strftime("%d %B %Y")
-    start_time = start_time.strftime("%I %p")
-    end_time = end_time.strftime("%I %p")
+    start_time = start_time.strftime("%I:%M %p")
+    end_time = end_time.strftime("%I:%M %p")
 
     try:
         html_message_shop = "<table>"
         html_message_shop += "<tr>"
-        html_message_shop += "<td>" + "Name of Visitor: " + "</td>" + "<td>" + name + "</td>"
-        html_message_shop += "<td>" + "Contact No: " + "</td>" + "<td>" + contact_no + "</td>"
+        html_message_shop += "<td><b>" + "Name of Visitor: " + "</b></td>" + "<td><b>" + name + "</b></td>"
+        html_message_shop += "</tr>"
+        html_message_shop += "<tr>"
+        html_message_shop += "<td><b>" + "Contact No: " + "</b></td>" + "<td><b>" + contact_no + "</b></td>"
         html_message_shop += "</tr>"
         html_message_shop += "</table>"
 
@@ -133,24 +134,17 @@ def contact(name,contact_no,email,date,start_time,end_time):
         html_message_customer += "<tr>"
         html_message_customer += "<td>"
         html_message_customer += "Congratulations!! Your appointment has been booked with Gorgeous Salon"
-        html_message_customer += " on " + date + " from "+ start_time + " to " + end_time
+        html_message_customer += " on <b>" + date + "</b> from <b>" + start_time + "</b> to <b>" + end_time + "</b>"
         html_message_customer += "</td>"
         html_message_customer += "</tr>"
         html_message_customer += "</table>"
 
         message = ""
-        pdb.set_trace()
-        try:
-            mail_sent_to_shop = send_mail(settings.EMAIL_SUBJECT,message,settings.EMAIL_HOST_USER,\
+        mail_sent_to_customer = send_mail(settings.NEW_CUSTOMER_SUBJECT,message,settings.EMAIL_HOST_USER,[email],\
+                                          html_message=html_message_customer, fail_silently=False)
+
+        mail_sent_to_shop = send_mail(settings.NEW_SHOP_SUBJECT,message,settings.EMAIL_HOST_USER,\
                                     [settings.EMAIL_HOST_USER], html_message=html_message_shop, fail_silently=False)
-        except Exception as e:
-            print e
-
-        print("mail sent to shop", mail_sent_to_shop)
-
-        mail_sent_to_customer = send_mail(settings.EMAIL_SUBJECT,message,settings.EMAIL_HOST_USER,[email],\
-                                html_message=html_message_customer, fail_silently=False)
-        print("mail sent to customer", mail_sent_to_customer)
 
     except Exception as e:
         print ('%s (%s)' % (e.message, type(e)))
