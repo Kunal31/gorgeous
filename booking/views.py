@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.db.models import Sum
 from gorgeous import settings
-from booking.models import Service,Customer,Order,Session
+from booking.models import Service,Customer,Order,Session,Invoice
 from django.views.decorators.csrf import csrf_exempt
 import pdb
 
@@ -108,13 +108,20 @@ def book_appointment(request):
     session = Session.objects.create(session_date=session_date,\
                            start_time=session_start_time,\
                            end_time=session_end_time)
-    Order.objects.create(customer=customer,session=session)
-    contact(first_name,phone_number,email_id,session_date,session_start_time,session_end_time)
+    order = Order.objects.create(customer=customer,session=session)
+
+    gst_amount = session_bill_amount + ((session_bill_amount * 18) / 100)
+    gross_amount = session_bill_amount + gst_amount
+    invoice = Invoice.objects.create(order=order,net_bill=session_bill_amount,gst=gst_amount,gross_bill=gross_amount)
+
+    contact(first_name,phone_number,email_id,session_date,session_start_time,session_end_time,\
+            session_bill_amount,gst_amount,gross_amount)
+
 
     return HttpResponse('OK',status=200)
 
 
-def contact(name,contact_no,email,date,start_time,end_time):
+def contact(name,contact_no,email,date,start_time,end_time,net_bill_amount,gst_amount,gross_bill_amount):
     # age = request.POST.get('age')
     date = date.strftime("%d %B %Y")
     start_time = start_time.strftime("%I:%M %p")
@@ -132,10 +139,16 @@ def contact(name,contact_no,email,date,start_time,end_time):
 
         html_message_customer = "<table>"
         html_message_customer += "<tr>"
-        html_message_customer += "<td>"
+        html_message_customer += "<td colspan=3>"
         html_message_customer += "Congratulations!! Your appointment has been booked with Gorgeous Salon"
         html_message_customer += " on <b>" + date + "</b> from <b>" + start_time + "</b> to <b>" + end_time + "</b>"
         html_message_customer += "</td>"
+        html_message_customer += "</tr>"
+        html_message_customer += "<tr>"
+        html_message_customer += "<td>Bill Amount</td><td>GST Amount</td><td><td>Total bill Amount</td>"
+        html_message_customer += "</tr>"
+        html_message_customer += "<tr>"
+        html_message_customer += "<td>"+net_bill_amount+"</td><td>"+gst_amount+"</td><td>"+gross_bill_amount+"</td>"
         html_message_customer += "</tr>"
         html_message_customer += "</table>"
 
