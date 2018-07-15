@@ -8,13 +8,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render
 from django.contrib.auth import logout
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,Group
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.db.models import Sum
 from gorgeous import settings
-from booking.models import Service,Customer,Order,Session,Invoice
+from booking.models import Service,Customer,Order,Session,Invoice,OrderService,Feedback
 from django.views.decorators.csrf import csrf_exempt
 import pdb
 
@@ -70,6 +70,21 @@ def blog_single(request):
 def blog_details(request):
     return render(request,"blog-details.html")
 
+
+@login_required
+def appointments(request):
+    o = Order.objects.all()
+    context = {'apptmnts':o}
+    return render(request,"appointments.html",context)
+
+
+@login_required
+def feedbacks(request):
+    f = Feedback.objects.all()
+    context = {'feedbacks':f}
+    return render(request,"feedbacks.html",context)
+
+
 @csrf_exempt
 @login_required()
 def get_services(request):
@@ -101,6 +116,17 @@ def book_appointment(request):
     user=User.objects.create(username=email_id,first_name=first_name,\
                                   last_name=last_name,email=email_id,\
                                   password='gorgeous')
+
+    ### user group pairing ###
+    user_type = "customer"
+    if user_type == "customer":
+        group = Group.objects.get(name="customer")
+    elif user_type == "beautician":
+        group = Group.objects.get(name="beautician")
+
+    user.groups.add(group)
+    ###
+
     customer = Customer.objects.create(user=user,contact_no=phone_number)
     session_date = datetime.strptime(appointment_date, "%d-%m-%Y")
     session_start_time = datetime.strptime(appointment_time,"%I:%M %p")
@@ -109,6 +135,8 @@ def book_appointment(request):
                            start_time=session_start_time,\
                            end_time=session_end_time)
     order = Order.objects.create(customer=customer,session=session)
+    for service in selected_services:
+        OrderService.objects.create(order=order,service=service)
 
     gst_amount = session_bill_amount + ((session_bill_amount * 18) / 100)
     gross_amount = session_bill_amount + gst_amount
@@ -116,7 +144,6 @@ def book_appointment(request):
 
     contact(first_name,phone_number,email_id,session_date,session_start_time,session_end_time,\
             session_bill_amount,gst_amount,gross_amount)
-
 
     return HttpResponse('OK',status=200)
 

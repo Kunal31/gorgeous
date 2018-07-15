@@ -1,4 +1,5 @@
 {% load static %}
+{% load booking_template_tags %}
 <!doctype html>
 <html class="no-js" lang="en">
     {% block head %}
@@ -109,11 +110,17 @@
                                         </li>
                                         <li><a href="http://usdtheme.com/preview-styles/blog.html">Blog</a>
                                             <ul class="sub-menu">
-                                                <li><a href="{% url 'blog_grid' %}">Blog Grid</a></li>
-                                                <li><a href="{% url 'blog_single' %}">Blog Single Post</a></li>
-                                                <li><a href="{% url 'blog_details' %}">Blog-Details</a></li>
+                                                <li><a href="{% url 'blog_grid' %}">Blog Grid(Service wise Feedback/review Overview)</a></li>
+                                                {% if request.user|in_group:"beautician" or request.user.is_superuser %}
+                                                    <li><a href="{% url 'blog_single' %}">Blog Single Post(Beautician upcoming appointments)</a></li>
+                                                    <!-- Left side is Service (long Description) & BLOGING OPTIONS is Beautician upcoming appointments	 -->
+                                                {% endif %}
+                                                <li><a href="{% url 'blog_details' %}">Blog-Details(Detailed Service Feedback/review)</a></li>
+                                                <!-- one to one with blog_grid i.e. Service wise Feedback/review Overview-->
                                             </ul>
                                         </li>
+                                        <li><a href="{% url 'appointment_details' %}">Appointments</a></li>
+                                        <li><a href="{% url 'feedback_details' %}">Feedback</a></li>
                                         <li><a href="{% url 'logout' %}">Logout</a></li>
                                     </ul>
                                 </nav>
@@ -213,22 +220,22 @@
                                     <div class="footer-icons">
                                         <ul>
                                             <li>
-                                                <a href="index-2.html#">
+                                                <a href="https://www.facebook.com">
                                                     <i class="fa fa-facebook"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="index-2.html#">
+                                                <a href="https://www.twitter.com">
                                                     <i class="fa fa-twitter"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="index-2.html#">
+                                                <a href="https://plus.google.com">
                                                     <i class="fa fa-google"></i>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="index-2.html#">
+                                                <a href="https://www.pinterest.com">
                                                     <i class="fa fa-pinterest"></i>
                                                 </a>
                                             </li>
@@ -246,9 +253,9 @@
                                         Want To Get In Touch...
                                     </p>
                                     <div class="footer-contacts">
-                                        <p><span>Tel:</span> +91 9867166478</p>
-                                        <p><span>Email:</span> admin@minn.com</p>
-                                        <p><span>Working Hours:</span> 11am-8pm</p>
+                                        <p><span>Tel:</span> +91 7303755507</p>
+                                        <p><span>Email:</span><a href="mailto:pandavparbhip3@gmail.com">pandavparbhip3@gmail.com</a></p>
+                                        <p><span>Working Hours:</span> 1pm-8pm</p>
                                     </div>
                                 </div>
                             </div>
@@ -257,24 +264,24 @@
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="footer-content">
                                 <div class="footer-head">
-                                    <h4>Instragram</h4>
+                                    <h4>Instagram</h4>
                                     <div class="flicker-img">
-                                        <a href="index-2.html#">
+                                        <a href="https://www.instagram.com/pemsss03/">
                                             <img src="{% static 'images/portfolio/7.jpg' %}" alt="">
                                         </a>
-                                        <a href="index-2.html#">
+                                        <a href="https://www.instagram.com/pemsss03/">
                                             <img src="{% static 'images/portfolio/8.jpg' %}" alt="">
                                         </a>
-                                        <a href="index-2.html#">
+                                        <a href="https://www.instagram.com/pemsss03/">
                                             <img src="{% static 'images/portfolio/9.jpg' %}" alt="">
                                         </a>
-                                        <a href="index-2.html#">
+                                        <a href="https://www.instagram.com/pemsss03/">
                                             <img src="{% static 'images/portfolio/port1.jpg' %}" alt="">
                                         </a>
-                                        <a href="index-2.html#">
+                                        <a href="https://www.instagram.com/pemsss03/">
                                             <img src="{% static 'images/portfolio/5.jpg' %}" alt="">
                                         </a>
-                                        <a href="index-2.html#">
+                                        <a href="https://www.instagram.com/pemsss03/">
                                             <img src="{% static 'images/portfolio/6.jpg' %}" alt="">
                                         </a>
                                     </div>
@@ -291,7 +298,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="copyright text-center">
                                 <p>
-                                    Copyright © 2017
+                                    Copyright © 2018
                                     <a href="{% url 'index' %}"> Gorgeous Salon</a>.
                                     All Rights Reserved
                                 </p>

@@ -16,6 +16,18 @@ class Customer(models.Model):
         return self.user.first_name
 
 
+class Beautician(models.Model):
+    class Meta:
+        db_table = "beautician"
+
+    user = models.OneToOneField(User)
+    contact_no = models.BigIntegerField()
+    
+
+    def __str__(self):
+        return self.user.first_name
+
+
 class Service(models.Model):
     class Meta:
         db_table = "service"
@@ -86,7 +98,7 @@ class Feedback(models.Model):
         db_table = "feedback"
 
     customer = models.FloatField(Customer)
-    order = models.FloatField(Order)
+    date = models.DateField(auto_now_add=True)
     content = models.CharField(max_length=1000)
     is_inappropriate = models.BooleanField(default=False)
 
