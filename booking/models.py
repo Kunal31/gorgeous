@@ -22,7 +22,8 @@ class Beautician(models.Model):
 
     user = models.OneToOneField(User)
     contact_no = models.BigIntegerField()
-    
+    experience_details = models.TextField(default=None)
+
 
     def __str__(self):
         return self.user.first_name

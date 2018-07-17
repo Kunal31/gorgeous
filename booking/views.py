@@ -14,7 +14,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.db.models import Sum
 from gorgeous import settings
-from booking.models import Service,Customer,Order,Session,Invoice,OrderService,Feedback
+from booking.models import Service,Customer,Order,Session,\
+    Invoice,OrderService,Feedback,Beautician
 from django.views.decorators.csrf import csrf_exempt
 import pdb
 
@@ -39,8 +40,10 @@ def index(request):
 
 @login_required
 def about(request):
+    beauticians = Beautician.objects.all()
+    context = {'beauticians':beauticians}
     print request.user
-    return render(request,"about.html")
+    return render(request,"about.html",context)
 
 
 @login_required
@@ -69,6 +72,11 @@ def blog_single(request):
 @login_required
 def blog_details(request):
     return render(request,"blog-details.html")
+
+
+@login_required
+def beautician_details(request):
+    return render(request,"beautician-details.html")
 
 
 @login_required
