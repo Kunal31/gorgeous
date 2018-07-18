@@ -75,8 +75,10 @@ def blog_details(request):
 
 
 @login_required
-def beautician_details(request):
-    return render(request,"beautician-details.html")
+def beautician_details(request,id):
+    b = Beautician.objects.get(id=id)
+    context = {"beautician":b}
+    return render(request,"beautician-details.html",context)
 
 
 @login_required

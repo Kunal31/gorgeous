@@ -18,7 +18,7 @@ urlpatterns = [
 
     url(r'^appointments$', views.appointments, name='appointment_details'),
     url(r'^feedbacks$', views.feedbacks, name='feedback_details'),
-    url(r'^beauticians$', views.beautician_details, name='beautician_details'),
+    url(r'^beauticians/([0-9]+)$', views.beautician_details, name='beautician_details'),
 
     url('^contact$',views.contact,name='contact'),
     url(r'^logout$',views.log_out,name="logout"),

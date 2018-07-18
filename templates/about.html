@@ -123,7 +123,7 @@
                                 <div class="col-lg-3 col-md-3 col-sm-4">
                                     <div class="single-team-member">
                                         <div class="team-img">
-                                            <a href="{% url 'beautician_details' %}">
+                                            <a href="{% url 'beautician_details' beautician.id %}">
                                                 {% if beautician.user.first_name == "prabha" %}
                                                     <img src="{% static 'images/team/team3.jpg' %}" alt="{{ beautician.user.first_name }}'s image">
                                                 {% elif beautician.user.first_name == "dipti" %}
