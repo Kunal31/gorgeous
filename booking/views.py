@@ -34,7 +34,15 @@ def index_test(request):
 def index(request):
     services = Service.objects.all()
     service_categories = Service.objects.values_list('category', flat=True).distinct()
-    context = {'services':services,'service_categories':service_categories}
+    skin_services = Service.objects.filter(category='skin')
+    hair_services = Service.objects.filter(category='hair')
+    beauticians = Beautician.objects.all()
+    context = {'services':services,
+               'service_categories':service_categories,
+               'skin_services': skin_services,
+               'hair_services': hair_services,
+               'beauticians': beauticians
+               }
     return render(request,"index-2.html",context)
 
 

@@ -110,10 +110,10 @@
 					<div class="col-lg-12 wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
 						<div class="service-right">
 							<div class="cut-content head-team">
-								<h4>Cutting</h4>
+								<h4>Skin</h4>
 							</div>
 							<div class="service-images">
-								<a href="index-2.html#"><img src="{% static 'images/service/service1.jpg' %}" alt=""></a>
+								<a href="index-2.html#"><img src="{% static 'images/service/service2.jpg' %}" alt=""></a>
 								<div class="overly-text">
 									<h4>follow our services</h4>
 									<a class="btn-service " href="index-2.html#">Read more</a>
@@ -125,52 +125,15 @@
 								<table class=" table table-striped">
 									<thead>
 										<tr>
-											<th>Cut</th>
-											<th>Womens</th>
-											<th>Mens</th>
+											<th>Available Skin Services</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>Styles</td>
-											<td>$100</td>
-											<td>$90</td>
-										</tr>
-										<tr>
-											<td>Master Stylist</td>
-											<td>$110</td>
-											<td>$100</td>
-										</tr>
+										{% for service in skin_services %}
 											<tr>
-											<td>Celebrity Stylist</td>
-											<td>$160</td>
-											<td>$150</td>
-										</tr>
-										<tr>
-											<td>Baby Cut</td>
-											<td>$70</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Comon Stylist</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-										<tr>
-											<td>General</td>
-											<td>$80</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Mini Cut</td>
-											<td>$40</td>
-											<td>$40</td>
-										</tr>
-										<tr>
-											<td>Cut</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
+												<td>{{ service.name }}</td>
+											</tr>
+										{% endfor %}
 									</tbody>
 								</table>
 							</div>
@@ -186,52 +149,15 @@
 								<table class=" table table-striped">
 									<thead>
 										<tr>
-											<th>facial</th>
-											<th>Womens</th>
-											<th>Mens</th>
+											<th>Available Hair Services</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>Standerd</td>
-											<td>$100</td>
-											<td>$90</td>
-										</tr>
-										<tr>
-											<td>Special</td>
-											<td>$110</td>
-											<td>$100</td>
-										</tr>
+										{% for service in hair_services %}
 											<tr>
-											<td>Celebrity face</td>
-											<td>$160</td>
-											<td>$150</td>
-										</tr>
-										<tr>
-											<td>Mackup</td>
-											<td>$70</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Regular</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-										<tr>
-											<td>General</td>
-											<td>$80</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Body spa</td>
-											<td>$240</td>
-											<td>$240</td>
-										</tr>
-										<tr>
-											<td>Styles</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
+												<td>{{ service.name }}</td>
+											</tr>
+										{% endfor %}
 									</tbody>
 								</table>
 							</div>
@@ -239,89 +165,16 @@
 						<!-- end table -->
 						<div class="service-right">
 						   <div class="cut-content head-team">
-								<h4>Special facial</h4>
+								<h4>Hair</h4>
 							</div>
 							<div class="service-images">
-								<a href="index-2.html#"><img src="{% static 'images/service/service2.jpg' %}" alt=""></a>
+								<a href="index-2.html#"><img src="{% static 'images/service/service1.jpg' %}" alt=""></a>
 								<div class="overly-text">
 									<h4>follow our services</h4>
 									<a class="btn-service " href="index-2.html#">Read more</a>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-				<!-- end row -->
-				<div class="row">
-					<div class="col-lg-12 wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
-						<div class="service-right">
-							<div class="cut-content head-team">
-								<h4>Other Services</h4>
-							</div>
-							<div class="service-images">
-								<a href="index.html#"><img src="{% static 'images/service/service3.jpg' %}" alt=""></a>
-								<div class="overly-text">
-									<h4>follow our services</h4>
-									<a class="btn-service " href="index.html#">Read more</a>
-								</div>
-							</div>
-						</div>
-						<form action="index.html#">
-							<div class="table-content table-responsive">
-								<table class=" table table-striped">
-									<thead>
-										<tr>
-											<th>Services</th>
-											<th>Womens</th>
-											<th>Mens</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Colors</td>
-											<td>$100</td>
-											<td>$90</td>
-										</tr>
-										<tr>
-											<td>Red Colors</td>
-											<td>$110</td>
-											<td>$100</td>
-										</tr>
-											<tr>
-											<td>Celebrity</td>
-											<td>$160</td>
-											<td>$150</td>
-										</tr>
-										<tr>
-											<td>Body Masege</td>
-											<td>$70</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Comon Color</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-										<tr>
-											<td>General</td>
-											<td>$80</td>
-											<td>$60</td>
-										</tr>
-										<tr>
-											<td>Black Hair</td>
-											<td>$40</td>
-											<td>$40</td>
-										</tr>
-										<tr>
-											<td>Broun Clors</td>
-											<td>$50</td>
-											<td>$50</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</form>
-						<!-- end table -->
 					</div>
 				</div>
 				<!-- end row -->
@@ -345,7 +198,7 @@
 							<div class="team-side-text wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
 								<div class="team-left-text">
 									<h4>meet our expert team</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus lacus viverra nec. Nullam cursus, neque non congue aliquam, mauris massa consequat sem.</p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus lacus viverra nec.<br><br>Kindly subscribe to our newsletter to get weekly makeup and hair caring tips.</p>
 								</div>
 								<div class="email-news">
 									<form action="index-2.html#">
@@ -355,21 +208,13 @@
 										</div>
 									</form>
 								</div>
-								<div class="team-left-icon text-center">
-									<ul>
-										<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-youtube"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-linkedin"></i></a></li>
-									</ul>
-								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-9 col-md-9 col-sm-8 team-left wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
 						<div class="team-member-carousel team-indicator">
 						   <!-- Start single-team member -->
+							{% for beautician in beauticians %}
 							<div class="single-team-member">
 								<div class="team-img">
 									<a href="index-2.html#">
@@ -377,117 +222,17 @@
 									</a>
 									<div class="team-social-icon text-center">
 										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
+											<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="team-content head-team">
-									<h4>Jhon</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
+									<h4>{{ beautician.user.first_name }}</h4>
+									<p>{{ beautician.experience_details }}</p>
 								</div>
 							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team2.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Marey</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team3.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Lopeez</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team4.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Jenne</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team5.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Andew Loies</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
-							<!-- End single-team member -->
-							<!-- Start single-team member -->
-							<div class="single-team-member">
-								<div class="team-img">
-									<a href="index-2.html#">
-										<img src="{% static 'images/team/team6.jpg' %}" alt="">
-									</a>
-									<div class="team-social-icon text-center">
-										<ul>
-											<li><a href="index-2.html#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="index-2.html#"><i class="fa fa-rss"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="team-content head-team">
-									<h4>Annei</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus </p>
-								</div>
-							</div>
+							{% endfor %}
 							<!-- End single-team member -->
 						</div>
 					</div>
@@ -547,7 +292,7 @@
 									</div>
 									<ul class="project-action-btn">
 										<li><a class="venobox" data-gall="myGallery" href="{% static 'images/portfolio/port1.jpg' %}"><i class="fa fa-search-plus"></i></a></li>
-										<li><a href="index-2.html#"><i class="fa fa-link"></i></a></li>
+										<li><a download="image.jpg" href="{% static 'images/portfolio/port1.jpg' %}"><i class="fa fa-download"></i></a></li>
 									</ul>
 								</div>
 							</div>
