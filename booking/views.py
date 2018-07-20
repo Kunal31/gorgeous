@@ -160,13 +160,13 @@ def book_appointment(request):
     gross_amount = session_bill_amount + gst_amount
     invoice = Invoice.objects.create(order=order,net_bill=session_bill_amount,gst=gst_amount,gross_bill=gross_amount)
 
-    contact(first_name,phone_number,email_id,session_date,session_start_time,session_end_time,\
+    email(first_name,phone_number,email_id,session_date,session_start_time,session_end_time,\
             session_bill_amount,gst_amount,gross_amount)
 
     return HttpResponse('OK',status=200)
 
 
-def contact(name,contact_no,email,date,start_time,end_time,net_bill_amount,gst_amount,gross_bill_amount):
+def email(name,contact_no,email,date,start_time,end_time,net_bill_amount,gst_amount,gross_bill_amount):
     # age = request.POST.get('age')
     date = date.strftime("%d %B %Y")
     start_time = start_time.strftime("%I:%M %p")
@@ -208,35 +208,36 @@ def contact(name,contact_no,email,date,start_time,end_time,net_bill_amount,gst_a
         print ('%s (%s)' % (e.message, type(e)))
         return HttpResponse("Exception occured while sending mail: %s ", e.__str__())
 
-    return HttpResponse("Sending mail for contact us")
+    return HttpResponse(status=200)
 
 
-# def contact(request):
-#     print request.POST
-#     name = request.POST.get('client-name')
-#     age = request.POST.get('age')
-#     contact_no = request.POST.get('contact_no')
-#     email = request.POST.get('client-email')
-#     message = request.POST.get('AppointmentMessage')
-#
-#     try:
-#         html_message = "<table>"
-#         html_message += "<tr>"
-#         html_message += "<td>" + "Name of Visitor: " + "</td>" + "<td>" + name + "</td>"
-#         html_message += "<td>" + "Contact No: " + "</td>" + "<td>" + contact_no + "</td>"
-#         html_message += "</tr>"
-#         # html_message += "<tr><td colspan=2></td></tr>"
-#         # html_message += "<tr>"
-#         # html_message += message
-#         # html_message += "</tr>"
-#         html_message = "</table>"
-#         mail_sent = send_mail(settings.EMAIL_SUBJECT,message,settings.EMAIL_HOST_USER,[settings.EMAIL_HOST_USER],\
-#                                 # html_message=html_message,\
-#                               fail_silently=False)
-#     except Exception as e:
-#         return HttpResponse("Exception occured while sending mail: %s ", e.__str__())
-#
-#     return HttpResponse("Sending mail for contact us")
+def contact(request):
+    print request.POST
+    pdb.set_trace()
+    name = request.POST.get('client-name')
+    age = request.POST.get('age')
+    contact_no = request.POST.get('contact_no')
+    email_id = request.POST.get('client-email')
+    message = request.POST.get('AppointmentMessage')
+
+    try:
+        html_message = "<table bgcolor='silver'>"
+        html_message += "<tr><td><b>" + "Name of Visitor " + "</b></td>" + "<td>" + name + "</td></tr>"
+        if age:
+            html_message += "<tr><td><b>" + "Age " + "</b></td>" + "<td>" + age + "</td></tr>"
+        html_message += "<tr><td><b>" + "Contact No " + "</b></td>" + "<td>" + contact_no + "</td></tr>"
+        if email_id:
+            html_message += "<tr><td><b>" + "Email Id " + "</b></td>" + "<td>" + email_id + "</td></tr>"
+        if message:
+            html_message += "<tr><td><b>" + "Message " + "</b></td>" + "<td>" + message + "</td></tr>"
+        html_message += "</table>"
+        message_text = ''
+        mail_sent = send_mail(settings.EMAIL_SUBJECT,message_text,settings.EMAIL_HOST_USER,[settings.EMAIL_HOST_USER],\
+                                html_message=html_message,fail_silently=False)
+    except Exception as e:
+        return HttpResponse("Exception occured while sending Contact Us mail: %s ", e.__str__())
+
+    return HttpResponse(status=200)
 
 
 def log_out(request):
