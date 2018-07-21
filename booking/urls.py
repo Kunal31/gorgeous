@@ -5,6 +5,7 @@ urlpatterns = [
     url(r'^test$', views.test, name='test'),
     url(r'^index_test$', views.index_test, name='index_test'),
     url(r'^index$', views.index, name='index'),
+    url(r'^subscribe_newsletter$', views.subscribe_newsletter, name='newsletter_subscription'),
     url(r'^about$', views.about, name='about'),
     url(r'^services$', views.services, name='services'),
     url(r'^portfolio$', views.portfolio, name='portfolio'),

@@ -46,6 +46,13 @@ def index(request):
     return render(request,"index-2.html",context)
 
 
+@login_required()
+def subscribe_newsletter(request):
+    email_id = request.POST.get('email_id')
+    # return HttpResponse('OK', status=200)
+    return HttpResponseRedirect(reverse('index'))
+
+
 @login_required
 def about(request):
     beauticians = Beautician.objects.all()

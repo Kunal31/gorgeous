@@ -198,12 +198,13 @@
 							<div class="team-side-text wow slideInUp" data-wow-duration="1s" data-wow-delay=".2s">
 								<div class="team-left-text">
 									<h4>meet our expert team</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue. Nam auctor nisi est, nec tempus lacus viverra nec.<br><br>Kindly subscribe to our newsletter to get weekly makeup and hair caring tips.</p>
+									<p>meet our stylish, passionate, experienced, educated, talented and professional staff which thrives in keeping up with current trends and technological advances in hair care and skin care. We support this through continuing education and practical training — attending hair shows/conferences, taking classes at nationally recognized academies, participating in show events and more.</p>
 								</div>
 								<div class="email-news">
-									<form action="index-2.html#">
+									<form method="post" action="{% url 'newsletter_subscription' %}">
+										{% csrf_token %}
 										<div class="email_button">
-										   <input type="text" placeholder="Email"/>
+										   <input type="email" name="email_id" placeholder="Email" required>
 										   <button type="submit"><i class="fa fa-envelope"></i></button>
 										</div>
 									</form>
@@ -218,12 +219,18 @@
 							<div class="single-team-member">
 								<div class="team-img">
 									<a href="index-2.html#">
-										<img src="{% static 'images/team/team1.jpg' %}" alt="">
+										{% if beautician.user.first_name == "prabha" %}
+											<img src="{% static 'images/team/team3.jpg' %}" alt="{{ beautician.user.first_name }}'s image">
+										{% elif beautician.user.first_name == "dipti" %}
+											<img src="{% static 'images/team/team4.jpg' %}" alt="{{ beautician.user.first_name }}'s image">
+										{% else %}
+											<img src="{% static 'images/team/team6.jpg' %}" alt="{{ beautician.user.first_name }}'s image">
+										{% endif %}
 									</a>
 									<div class="team-social-icon text-center">
 										<ul>
-											<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											<li><a href="https://www.instagram.com/pemsss03/"><i class="fa fa-instagram"></i></a></li>
+											<li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
 										</ul>
 									</div>
 								</div>
