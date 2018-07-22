@@ -53,6 +53,7 @@ class Session(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     is_active = models.BooleanField(default=False)
+    is_completed = models.BooleanField(default=False)
 
     def __str__(self):
         return "{0} {1} To {2}".format(self.session_date,self.start_time,self.end_time)

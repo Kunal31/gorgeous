@@ -66,7 +66,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="well-left">
                             <div class="single-well">
-                                <a href="service.html#">
+                                <a href="{% url 'single_service' 18 %}">
                                     <img src="{% static 'images/service/service1.jpg' %}" alt="">
                                     <h4 class="sec-head">Hair Cutting</h4>
                                 </a>
@@ -78,7 +78,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="well-middle">
                             <div class="single-well">
-                                <a href="service.html#">
+                                <a href="{% url 'single_service' 24 %}">
                                     <img src="{% static 'images/service/split_ends.jpg' %}" alt="">
                                     <h4 class="sec-head">Split End Repair </h4>
                                 </a>
@@ -90,7 +90,7 @@
                     <div class="col-lg-4 col-md-4 hidden-sm col-xs-12">
                         <div class="well-left">
                             <div class="single-well">
-                                <a href="service.html#">
+                                <a href="{% url 'single_service' 19 %}">
                                     <img src="{% static 'images/service/hair_cleanup.jpg' %}" alt="">
                                     <h4 class="sec-head">Clean Up</h4>
                                 </a>
@@ -104,7 +104,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="well-left">
                             <div class="single-well">
-                                <a href="service.html#">
+                                <a href="{% url 'single_service' 21 %}">
                                     <img src="{% static 'images/service/service3.jpg' %}" alt="">
                                     <h4 class="sec-head">Dry Cut</h4>
                                 </a>
@@ -116,7 +116,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="well-middle">
                             <div class="single-well">
-                                <a href="service.html#">
+                                <a href="{% url 'single_service' 2 %}">
                                     <img src="{% static 'images/service/de_tan.jpg' %}" alt="">
                                     <h4 class="sec-head">De tan</h4>
                                 </a>
@@ -128,7 +128,7 @@
                     <div class="col-lg-4 col-md-4 hidden-sm col-xs-12">
                         <div class="well-left">
                             <div class="single-well">
-                                <a href="service.html#">
+                                <a href="{% url 'single_service' 6 %}">
                                     <img src="{% static 'images/service/facial.jpg' %}" alt="">
                                     <h4 class="sec-head">Facial </h4>
                                 </a>
@@ -179,9 +179,9 @@
 									<tbody>
 										{% for service in skin_services %}
 											<tr>
-												<td>{{ service.name }}</td>
-												<td>{{ service.completion_time }}</td>
-												<td>{{ service.price }}</td>
+												<td><a href="{% url 'single_service' service.id %}">{{ service.name }}</a></td>
+												<td><a href="{% url 'single_service' service.id %}">{{ service.completion_time }}</a></td>
+												<td><a href="{% url 'single_service' service.id %}">{{ service.price }}</a></td>
 											</tr>
 										{% endfor %}
 									</tbody>
@@ -207,9 +207,9 @@
 									<tbody>
 										{% for service in hair_services %}
 											<tr>
-												<td>{{ service.name }}</td>
-												<td>{{ service.completion_time }}</td>
-												<td>{{ service.price }}</td>
+												<td><a href="{% url 'single_service' service.id %}">{{ service.name }}</a></td>
+												<td><a href="{% url 'single_service' service.id %}">{{ service.completion_time }}</a></td>
+												<td><a href="{% url 'single_service' service.id %}">{{ service.price }}</a></td>
 											</tr>
 										{% endfor %}
 									</tbody>

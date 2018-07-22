@@ -20,41 +20,64 @@
 				</div>
 			</div>
 			<!-- End Page Header -->
-			<!-- Start Blog Post Area -->
-			<div class="blog-post fix">
-				<div class="container">
-					<div class="row">
-						<div class="blog-post-inner blog-grid-post">
-							{% for appointment in apptmnts %}
-								<!-- Start Single Blog -->
-								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-									<div class="single-blog text-left ">
-										<div class="blog-thumb">
-											<img alt="blog img" src="{% static 'images/blog/bl1.jpg' %}">
-										</div>
-										<div class="blog-info">
-											<h3 class="blog-heading"><a href="blog-grid.html#">{{ appointment.customer.user.first_name }} {{ appointment.customer.user.last_name }}</a></h3>
-											<div class="blog-post-dlc">
-												<ul>
-													<li>
-														<span class="date-time"><i class="fa fa-calendar"></i>{{ appointment.session.session_date }}</span>
-													</li>
-													<li>
-														<span class="date-time"><i class="fa fa-clock-o"></i>{{ appointment.session.start_time }}</span>
-													</li>
-												</ul>
+			{% if apptmnts %}
+				<!-- Start Blog Post Area -->
+				<div class="blog-post fix">
+					<div class="container">
+						<div class="row">
+							<div class="blog-post-inner blog-grid-post">
+								{% for appointment in apptmnts %}
+									<!-- Start Single Blog -->
+									<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+										<div class="single-blog text-left ">
+											<div class="blog-thumb">
+												<img alt="blog img" src="{% static 'images/blog/bl1.jpg' %}">
 											</div>
-											<p class="blog-content">{{ appointment|get_appointment_services }}</p>
+											<div class="blog-info">
+												<h3 class="blog-heading"><a href="blog-grid.html#">{{ appointment.customer.user.first_name }} {{ appointment.customer.user.last_name }}</a></h3>
+												<div class="blog-post-dlc">
+													<ul>
+														<li>
+															<span class="date-time"><i class="fa fa-calendar"></i>{{ appointment.session.session_date }}</span>
+														</li>
+														<li>
+															<span class="date-time"><i class="fa fa-clock-o"></i>{{ appointment.session.start_time }}</span>
+														</li>
+														<li>
+															{% if appointment.session.is_completed %}
+																<span class="date-time"><i class="fa fa-check"></i></span>
+															{% else %}
+																<span class="date-time"><i class="fa fa-ellipsis-h"></i></span>
+															{% endif %}
+														</li>
+													</ul>
+												</div>
+												<p class="blog-content">{{ appointment|get_appointment_services }}</p>
+											</div>
 										</div>
 									</div>
-								</div>
-							<!-- End Single Blog -->
-							{% endfor %}
+								<!-- End Single Blog -->
+								{% endfor %}
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!--End Blog Post Area -->
+				<!--End Blog Post Area -->
+			{% else %}
+				<!-- Start Blog Post Area -->
+				<div class="blog-post fix">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="blog-title text-center">
+									 <h3 class="">No upcoming appointments... <i class="fa fa-smile-o"></i></h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--End Blog Post Area -->
+			{% endif %}
 		</div>
 		<!-- Start Page Content -->
         {% endblock content %}

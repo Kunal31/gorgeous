@@ -86,19 +86,19 @@
                                         <li><a href="{% url 'services' %}">services</a>
                                             <div class="mega-menu">
                                                 <span>
-                                                    <a class="mega-menu-title badge-hot" href="">Latest hair style</a>
-                                                    <a href="individual_service.html">hair cut with blowdry</a>
-                                                    <a href="individual_service.html">X-tenso smoothing</a>
+                                                    <a class="mega-menu-title badge-hot" href="">Latest hair styles</a>
+                                                    <a href="{% url 'single_service' 1 %}">hair cut with blowdry</a>
+                                                    <a href="{% url 'single_service' 2 %}">hair spa</a>
                                                 </span>
                                                 <span>
                                                     <a class="mega-menu-title badge-populer" href="">Popular skin service</a>
-                                                    <a href="individual_service.html">De-tan face</a>
-                                                    <a href="individual_service.html">facial</a>
+                                                    <a href="{% url 'single_service' 3 %}">De-tan face</a>
+                                                    <a href="{% url 'single_service' 4 %}">facial</a>
                                                 </span>
                                                 <span>
-                                                    <a class="mega-menu-title new-pro" href="">Popular style</a>
-                                                    <a href="index-2.html#">casual cut</a>
-                                                    <a href="index-2.html#">styles</a>
+                                                    <a class="mega-menu-title new-pro" href="">New hair treatments</a>
+                                                    <a href="{% url 'single_service' 5 %}">X-tenso smoothing</a>
+                                                    <a href="{% url 'single_service' 6 %}">Keratin</a>
                                                 </span>
                                             </div>
                                         </li>
@@ -108,7 +108,7 @@
                                                 <!--<li><a href="portfolio-2.html">Gallery 2</a></li>-->
                                             <!--</ul>-->
                                         </li>
-                                        <li><a href="http://usdtheme.com/preview-styles/blog.html">Blog</a>
+                                        <li><a href="#">Blog</a>
                                             <ul class="sub-menu">
                                                 <li><a href="{% url 'blog_grid' %}">Blog Grid(Service wise Feedback/review Overview)</a></li>
                                                 {% if request.user|in_group:"beautician" or request.user.is_superuser %}

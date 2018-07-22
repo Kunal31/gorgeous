@@ -98,7 +98,9 @@ def beautician_details(request,id):
 
 @login_required
 def appointments(request):
-    o = Order.objects.all()
+    o = Order.objects.filter(session__session_date__gte=datetime.now().date(),\
+                            session__start_time__gte=datetime.now().time(),\
+                            session__is_completed=False)
     context = {'apptmnts':o}
     return render(request,"appointments.html",context)
 
@@ -124,6 +126,13 @@ def get_services(request):
     service_category = request.POST.get('service_category')
     services = list(Service.objects.filter(category=service_category).values_list('name',flat=True))
     return HttpResponse(json.dumps({'services':services}),status=200)
+
+
+@login_required()
+def single_service(request,service_id):
+    service = Service.objects.get(id=service_id)
+    context = {'service':service}
+    return render(request,'single_service.html',context)
 
 
 @login_required
@@ -252,6 +261,20 @@ def contact(request):
 
     return HttpResponse(status=200)
 
+
+@login_required()
+def orders(request):
+    if request.POST:
+        from_date = request.POST.get('from_date')
+        to_date = request.POST.get('to_date')
+        from_date = datetime.strptime(from_date, "%d-%m-%Y")
+        to_date = datetime.strptime(to_date, "%d-%m-%Y")
+        o = Order.objects.filter(session__session_date__gte=from_date, \
+                                 session__session_date__lte=to_date)
+        context = {'orders':o}
+        return render(request,'orders.html',context=context)
+    else:
+        return render(request,'orders.html',context={})
 
 def log_out(request):
     logout(request)

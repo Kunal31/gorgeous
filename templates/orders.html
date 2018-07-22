@@ -1,0 +1,100 @@
+	{% extends 'base.html' %}
+	{% load static %}
+	{% load booking_template_tags %}
+
+	{% block content %}
+		<!--Start Page Content -->
+		<div class="service-page">
+			<div class="service-heading">
+				<div class="blog-overly"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="blog-title text-center">
+								 <h2 class="breadcumb-header">Orders</h2>
+								 <ul class="page-head-menu">
+									<li>keep track of all orders...</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End Page Header -->
+		<!-- Start Service Area -->
+		<div class="service-area area-padding page-service">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+							<h3>Our Orders</h3>
+							<p>Here you can see all online booked orders .</p>
+						</div>
+						<form method="post" action="{% url 'orders' %}">
+							{% csrf_token %}
+							<div>
+								<span>from date:&nbsp;&nbsp;<input type="text" id="from_date" class="date_range" name="from_date" placeholder="Select start Date" required data-error="Please Select From Date"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+								<span>to date:&nbsp;&nbsp;<input type="text" id="to_date" class="date_range" name="to_date" placeholder="Select end Date" required data-error="Please Select To Date"></span>
+								<button type="submit"><i class="fa fa-search"></i></button>
+							</div>
+							<br>
+						</form>
+					</div>
+				</div>
+				<div class="row mar-table">
+					<div class="col-lg-12 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".3s">
+						<form action="service.html#">
+							<div style="width:100%" class="table-content table-responsive">
+								<table class=" table table-striped">
+									<thead>
+										<tr>
+											<th>Id</th>
+											<th>Order Date</th>
+											<th>Order Time</th>
+											<th>Customer name</th>
+											<th>contact no</th>
+											<th>Services opted</th>
+											<th>gross bill</th>
+											<th>is completed</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% for order in orders %}
+											<tr>
+												<td>{{ order.id }}</td>
+												<td>{{ order.session.session_date }}</td>
+												<td>{{ order.session.start_time }}</td>
+												<td>{{ order.customer.user.first_name }} {{ order.customer.user.last_name }}</td>
+												<td>{{ order.customer.contact_no }}</td>
+												<td>{{ order|get_appointment_services }}</td>
+												<td>{{ order|get_order_bill_amount }}</td>
+												<td align="center">
+													{% if order.session.is_completed %}
+													    <i class="fa fa-check"></i>
+													{% else %}
+														<i class="fa fa-times"></i>
+													{% endif %}
+												</td>
+											</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+							</div>
+						</form>
+						<!-- end table -->
+					</div>
+				</div>
+				<!-- end row -->
+			</div>
+		</div>
+		<!-- End Service Area -->
+	{% endblock content %}
+	{% block js %}
+		{{ block.super }}
+		<script>
+			$(document).ready(function(){
+				$( ".date_range" ).datepicker({dateFormat: "dd-mm-yy",maxDate: 0});
+			});
+		</script>
+	{% endblock js %}
