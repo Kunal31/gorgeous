@@ -110,6 +110,13 @@ def feedbacks(request):
     return render(request,"feedbacks.html",context)
 
 
+@login_required()
+def save_feedback(request):
+    feedback_content = request.POST.get('feedback_message')
+    Feedback.objects.create(customer=request.user,content=feedback_content)
+    return HttpResponseRedirect(reverse('feedback_details'))
+
+
 @csrf_exempt
 @login_required()
 def get_services(request):
@@ -220,7 +227,6 @@ def email(name,contact_no,email,date,start_time,end_time,net_bill_amount,gst_amo
 
 def contact(request):
     print request.POST
-    pdb.set_trace()
     name = request.POST.get('client-name')
     age = request.POST.get('age')
     contact_no = request.POST.get('contact_no')

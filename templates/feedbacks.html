@@ -34,12 +34,13 @@
 												<img alt="blog img" src="{% static 'images/blog/bl1.jpg' %}">
 											</div>
 											<div class="blog-info">
-												<h3 class="blog-heading"><a href="blog-grid.html#">{{ feedback.customer.user.first_name }} {{ feedback.customer.user.last_name }}</a></h3>
+												<h3 class="blog-heading"><a href="#">{{ feedback.customer.first_name }} {{ feedback.customer.last_name }}</a></h3>
 												<div class="blog-post-dlc">
 													<ul>
 														<li>
-															<span class="date-time"><i class="fa fa-calendar"></i>{{ feedback.date }}</span>
+															<span class="date-time"><i class="fa fa-calendar"></i>{{ feedback.feedback_timestamp.date }}</span>
 														</li>
+														<li><a href="blog-grid.html#"><i class="fa fa-clock-o"></i></a>{{ feedback.feedback_timestamp.time }}</li>
 													</ul>
 												</div>
 												<p class="blog-content">{{ feedback.content }}</p>
@@ -66,30 +67,30 @@
 						</div>
 						<div class="clearfix"></div>
 						<div class="apoint-form">
-							<form name="app-form" id="app-ready" method="post" action="{% url 'contact' %}" on>
+							<form name="app-form" id="app-ready" method="post" action="{% url 'save_feedback' %}" on>
 								{% csrf_token %}
 								<div class="col-sm-12 col-md-offset-1 col-md-10 app-left">
-									<div class="form-group">
-										  <label>Name</label>
-										  <input type="text" name="client-name" id="app-name"  class="form-control required" placeholder="name" required title="kindly provide your name">
-									</div>
-									<div class="form-group mt-right0">
-										  <label>Email</label>
-										  <input type="email" class="form-control required email" name="client-email" id="app-email" placeholder="Email">
-									</div>
+									<!--<div class="form-group">-->
+										  <!--<label>Name</label>-->
+										  <!--<input type="text" name="client-name" id="app-name"  class="form-control required" placeholder="name" required title="kindly provide your name">-->
+									<!--</div>-->
+									<!--<div class="form-group mt-right0">-->
+										  <!--<label>Email</label>-->
+										  <!--<input type="email" class="form-control required email" name="client-email" id="app-email" placeholder="Email">-->
+									<!--</div>-->
 
-									<div class="form-group">
-										  <label>Age</label>
-										  <input type="number" name="age" id="age"  class="form-control required" placeholder="age">
-									</div>
-									<div class="form-group mt-right0">
-										  <label>Contact No</label>
-										  <input type="number" class="form-control required email" name="contact_no" id="contact_no" placeholder="contact no" required title="kindly provide your contact no">
-									</div>
+									<!--<div class="form-group">-->
+										  <!--<label>Age</label>-->
+										  <!--<input type="number" name="age" id="age"  class="form-control required" placeholder="age">-->
+									<!--</div>-->
+									<!--<div class="form-group mt-right0">-->
+										  <!--<label>Contact No</label>-->
+										  <!--<input type="number" class="form-control required email" name="contact_no" id="contact_no" placeholder="contact no" required title="kindly provide your contact no">-->
+									<!--</div>-->
 
 									<div class="form-group textarea">
-									  <label class="control-label">Message</label>
-									  <textarea class="form-control" name="AppointmentMessage" placeholder="your message goes here..." rows="5" id="AppointmentMessage"></textarea>
+									  <label class="control-label">Feedback</label>
+									  <textarea class="form-control" name="feedback_message" placeholder="your feedback goes here..." rows="5" id="AppointmentMessage" required></textarea>
 									</div>
 									<div class="submitbtn">
 										<button type="submit" class="btn btn-default" value="Submit" >SUBMIT</button>

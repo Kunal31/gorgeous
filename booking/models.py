@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
+from datetime import datetime
 
 
 class Customer(models.Model):
@@ -97,8 +98,8 @@ class Feedback(models.Model):
     class Meta:
         db_table = "feedback"
 
-    customer = models.FloatField(Customer)
-    date = models.DateField(auto_now_add=True)
+    customer = models.ForeignKey(User)
+    feedback_timestamp = models.DateTimeField(auto_now_add=True)
     content = models.CharField(max_length=1000)
     is_inappropriate = models.BooleanField(default=False)
 
