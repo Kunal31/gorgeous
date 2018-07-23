@@ -7,7 +7,7 @@
 			<div class="bend niceties preview-2">
 				<div id="ensign-nivoslider" class="slides">	
 					<img src="{% static 'images/slider/slider7.jpg' %}" alt="" title="#slider-direction-1"  />
-					<img src="{% static 'images/slider/slider8.jpg' %}" alt="" title="#slider-direction-2"  />
+					<img src="{% static 'images/slider/slider2.jpg' %}" alt="" title="#slider-direction-2"  />
 				</div>
 				<!-- direction 1 -->
 				<div id="slider-direction-1" class="slider-direction slider-one">
@@ -21,12 +21,14 @@
 									</div>
 									<!-- layer 2 -->
 									<div class="layer-1-2 wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s ">
-										<h1 class="title2">Lets Go Hair Styless</h1>
+										<h1 class="title2">Let Your Hair Do The Talking...</h1>
 									</div>
 									<!-- layer 3 -->
-									<div class="layer-1-3 wow slideInUp" data-wow-duration="1s" data-wow-delay=".3s ">
-                                        <a href="index-2.html#" class="ready-btn" title="Quick view" data-toggle="modal" data-target="#productModal">Appointment Here</a>
-									</div>
+									{% if request.user.is_authenticated %}
+										<div class="layer-1-3 wow slideInUp" data-wow-duration="1s" data-wow-delay=".3s ">
+											<a href="index-2.html#" class="ready-btn" title="Quick view" data-toggle="modal" data-target="#productModal">Book Appointment</a>
+										</div>
+									{% endif %}
 								</div>
 							</div>
 						</div>
@@ -40,15 +42,15 @@
 								<div class="slider-content hidden-xs">
 									<!-- layer 1 -->
 									<div class="layer-1-1 wow slideInDown" data-wow-duration="1s" data-wow-delay=".3s ">
-										<h2 class="title1">The Hair Fashion</h2>
+										<h2 class="title1">The Skin Care</h2>
 									</div>
 									<!-- layer 2 -->
 									<div class="layer-1-2 wow slideInLeft" data-wow-duration="1s" data-wow-delay=".3s  ">
-										<h1 class="title2">Lets Go Hair Styless</h1>
+										<h1 class="title2">Lets Make Something very, very clear... Your Skin</h1>
 									</div>
 									<!-- layer 3 -->
 									<div class="layer-1-3 wow slideInUp" data-wow-duration="1s" data-wow-delay=".3s ">
-                                        <a href="index-2.html#" class="ready-btn" title="Quick view" data-toggle="modal" data-target="#productModal">Appointment Here</a>
+                                        <a href="index-2.html#" class="ready-btn" title="Quick view" data-toggle="modal" data-target="#productModal">Book Appointment</a>
 									</div>
 								</div>
 							</div>
@@ -691,7 +693,7 @@
                                     <div class="input-text">
                                         <select id="select-country" class="select-country form-control width-50" name="select-country">
                                             <option value="0">Choose Country</option>
-                                            <option value="Afganisthan">Afganisthan</option>
+                                            <option value="Afghanisthan">Afghanisthan</option>
                                             <option value="Australia">Australia</option>
                                             <option value="Brazil">Brazil</option>
                                             <option value="Canada">Canada</option>
@@ -708,25 +710,41 @@
                                 <!-- single feilds category and service-->
                                 <div class="sign-feilds">
                                     <div class="input-text">
-                                        <select id="select-category" class="select-country form-control width-50" name="select-category">
-                                            <option value="0">Choose Category</option>
-											{% for category in service_categories %}
-											    <option value="{{ category }}">{{ category }}</option>
-											{% endfor %}
-                                        </select>
-                                        <select multiple id="select-service" class="form-control width-50 last-name" name="select-service">
-                                            <option value="0">Choose Service</option>
-											<!--{% for service in services %}-->
-											    <!--<option value="{{ service.name }}">{{ service.name }}</option>-->
-											<!--{% endfor %}-->
-                                        </select>
+										<span>
+											<select id="select-category" class="select-country form-control width-50" name="select-category" required>
+												<option value="">Choose Category</option>
+												{% for category in service_categories %}
+													<option value="{{ category }}">{{ category }}</option>
+												{% endfor %}
+											</select>
+										</span>
+										<span>
+											<select multiple id="select-service" class="form-control width-50 last-name" name="select-service" required>
+												<option value="">Choose Service</option>
+												<!--{% for service in services %}-->
+													<!--<option value="{{ service.name }}">{{ service.name }}</option>-->
+												<!--{% endfor %}-->
+											</select>
+										</span>
                                     </div>
                                 </div>
                                 <!-- Date & Time Picker-->
                                 <div class="sign-feilds">
                                     <div class="input-text">
                                         <input type="text" id="datepicker" class="form-control width-50" name="date" placeholder="Select Date" required data-error="Please Select Date">
-                                        <input type="text" id="timepicker" class="form-control width-50 last-name timepicker" name="timepicker" placeholder="Select Time" required data-error="Please Select Time">
+                                        <!--<input type="text" id="timepicker" class="form-control width-50 last-name timepicker" name="timepicker" placeholder="Select Time" required data-error="Please Select Time">-->
+										<span style="margin-left:3%">
+											<select id="timepicker" class="select-country form-control width-50" name="time" required>
+												<option value="">Select Time</option>
+												<option value="01:00 PM">01:00 PM</option>
+												<option value="02:00 PM">02:00 PM</option>
+												<option value="03:00 PM">03:00 PM</option>
+												<option value="04:00 PM">04:00 PM</option>
+												<option value="05:00 PM">05:00 PM</option>
+												<option value="06:00 PM">06:00 PM</option>
+												<option value="07:00 PM">07:00 PM</option>
+											</select>
+										</span>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>

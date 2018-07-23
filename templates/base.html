@@ -82,7 +82,9 @@
                                                 <!--<li><a href="index-2.html">Homepage Version 2</a></li>-->
                                             <!--</ul>-->
                                         </li>
-                                        <li><a href="{% url 'about' %}">About</a></li>
+                                        {% if request.user|in_group:"customer" or request.user.is_superuser %}
+                                            <li><a href="{% url 'about' %}">About</a></li>
+                                        {% endif %}
                                         <li><a href="{% url 'services' %}">services</a>
                                             <div class="mega-menu">
                                                 <span>
@@ -102,25 +104,32 @@
                                                 </span>
                                             </div>
                                         </li>
-                                        <li><a href="{% url 'portfolio' %}">Portfolio</a>
+                                        {% if request.user|in_group:"customer" or request.user.is_superuser %}
+                                            <li><a href="{% url 'portfolio' %}">Portfolio</a>
+                                                <!--<ul class="sub-menu">-->
+                                                    <!--<li><a href="portfolio-1.html">Gallery 1</a></li>-->
+                                                    <!--<li><a href="portfolio-2.html">Gallery 2</a></li>-->
+                                                <!--</ul>-->
+                                            </li>
+                                        {% endif %}
+                                        <!--remaining template reference-->
+                                        <!--<li><a href="#">Blog</a>-->
                                             <!--<ul class="sub-menu">-->
-                                                <!--<li><a href="portfolio-1.html">Gallery 1</a></li>-->
-                                                <!--<li><a href="portfolio-2.html">Gallery 2</a></li>-->
+                                                <!--<li><a href="{% url 'blog_grid' %}">Blog Grid(Service wise Feedback/review Overview)</a></li>-->
+                                                <!--{% if request.user|in_group:"beautician" or request.user.is_superuser %}-->
+                                                    <!--<li><a href="{% url 'blog_single' %}">Blog Single Post(Beautician upcoming appointments)</a></li>-->
+                                                    <!--&lt;!&ndash; Left side is Service (long Description) & BLOGING OPTIONS is Beautician upcoming appointments	 &ndash;&gt;-->
+                                                <!--{% endif %}-->
+                                                <!--<li><a href="{% url 'blog_details' %}">Blog-Details(Detailed Service Feedback/review)</a></li>-->
+                                                <!--&lt;!&ndash; one to one with blog_grid i.e. Service wise Feedback/review Overview&ndash;&gt;-->
                                             <!--</ul>-->
-                                        </li>
-                                        <li><a href="#">Blog</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{% url 'blog_grid' %}">Blog Grid(Service wise Feedback/review Overview)</a></li>
-                                                {% if request.user|in_group:"beautician" or request.user.is_superuser %}
-                                                    <li><a href="{% url 'blog_single' %}">Blog Single Post(Beautician upcoming appointments)</a></li>
-                                                    <!-- Left side is Service (long Description) & BLOGING OPTIONS is Beautician upcoming appointments	 -->
-                                                {% endif %}
-                                                <li><a href="{% url 'blog_details' %}">Blog-Details(Detailed Service Feedback/review)</a></li>
-                                                <!-- one to one with blog_grid i.e. Service wise Feedback/review Overview-->
-                                            </ul>
-                                        </li>
-                                        <li><a href="{% url 'appointment_details' %}">Appointments</a></li>
-                                        <li><a href="{% url 'feedback_details' %}">Feedback</a></li>
+                                        <!--</li>-->
+                                        {% if request.user|in_group:"beautician" or request.user.is_superuser %}
+                                            <li><a href="{% url 'appointment_details' %}">Appointments</a></li>
+                                        {% endif %}
+                                        {% if request.user|in_group:"customer" or request.user.is_superuser %}
+                                            <li><a href="{% url 'feedback_details' %}">Feedback</a></li>
+                                        {% endif %}
                                         <li><a href="{% url 'logout' %}">Logout</a></li>
                                     </ul>
                                 </nav>

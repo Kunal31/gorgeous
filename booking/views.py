@@ -147,7 +147,7 @@ def book_appointment(request):
     state = request.POST.get('state')
     country = request.POST.get('select-country')
     appointment_date = request.POST.get('date')
-    appointment_time = request.POST.get('timepicker')
+    appointment_time = request.POST.get('time')
     service_category = request.POST.get('select-category')
     selected_service_list = request.POST.getlist('select-service')
     selected_services = Service.objects.filter(category=service_category,\
