@@ -12,6 +12,7 @@ from django.contrib.auth.models import User,Group
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from gorgeous import settings
 from booking.models import Service,Customer,Order,Session,\
@@ -153,8 +154,12 @@ def book_appointment(request):
     selected_services = Service.objects.filter(category=service_category,\
                                name__in=selected_service_list)
     session_minutes = selected_services.aggregate(session_minutes=Sum('completion_time'))
-    session_bill_amount = selected_services.aggregate(session_bill=Sum('price'))
-    user=User.objects.create(username=email_id,first_name=first_name,\
+    session_bill_amount_dict = selected_services.aggregate(session_bill=Sum('price'))
+    session_bill_amount = session_bill_amount_dict['session_bill']
+    try:
+        user = User.objects.get(username=email_id)
+    except ObjectDoesNotExist:
+        user=User.objects.create(username=email_id,first_name=first_name,\
                                   last_name=last_name,email=email_id,\
                                   password='gorgeous')
 
@@ -168,7 +173,10 @@ def book_appointment(request):
     user.groups.add(group)
     ###
 
-    customer = Customer.objects.create(user=user,contact_no=phone_number)
+    try:
+        customer = Customer.objects.get(user=user)
+    except ObjectDoesNotExist:
+        customer = Customer.objects.create(user=user,contact_no=phone_number)
     session_date = datetime.strptime(appointment_date, "%d-%m-%Y")
     session_start_time = datetime.strptime(appointment_time,"%I:%M %p")
     session_end_time = session_start_time + timedelta(minutes=session_minutes['session_minutes'])
@@ -183,13 +191,13 @@ def book_appointment(request):
     gross_amount = session_bill_amount + gst_amount
     invoice = Invoice.objects.create(order=order,net_bill=session_bill_amount,gst=gst_amount,gross_bill=gross_amount)
 
-    email(first_name,phone_number,email_id,session_date,session_start_time,session_end_time,\
+    send_email(first_name,phone_number,email_id,session_date,session_start_time,session_end_time,\
             session_bill_amount,gst_amount,gross_amount)
 
-    return HttpResponse('OK',status=200)
+    return HttpResponseRedirect(reverse('index'))
 
 
-def email(name,contact_no,email,date,start_time,end_time,net_bill_amount,gst_amount,gross_bill_amount):
+def send_email(name,contact_no,email_id,date,start_time,end_time,net_bill_amount,gst_amount,gross_bill_amount):
     # age = request.POST.get('age')
     date = date.strftime("%d %B %Y")
     start_time = start_time.strftime("%I:%M %p")
@@ -202,6 +210,9 @@ def email(name,contact_no,email,date,start_time,end_time,net_bill_amount,gst_amo
         html_message_shop += "</tr>"
         html_message_shop += "<tr>"
         html_message_shop += "<td><b>" + "Contact No: " + "</b></td>" + "<td><b>" + contact_no + "</b></td>"
+        html_message_shop += "</tr>"
+        html_message_shop += "<tr>"
+        html_message_shop += "<td><b>" + "Timing: " + "</b></td>" + "<td><b>" + date + " from " + start_time + " to " + end_time +"</b></td>"
         html_message_shop += "</tr>"
         html_message_shop += "</table>"
 
@@ -216,16 +227,18 @@ def email(name,contact_no,email,date,start_time,end_time,net_bill_amount,gst_amo
         html_message_customer += "<td>Bill Amount</td><td>GST Amount</td><td><td>Total bill Amount</td>"
         html_message_customer += "</tr>"
         html_message_customer += "<tr>"
-        html_message_customer += "<td>"+net_bill_amount+"</td><td>"+gst_amount+"</td><td>"+gross_bill_amount+"</td>"
+        html_message_customer += "<td>"+str(net_bill_amount)+"</td><td>"+str(gst_amount)+"</td><td>"+str(gross_bill_amount)+"</td>"
         html_message_customer += "</tr>"
         html_message_customer += "</table>"
 
         message = ""
-        mail_sent_to_customer = send_mail(settings.NEW_CUSTOMER_SUBJECT,message,settings.EMAIL_HOST_USER,[email],\
+        mail_sent_to_customer = send_mail(settings.NEW_CUSTOMER_SUBJECT,message,settings.EMAIL_HOST_USER,[email_id],\
                                           html_message=html_message_customer, fail_silently=False)
+        print "Mail sent to customer: ",mail_sent_to_customer
 
         mail_sent_to_shop = send_mail(settings.NEW_SHOP_SUBJECT,message,settings.EMAIL_HOST_USER,\
                                     [settings.EMAIL_HOST_USER], html_message=html_message_shop, fail_silently=False)
+        print "Mail sent to shop: ",mail_sent_to_shop
 
     except Exception as e:
         print ('%s (%s)' % (e.message, type(e)))
@@ -243,7 +256,7 @@ def contact(request):
     message = request.POST.get('AppointmentMessage')
 
     try:
-        html_message = "<table bgcolor='silver'>"
+        html_message = "<table border=1 bgcolor='silver'>"
         html_message += "<tr><td><b>" + "Name of Visitor " + "</b></td>" + "<td>" + name + "</td></tr>"
         if age:
             html_message += "<tr><td><b>" + "Age " + "</b></td>" + "<td>" + age + "</td></tr>"
@@ -259,7 +272,7 @@ def contact(request):
     except Exception as e:
         return HttpResponse("Exception occured while sending Contact Us mail: %s ", e.__str__())
 
-    return HttpResponse(status=200)
+    return HttpResponseRedirect(reverse('index'))
 
 
 @login_required()

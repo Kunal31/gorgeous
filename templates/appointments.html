@@ -34,7 +34,7 @@
 												<img alt="blog img" src="{% static 'images/blog/bl1.jpg' %}">
 											</div>
 											<div class="blog-info">
-												<h3 class="blog-heading"><a href="blog-grid.html#">{{ appointment.customer.user.first_name }} {{ appointment.customer.user.last_name }}</a></h3>
+												<h3 class="blog-heading"><a href="#">{{ appointment.customer.user.first_name }} {{ appointment.customer.user.last_name }}</a></h3>
 												<div class="blog-post-dlc">
 													<ul>
 														<li>
@@ -46,6 +46,8 @@
 														<li>
 															{% if appointment.session.is_completed %}
 																<span class="date-time"><i class="fa fa-check"></i></span>
+															{% elif appointment.session.is_active %}
+																<span class="date-time"><i class="fa fa-hourglass-half"></i></span>
 															{% else %}
 																<span class="date-time"><i class="fa fa-ellipsis-h"></i></span>
 															{% endif %}

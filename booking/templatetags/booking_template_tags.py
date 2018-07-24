@@ -15,9 +15,9 @@ def get_appointment_services(order):
     order_services = OrderService.objects.filter(order=order)
     order_service_string = ''
     for os in order_services:
-        order_service_string += os.service.name
+        order_service_string += os.service.name+', '
 
-    return order_service_string
+    return order_service_string[:-2]
 
 @register.filter(name='get_order_bill_amount')
 def get_order_bill_amount(order):

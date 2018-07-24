@@ -56,7 +56,7 @@ class Session(models.Model):
     is_completed = models.BooleanField(default=False)
 
     def __str__(self):
-        return "{0} {1} To {2}".format(self.session_date,self.start_time,self.end_time)
+        return "{0} From {1} To {2}".format(self.session_date,self.start_time,self.end_time)
 
 
 class Order(models.Model):
@@ -78,8 +78,8 @@ class OrderService(models.Model):
     order = models.ForeignKey(Order)
     service = models.ForeignKey(Service)
 
-    def __str__(self):
-        return self.id
+    # def __str__(self):
+    #     return self.id
 
 
 class Invoice(models.Model):
@@ -91,8 +91,8 @@ class Invoice(models.Model):
     gst = models.FloatField()
     gross_bill = models.FloatField()
 
-    def __str__(self):
-        return self.order.id
+    # def __str__(self):
+    #     return self.order.id
 
 
 class Feedback(models.Model):
