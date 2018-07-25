@@ -164,8 +164,9 @@ def book_appointment(request):
         user = User.objects.get(username=email_id)
     except ObjectDoesNotExist:
         user=User.objects.create(username=email_id,first_name=first_name,\
-                                  last_name=last_name,email=email_id,\
-                                  password='gorgeous')
+                                  last_name=last_name,email=email_id)
+        user.set_password('gorgeous')
+        user.save()
 
     ### user group pairing ###
     user_type = "customer"

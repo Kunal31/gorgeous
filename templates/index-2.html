@@ -206,7 +206,7 @@
 									<form method="post" action="{% url 'newsletter_subscription' %}">
 										{% csrf_token %}
 										<div class="email_button">
-										   <input type="email" name="email_id" placeholder="Email" required>
+										   <input type="text" name="email_id" placeholder="Email" required  pattern="[A-Za-z0-9!#$%&'*+-/=?^_`{|}~]+@[A-Za-z]*\.+[A-Za-z]+" title="kindly enter valid email id">
 										   <button type="submit"><i class="fa fa-envelope"></i></button>
 										</div>
 									</form>
@@ -613,11 +613,11 @@
                             <div class="col-sm-12 col-md-offset-1 col-md-10 app-left">
 								<div class="form-group">
 									  <label>Name</label>
-									  <input type="text" name="client-name" id="app-name"  class="form-control required" placeholder="name" required title="kindly provide your name">
+									  <input type="text" name="client-name" id="app-name"  class="form-control required" placeholder="name" required pattern="[A-Za-z\s]+" title="only characters are allowed">
 								</div>
 								<div class="form-group mt-right0">
 									  <label>Email</label>
-									  <input type="email" class="form-control required email" name="client-email" id="app-email" placeholder="Email(optional)">
+									  <input type="email" class="form-control required email" name="client-email" id="app-email" placeholder="Email(optional)" pattern="[A-Za-z0-9!#$%&'*+-/=?^_`{|}~]+@[A-Za-z]*\.+[A-Za-z]+" title="kindly enter valid email id">
 								</div>
 
 								<div class="form-group">
@@ -626,12 +626,12 @@
 								</div>
 								<div class="form-group mt-right0">
 									  <label>Contact No</label>
-									  <input type="number" class="form-control required email" name="contact_no" id="contact_no" placeholder="contact no" required title="kindly provide your contact no">
+									  <input type="text" class="form-control required email" name="contact_no" id="contact_no" placeholder="contact no" required pattern="[0-9]{10}" title="10 digit mobile number">
 								</div>
 
 								<div class="form-group textarea">
 								  <label class="control-label">Message</label>
-								  <textarea class="form-control" name="AppointmentMessage" placeholder="your message goes here..." rows="5" id="AppointmentMessage"></textarea>
+								  <textarea class="form-control" name="AppointmentMessage" placeholder="your message goes here..." rows="5" id="AppointmentMessage" required></textarea>
 								</div>
 								<div class="submitbtn">
 									<button type="submit" class="btn btn-default" value="Submit" >SUBMIT</button>
@@ -662,15 +662,15 @@
 								<!-- single feilds -->
                                 <div class="sign-feilds">
                                     <div class="input-text">
-                                        <input type="text" id="fname" class="form-control width-50" name="first_name" placeholder="First Name" required data-error="Please enter your name">
-                                        <input type="text" id="lname" class="form-control width-50 last-name" name="last_name" placeholder="Last Name" required data-error="Please enter your name">
+                                        <input type="text" id="fname" class="form-control width-50" name="first_name" placeholder="First Name" required data-error="Please enter your first name" pattern="[A-Za-z\s]+" title="only characters and spaces are allowed">
+                                        <input type="text" id="lname" class="form-control width-50 last-name" name="last_name" placeholder="Last Name" required data-error="Please enter your last name" pattern="[A-Za-z\s]+" title="only characters and spaces are allowed">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <!-- single feilds -->
                                 <div class="sign-feilds">
                                     <div class="input-text">
-                                        <input type="email" class="email form-control" id="email" name="email" placeholder="Email" required data-error="Please enter your email">
+                                        <input type="email" class="email form-control" id="email" name="email" placeholder="Email" required data-error="Please enter your email" pattern="[A-Za-z0-9!#$%&'*+-/=?^_`{|}~]+@[A-Za-z]*\.+[A-Za-z]+" title="kindly enter valid email id">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -684,14 +684,14 @@
                                 <!-- single feilds -->
                                 <div class="sign-feilds">
                                     <div class="input-text">
-                                        <input type="text" class="city form-control" id="city" name="city" placeholder="City" required data-error="Please enter your City">
+                                        <input type="text" class="city form-control" id="city" name="city" placeholder="City" required data-error="Please enter your City" pattern="[A-Za-z\s]+" title="only characters and spaces are allowed">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <!-- single feilds -->
                                 <div class="sign-feilds">
                                     <div class="input-text">
-                                        <select id="select-country" class="select-country form-control width-50" name="select-country">
+                                        <select id="select-country" class="select-country form-control width-50" name="select-country" required>
                                             <option value="0">Choose Country</option>
                                             <option value="Afghanisthan">Afghanisthan</option>
                                             <option value="Australia">Australia</option>
@@ -703,7 +703,7 @@
                                             <option value="India">India</option>
                                             <option value="United States">United States</option>
                                         </select>
-                                        <input type="text" class="form-control width-50 last-name" id="state" name="state" placeholder="State" required data-error="Please enter your State">
+                                        <input type="text" class="form-control width-50 last-name" id="state" name="state" placeholder="State" required data-error="Please enter your State" pattern="[A-Za-z\s]+" title="only characters and spaces are allowed">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -752,8 +752,8 @@
                                 <!-- single feilds -->
                                 <div class="sign-feilds">
                                     <div class="input-text">
-                                        <input type="text" id="zipcode" class="form-control width-50" name="zip_code" placeholder="Zip Code" maxlength="6" required data-error="Please enter your zip code">
-                                        <input type="text" id="phone" class="form-control width-50 last-name" name="phone_number" placeholder="Phone Number" maxlength="10" required data-error="Please enter your phone number">
+                                        <input type="text" id="zipcode" class="form-control width-50" name="zip_code" placeholder="Zip Code" maxlength="6" required data-error="Please enter your zip code" pattern="[0-9]{6}" title="6 digit pin code">
+                                        <input type="text" id="phone" class="form-control width-50 last-name" name="phone_number" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}" title="10 digit mobile number" required data-error="Please enter your phone number">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
