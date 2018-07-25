@@ -182,7 +182,7 @@ def book_appointment(request):
     except ObjectDoesNotExist:
         customer = Customer.objects.create(user=user,contact_no=phone_number)
     session_date = datetime.strptime(appointment_date, "%d-%m-%Y")
-    session_start_time = datetime.strptime(appointment_time,"%I:%M %p")
+    session_start_time = datetime.strptime(appointment_time,"%H:%M")
     session_end_time = session_start_time + timedelta(minutes=session_minutes['session_minutes'])
     session = Session.objects.create(session_date=session_date,\
                            start_time=session_start_time,\
@@ -191,7 +191,7 @@ def book_appointment(request):
     for service in selected_services:
         OrderService.objects.create(order=order,service=service)
 
-    gst_amount = session_bill_amount + ((session_bill_amount * 18) / 100)
+    gst_amount = (session_bill_amount * 18) / 100
     gross_amount = session_bill_amount + gst_amount
     invoice = Invoice.objects.create(order=order,net_bill=session_bill_amount,gst=gst_amount,gross_bill=gross_amount)
 
@@ -227,19 +227,22 @@ def send_email(name,contact_no,email_id,date,start_time,end_time,net_bill_amount
         html_message_customer += " on <b>" + date + "</b> from <b>" + start_time + "</b> to <b>" + end_time + "</b>"
         html_message_customer += "</td>"
         html_message_customer += "</tr>"
-        # html_message_customer += "<tr>"
-        # html_message_customer += "<td colspan=3>"
-        # html_message_customer += "Kindly visit kunal31.pythonanywhere.com and login with given info for further info."
-        # html_message_customer += "</td>"
-        # html_message_customer += "</tr>"
-        # html_message_customer += "<tr>"
-        # html_message_customer += "<td>Username</td><td colspan=2>Password</td>"
-        # html_message_customer += "</tr>"
-        # html_message_customer += "<tr>"
-        # html_message_customer += "<td>"+email_id+"</td><td colspan=2>gorgeous</td>"
-        # html_message_customer += "</tr>"
+        html_message_customer += "<tr><td colspan=3></td></tr>"
+        html_message_customer += "<tr><td colspan=3></td></tr>"
         html_message_customer += "<tr>"
-        html_message_customer += "<td>Bill Amount</td><td>GST Amount</td><td><td>Total bill Amount</td>"
+        html_message_customer += "<td colspan=3>"
+        html_message_customer += "Kindly visit kunal31.pythonanywhere.com and login with given credentials for further info."
+        html_message_customer += "</td>"
+        html_message_customer += "</tr>"
+        html_message_customer += "<tr>"
+        html_message_customer += "<td colspan=3>"
+        html_message_customer += "Your username is <b>"+email_id+"</b> & password is <b>gorgeous</b>"
+        html_message_customer += "</td>"
+        html_message_customer += "</tr>"
+        html_message_customer += "<tr><td colspan=3></td></tr>"
+        html_message_customer += "<tr><td colspan=3></td></tr>"
+        html_message_customer += "<tr>"
+        html_message_customer += "<td><b>Bill Amount</b></td><td><b>GST Amount</b></td><td><b>Total bill Amount</b></td>"
         html_message_customer += "</tr>"
         html_message_customer += "<tr>"
         html_message_customer += "<td>"+str(net_bill_amount)+"</td><td>"+str(gst_amount)+"</td><td>"+str(gross_bill_amount)+"</td>"

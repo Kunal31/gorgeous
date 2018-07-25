@@ -734,16 +734,17 @@
                                         <input type="text" id="datepicker" class="form-control width-50" name="date" placeholder="Select Date" required data-error="Please Select Date">
                                         <!--<input type="text" id="timepicker" class="form-control width-50 last-name timepicker" name="timepicker" placeholder="Select Time" required data-error="Please Select Time">-->
 										<span style="margin-left:3%">
-											<select id="timepicker" class="select-country form-control width-50" name="time" required>
-												<option value="">Select Time</option>
-												<option value="01:00 PM">01:00 PM</option>
-												<option value="02:00 PM">02:00 PM</option>
-												<option value="03:00 PM">03:00 PM</option>
-												<option value="04:00 PM">04:00 PM</option>
-												<option value="05:00 PM">05:00 PM</option>
-												<option value="06:00 PM">06:00 PM</option>
-												<option value="07:00 PM">07:00 PM</option>
-											</select>
+											<input type="time" id="timepicker" min="13:00" max="18:00" class="form-control width-50" name="time" placeholder="Select Time" required data-error="Please Select Time">
+											<!--<select id="timepicker" class="select-country form-control width-50" name="time" required>-->
+												<!--<option value="">Select Time</option>-->
+												<!--<option value="01:00 PM">01:00 PM</option>-->
+												<!--<option value="02:00 PM">02:00 PM</option>-->
+												<!--<option value="03:00 PM">03:00 PM</option>-->
+												<!--<option value="04:00 PM">04:00 PM</option>-->
+												<!--<option value="05:00 PM">05:00 PM</option>-->
+												<!--<option value="06:00 PM">06:00 PM</option>-->
+												<!--<option value="07:00 PM">07:00 PM</option>-->
+											<!--</select>-->
 										</span>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -778,8 +779,8 @@
 		{{ block.super }}
 		<script>
 			$(document).ready(function(){
-				$( "#datepicker" ).datepicker({dateFormat: "dd-mm-yy"});
-				$('input.timepicker').timepicker();
+				$( "#datepicker" ).datepicker({dateFormat: "dd-mm-yy",minDate: 0});
+				//$('input.timepicker').timepicker();
 				var get_services_url = "{% url 'get_services' %}"
 				$("#select-category").change(function(){
 					var service_category = $(this).val();
