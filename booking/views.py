@@ -99,9 +99,10 @@ def beautician_details(request,id):
 
 @login_required
 def appointments(request):
-    o = Order.objects.filter(session__session_date__gte=datetime.now().date(),\
-                            session__start_time__gte=datetime.now().time(),\
-                            session__is_completed=False)
+    o1 = Order.objects.filter(session__session_date__gt=datetime.now().date())
+    o2 = Order.objects.filter(session__session_date=datetime.now().date(), \
+                             session__start_time__gte=datetime.now().time())
+    o = o1.union(o2).filter(session__is_completed=False)
     context = {'apptmnts':o}
     return render(request,"appointments.html",context)
 
