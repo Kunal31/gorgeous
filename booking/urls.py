@@ -15,7 +15,7 @@ urlpatterns = [
     url(r'^book_appointment$', views.book_appointment, name='book_appointment'),
 
     url(r'^blog_grid$', views.blog_grid, name='blog_grid'),
-    url(r'^blog_single', views.blog_single, name='blog_single'),
+    url(r'^blog_single$', views.blog_single, name='blog_single'),
     url(r'^blog_details$', views.blog_details, name='blog_details'),
 
     url(r'^appointments$', views.appointments, name='appointment_details'),
