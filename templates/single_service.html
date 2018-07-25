@@ -138,7 +138,13 @@
 						<!-- single-blog start -->
 						<article class="blog-post-wrapper">
 							<div class="post-thumbnail">
-								<img src="{% static 'images/blog/bl1.jpg' %}" alt="" />
+								{% if service.category == "hair" %}
+									<img src="{% static 'images/blog/bl1.jpg' %}" alt="" />
+								{% elif service.category == "skin" %}
+									<img src="{% static 'images/blog/bl5.jpg' %}" alt="" />
+								{% else %}
+									<img src="{% static 'images/blog/bl2.jpg' %}" alt="" />
+								{% endif %}
 							</div>
 							<div class="post-information">
 								<h4>{{ service.category }} <i class="fa fa-forward"></i> {{ service.name }}</h4>

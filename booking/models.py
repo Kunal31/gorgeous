@@ -42,7 +42,7 @@ class Service(models.Model):
     long_description = models.CharField(max_length=5000,null=True,blank=True)
 
     def __str__(self):
-        return self.name
+        return "{0} > {1}".format(self.category,self.name)
 
 
 class Session(models.Model):
@@ -105,4 +105,4 @@ class Feedback(models.Model):
     is_inappropriate = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.id
+        return "{0} : {1}".format(self.customer.first_name,self.content)

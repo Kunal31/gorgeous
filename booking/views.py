@@ -108,7 +108,7 @@ def appointments(request):
 
 @login_required
 def feedbacks(request):
-    f = Feedback.objects.all()
+    f = Feedback.objects.filter(is_inappropriate=False)
     context = {'feedbacks':f}
     return render(request,"feedbacks.html",context)
 
@@ -116,6 +116,9 @@ def feedbacks(request):
 @login_required()
 def save_feedback(request):
     feedback_content = request.POST.get('feedback_message')
+    # if len(feedback_content) < 160:
+    #     added_space_count = 160 - len(feedback_content)
+    #     feedback_content += ' ' * added_space_count
     Feedback.objects.create(customer=request.user,content=feedback_content)
     return HttpResponseRedirect(reverse('feedback_details'))
 
@@ -223,6 +226,17 @@ def send_email(name,contact_no,email_id,date,start_time,end_time,net_bill_amount
         html_message_customer += " on <b>" + date + "</b> from <b>" + start_time + "</b> to <b>" + end_time + "</b>"
         html_message_customer += "</td>"
         html_message_customer += "</tr>"
+        # html_message_customer += "<tr>"
+        # html_message_customer += "<td colspan=3>"
+        # html_message_customer += "Kindly visit kunal31.pythonanywhere.com and login with given info for further info."
+        # html_message_customer += "</td>"
+        # html_message_customer += "</tr>"
+        # html_message_customer += "<tr>"
+        # html_message_customer += "<td>Username</td><td colspan=2>Password</td>"
+        # html_message_customer += "</tr>"
+        # html_message_customer += "<tr>"
+        # html_message_customer += "<td>"+email_id+"</td><td colspan=2>gorgeous</td>"
+        # html_message_customer += "</tr>"
         html_message_customer += "<tr>"
         html_message_customer += "<td>Bill Amount</td><td>GST Amount</td><td><td>Total bill Amount</td>"
         html_message_customer += "</tr>"
