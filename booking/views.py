@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 import json
 from datetime import datetime,timedelta
+from operator import itemgetter
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render
@@ -14,6 +15,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
+from django.db.models import Case, When
 from gorgeous import settings
 from booking.models import Service,Customer,Order,Session,\
     Invoice,OrderService,Feedback,Beautician
@@ -102,8 +104,19 @@ def appointments(request):
     o1 = Order.objects.filter(session__session_date__gt=datetime.now().date())
     o2 = Order.objects.filter(session__session_date=datetime.now().date(), \
                              session__start_time__gte=datetime.now().time())
-    o = o1.union(o2).filter(session__is_completed=False)
-    context = {'apptmnts':o}
+    required_appointments = o1.union(o2).filter(session__is_completed=False)
+
+    orders = []
+    for apt in required_appointments:
+        orders.append({'id':apt.id,'datetime':datetime.combine(apt.session.session_date,\
+                                                               apt.session.start_time)})
+    sorted_orders = sorted(orders, key=itemgetter('datetime'))
+    sorted_order_ids = [order['id'] for order in sorted_orders]
+
+    preserved = Case(*[When(pk=pk, then=pos) for pos, pk in enumerate(sorted_order_ids)])
+    appointments = Order.objects.filter(id__in=sorted_order_ids).order_by(preserved)
+
+    context = {'apptmnts':appointments}
     return render(request,"appointments.html",context)
 
 
