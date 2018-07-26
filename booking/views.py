@@ -122,7 +122,7 @@ def appointments(request):
 
 @login_required
 def feedbacks(request):
-    f = Feedback.objects.filter(is_inappropriate=False)
+    f = Feedback.objects.filter(is_inappropriate=False).order_by('-feedback_timestamp')
     context = {'feedbacks':f}
     return render(request,"feedbacks.html",context)
 
@@ -324,7 +324,8 @@ def orders(request):
         from_date = datetime.strptime(from_date, "%d-%m-%Y")
         to_date = datetime.strptime(to_date, "%d-%m-%Y")
         o = Order.objects.filter(session__session_date__gte=from_date, \
-                                 session__session_date__lte=to_date)
+                                 session__session_date__lte=to_date).\
+            order_by('session__session_date','session__start_time')
         context = {'orders':o}
         return render(request,'orders.html',context=context)
     else:

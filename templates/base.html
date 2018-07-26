@@ -129,11 +129,12 @@
                                             <li><a href="{% url 'appointment_details' %}">Appointments</a></li>
                                         {% endif %}
                                         {% if request.user|in_group:"customer" or request.user.is_superuser %}
-                                            <li><a href="{% url 'feedback_details' %}">Feedback</a></li>
+                                            <li><a href="{% url 'feedback_details' %}">Feedbacks</a></li>
                                         {% endif %}
                                         {% if request.user.is_superuser %}
-                                            <li><a href="{% url 'orders' %}">Order</a></li>
+                                            <li><a href="{% url 'orders' %}">Orders</a></li>
                                         {% endif %}
+                                        <li><a href="#" style="color:#f3652a">Welcome {{ request.user.first_name }} </a></li>
                                         <li><a href="{% url 'logout' %}">Logout</a></li>
                                     </ul>
                                 </nav>
