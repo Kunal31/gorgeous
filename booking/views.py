@@ -178,7 +178,8 @@ def book_appointment(request):
     except ObjectDoesNotExist:
         user=User.objects.create(username=email_id,first_name=first_name,\
                                   last_name=last_name,email=email_id)
-        user.set_password('gorgeous')
+        customer_password = first_name+'@123'
+        user.set_password(customer_password)
         user.save()
 
     ### user group pairing ###
@@ -193,6 +194,7 @@ def book_appointment(request):
 
     try:
         customer = Customer.objects.get(user=user)
+        customer_password = ''
     except ObjectDoesNotExist:
         customer = Customer.objects.create(user=user,contact_no=phone_number)
     session_date = datetime.strptime(appointment_date, "%d-%m-%Y")
@@ -209,13 +211,13 @@ def book_appointment(request):
     gross_amount = session_bill_amount + gst_amount
     invoice = Invoice.objects.create(order=order,net_bill=session_bill_amount,gst=gst_amount,gross_bill=gross_amount)
 
-    send_email(first_name,phone_number,email_id,session_date,session_start_time,session_end_time,\
+    send_email(first_name,phone_number,email_id,customer_password,session_date,session_start_time,session_end_time,\
             session_bill_amount,gst_amount,gross_amount)
 
     return HttpResponseRedirect(reverse('index'))
 
 
-def send_email(name,contact_no,email_id,date,start_time,end_time,net_bill_amount,gst_amount,gross_bill_amount):
+def send_email(name,contact_no,email_id,customer_password,date,start_time,end_time,net_bill_amount,gst_amount,gross_bill_amount):
     # age = request.POST.get('age')
     date = date.strftime("%d %B %Y")
     start_time = start_time.strftime("%I:%M %p")
@@ -243,16 +245,23 @@ def send_email(name,contact_no,email_id,date,start_time,end_time,net_bill_amount
         html_message_customer += "</tr>"
         html_message_customer += "<tr><td colspan=3></td></tr>"
         html_message_customer += "<tr><td colspan=3></td></tr>"
-        html_message_customer += "<tr>"
-        html_message_customer += "<td colspan=3>"
-        html_message_customer += "Kindly visit kunal31.pythonanywhere.com and login with given credentials for further info."
-        html_message_customer += "</td>"
-        html_message_customer += "</tr>"
-        html_message_customer += "<tr>"
-        html_message_customer += "<td colspan=3>"
-        html_message_customer += "Your username is <b>"+email_id+"</b> & password is <b>gorgeous</b>"
-        html_message_customer += "</td>"
-        html_message_customer += "</tr>"
+        if customer_password:
+            html_message_customer += "<tr>"
+            html_message_customer += "<td colspan=3>"
+            html_message_customer += "Kindly visit kunal31.pythonanywhere.com and login with given credentials for further info."
+            html_message_customer += "</td>"
+            html_message_customer += "</tr>"
+            html_message_customer += "<tr>"
+            html_message_customer += "<td colspan=3>"
+            html_message_customer += "Your username is <b>"+email_id+"</b> & password is <b>"+ customer_password +"</b>"
+            html_message_customer += "</td>"
+            html_message_customer += "</tr>"
+        else:
+            html_message_customer += "<tr>"
+            html_message_customer += "<td colspan=3>"
+            html_message_customer += "Kindly visit kunal31.pythonanywhere.com and login with your username and password for further info."
+            html_message_customer += "</td>"
+            html_message_customer += "</tr>"
         html_message_customer += "<tr><td colspan=3></td></tr>"
         html_message_customer += "<tr><td colspan=3></td></tr>"
         html_message_customer += "<tr>"

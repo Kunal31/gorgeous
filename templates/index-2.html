@@ -692,7 +692,7 @@
                                 <div class="sign-feilds">
                                     <div class="input-text">
                                         <select id="select-country" class="select-country form-control width-50" name="select-country" required>
-                                            <option value="0">Choose Country</option>
+                                            <option value="">Choose Country</option>
                                             <option value="Afghanisthan">Afghanisthan</option>
                                             <option value="Australia">Australia</option>
                                             <option value="Brazil">Brazil</option>
@@ -796,7 +796,7 @@
 							var data = jQuery.parseJSON(data)
 							var services = data.services
 							$('#select-service').empty();
-							$('#select-service').append($('<option></option>').val("0").html("Choose Service"));
+							$('#select-service').append($('<option></option>').val("").html("Choose Service"));
 							$.each(services, function(i, s) {
 								$('#select-service').append($('<option></option>').val(s).html(s));
 							});
