@@ -133,7 +133,7 @@
 									<tbody>
 										{% for service in skin_services %}
 											<tr>
-												<td>{{ service.name }}</td>
+												<td><a href="{% url 'single_service' service.id %}">{{ service.name }}</a></td>
 											</tr>
 										{% endfor %}
 									</tbody>
@@ -157,7 +157,7 @@
 									<tbody>
 										{% for service in hair_services %}
 											<tr>
-												<td>{{ service.name }}</td>
+												<td><a href="{% url 'single_service' service.id %}">{{ service.name }}</a></td>
 											</tr>
 										{% endfor %}
 									</tbody>
@@ -731,7 +731,7 @@
                                 <!-- Date & Time Picker-->
                                 <div class="sign-feilds">
                                     <div class="input-text">
-                                        <input type="text" id="datepicker" class="form-control width-50" name="date" placeholder="Select Date" required data-error="Please Select Date">
+                                        <input type="text" id="datepicker" class="form-control width-50" name="date" placeholder="Select Date" required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" title="valid date format is dd-mm-yyyy" data-error="Please Select Date">
                                         <!--<input type="text" id="timepicker" class="form-control width-50 last-name timepicker" name="timepicker" placeholder="Select Time" required data-error="Please Select Time">-->
 										<span style="margin-left:3%">
 											<input type="time" id="timepicker" min="13:00" max="18:00" class="form-control width-50" name="time" placeholder="Select Time" required data-error="Please Select Time">

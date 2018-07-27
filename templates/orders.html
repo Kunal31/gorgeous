@@ -46,40 +46,42 @@
 					<div class="col-lg-12 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".3s">
 						<form action="service.html#">
 							<div style="width:100%" class="table-content table-responsive">
-								<table class=" table table-striped">
-									<thead>
-										<tr>
-											<th>Id</th>
-											<th>Order Date</th>
-											<th>Order Time</th>
-											<th>Customer name</th>
-											<th>contact no</th>
-											<th>Services opted</th>
-											<th>gross bill</th>
-											<th>is completed</th>
-										</tr>
-									</thead>
-									<tbody>
-										{% for order in orders %}
+								{% if orders %}
+									<table class=" table table-striped">
+										<thead>
 											<tr>
-												<td>{{ order.id }}</td>
-												<td>{{ order.session.session_date }}</td>
-												<td>{{ order.session.start_time }}</td>
-												<td>{{ order.customer.user.first_name }} {{ order.customer.user.last_name }}</td>
-												<td>{{ order.customer.contact_no }}</td>
-												<td>{{ order|get_appointment_services }}</td>
-												<td>{{ order|get_order_bill_amount }}</td>
-												<td align="center">
-													{% if order.session.is_completed %}
-													    <i class="fa fa-check"></i>
-													{% else %}
-														<i class="fa fa-times"></i>
-													{% endif %}
-												</td>
+												<th>Id</th>
+												<th>Order Date</th>
+												<th>Order Time</th>
+												<th>Customer name</th>
+												<th>contact no</th>
+												<th>Services opted</th>
+												<th>gross bill</th>
+												<th>is completed</th>
 											</tr>
-										{% endfor %}
-									</tbody>
-								</table>
+										</thead>
+										<tbody>
+											{% for order in orders %}
+												<tr>
+													<td>{{ order.id }}</td>
+													<td>{{ order.session.session_date }}</td>
+													<td>{{ order.session.start_time }}</td>
+													<td>{{ order.customer.user.first_name }} {{ order.customer.user.last_name }}</td>
+													<td>{{ order.customer.contact_no }}</td>
+													<td>{{ order|get_appointment_services }}</td>
+													<td>{{ order|get_order_bill_amount }}</td>
+													<td align="center">
+														{% if order.session.is_completed %}
+															<i class="fa fa-check"></i>
+														{% else %}
+															<i class="fa fa-times"></i>
+														{% endif %}
+													</td>
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								{% endif %}
 							</div>
 						</form>
 						<!-- end table -->
