@@ -13,7 +13,7 @@ class LoginView(View):
     template_name = 'login.html'
 
     def get(self,request):
-        print "INSIDE GETTTT"
+        print "INSIDE GETTTTT"
         print request.GET.get('next')
         template = loader.get_template(self.template_name)
         context = {'redirection_url':request.GET.get('next')}
